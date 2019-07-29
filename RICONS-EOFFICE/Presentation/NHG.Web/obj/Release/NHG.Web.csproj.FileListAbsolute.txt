@@ -1,0 +1,616 @@
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Xml\Const\Default.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Xml\Const\QLCV.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\NHG.Web.dll.config
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\NHG.Web.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\NHG.Web.pdb
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Antlr3.Runtime.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\EntityFramework.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\IBatisNet.Common.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\IBatisNet.Common.Logging.Log4Net.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\IBatisNet.DataMapper.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\log4net.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Newtonsoft.Json.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\NHG.Core.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\NHG.DataServices.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\NHG.Logger.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Npgsql.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Owin.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.Web.Helpers.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.Web.Mvc.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.Web.Optimization.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.Web.Razor.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\WebGrease.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\NHG.Core.pdb
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\NHG.DataServices.pdb
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\NHG.Logger.pdb
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\IBatisNet.Common.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\IBatisNet.Common.Logging.Log4Net.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\IBatisNet.DataMapper.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\log4net.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Npgsql.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.Web.Helpers.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.Web.Mvc.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.Web.Optimization.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.Web.Razor.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Newtonsoft.Json.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Antlr3.Runtime.pdb
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\EntityFramework.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\obj\Release\NHG.Web.csprojResolveAssemblyReference.cache
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\obj\Release\NHG.Web.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Presentation\NHG.Web\obj\Release\NHG.Web.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Xml\Const\Default.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Xml\Const\QLCV.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\NHG.Web.dll.config
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\NHG.Web.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\NHG.Web.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Antlr3.Runtime.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\EntityFramework.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\IBatisNet.Common.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\IBatisNet.Common.Logging.Log4Net.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\IBatisNet.DataMapper.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\log4net.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Newtonsoft.Json.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\NHG.Core.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\NHG.DataServices.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\NHG.Logger.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Npgsql.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Owin.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.Web.Helpers.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.Web.Mvc.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.Web.Optimization.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.Web.Razor.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\WebGrease.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\NHG.Core.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\NHG.DataServices.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\NHG.Logger.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\IBatisNet.Common.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\IBatisNet.Common.Logging.Log4Net.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\IBatisNet.DataMapper.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\log4net.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Npgsql.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.Web.Helpers.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.Web.Mvc.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.Web.Optimization.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.Web.Razor.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Newtonsoft.Json.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Antlr3.Runtime.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\EntityFramework.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\obj\Release\NHG.Web.csprojResolveAssemblyReference.cache
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\obj\Release\NHG.Web.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Presentation\NHG.Web\obj\Release\NHG.Web.pdb
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Xml\Const\Default.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Xml\Const\QLCV.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\NHG.Web.dll.config
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\NHG.Web.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\NHG.Web.pdb
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Antlr3.Runtime.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\EntityFramework.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\EntityFramework.SqlServer.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\IBatisNet.Common.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\IBatisNet.Common.Logging.Log4Net.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\IBatisNet.DataMapper.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\log4net.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Facebook.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Google.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Twitter.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Newtonsoft.Json.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\NHG.Core.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\NHG.DataServices.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\NHG.Logger.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Npgsql.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Owin.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.Web.Helpers.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.Web.Mvc.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.Web.Optimization.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.Web.Razor.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.Deployment.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.Razor.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\WebGrease.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\NHG.Core.pdb
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\NHG.DataServices.pdb
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\NHG.Logger.pdb
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\IBatisNet.Common.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\IBatisNet.Common.Logging.Log4Net.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\IBatisNet.DataMapper.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\log4net.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Npgsql.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.pdb
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.Web.Helpers.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.Web.Mvc.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.Web.Optimization.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.Web.Razor.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.Deployment.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\System.Web.WebPages.Razor.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Newtonsoft.Json.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Antlr3.Runtime.pdb
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\EntityFramework.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\EntityFramework.SqlServer.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Facebook.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.OAuth.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Google.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Twitter.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\obj\Release\NHG.Web.csprojResolveAssemblyReference.cache
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\obj\Release\NHG.Web.dll
+D:\01 - Development\CongTy\E-NHG\Presentation\NHG.Web\obj\Release\NHG.Web.pdb
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Xml\Const\Default.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Xml\Const\QLCV.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\NHG.Web.dll.config
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\NHG.Web.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\NHG.Web.pdb
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Antlr3.Runtime.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\EntityFramework.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\EntityFramework.SqlServer.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\IBatisNet.Common.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\IBatisNet.Common.Logging.Log4Net.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\IBatisNet.DataMapper.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\log4net.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.Security.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Facebook.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Google.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Twitter.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Newtonsoft.Json.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\NHG.Core.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\NHG.DataServices.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\NHG.Logger.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Npgsql.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Owin.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.Web.Helpers.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.Web.Mvc.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.Web.Optimization.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.Web.Razor.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.Web.WebPages.Deployment.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.Web.WebPages.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.Web.WebPages.Razor.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\WebGrease.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\NHG.Core.pdb
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\NHG.DataServices.pdb
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\NHG.Logger.pdb
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\IBatisNet.Common.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\IBatisNet.Common.Logging.Log4Net.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\IBatisNet.DataMapper.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\log4net.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Npgsql.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.pdb
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.Web.Helpers.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.Web.Mvc.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.Web.Optimization.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.Web.Razor.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.Web.WebPages.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.Web.WebPages.Deployment.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\System.Web.WebPages.Razor.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Newtonsoft.Json.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Antlr3.Runtime.pdb
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\EntityFramework.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\EntityFramework.SqlServer.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.Security.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Facebook.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.Security.OAuth.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Google.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Twitter.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\obj\Release\NHG.Web.csprojResolveAssemblyReference.cache
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\obj\Release\NHG.Web.dll
+D:\SOFTWARE\RICONS\Presentation\NHG.Web\obj\Release\NHG.Web.pdb
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Xml\Const\Default.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Xml\Const\QLCV.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Web.dll.config
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Web.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Web.pdb
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Antlr3.Runtime.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\EntityFramework.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.Common.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.Common.Logging.Log4Net.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.DataMapper.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\log4net.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Newtonsoft.Json.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Core.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\NHG.DataServices.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Logger.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Npgsql.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Owin.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Helpers.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Mvc.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Optimization.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Razor.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\WebGrease.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Core.pdb
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\NHG.DataServices.pdb
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Logger.pdb
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.Common.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.Common.Logging.Log4Net.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.DataMapper.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\log4net.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Npgsql.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Helpers.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Mvc.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Optimization.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Razor.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Newtonsoft.Json.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Antlr3.Runtime.pdb
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\EntityFramework.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\obj\Release\NHG.Web.csprojResolveAssemblyReference.cache
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\obj\Release\NHG.Web.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Presentation\NHG.Web\obj\Release\NHG.Web.pdb
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Xml\Const\Default.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Xml\Const\QLCV.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Web.dll.config
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Web.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Web.pdb
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Antlr3.Runtime.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\ClosedXML.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\DocumentFormat.OpenXml.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\EntityFramework.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\EntityFramework.SqlServer.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.Common.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.Common.Logging.Log4Net.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.DataMapper.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\log4net.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Facebook.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Google.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Twitter.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Newtonsoft.Json.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Core.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\NHG.DataServices.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Logger.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Npgsql.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Owin.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Helpers.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Mvc.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Optimization.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Razor.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.Deployment.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.Razor.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\WebGrease.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Core.pdb
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\NHG.DataServices.pdb
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Logger.pdb
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\ClosedXML.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.Common.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.Common.Logging.Log4Net.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.DataMapper.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\log4net.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Npgsql.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Helpers.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Mvc.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Optimization.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Razor.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.Deployment.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.Razor.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Newtonsoft.Json.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\EntityFramework.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\EntityFramework.SqlServer.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Facebook.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.OAuth.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Google.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Twitter.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\obj\Release\NHG.Web.csprojResolveAssemblyReference.cache
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\obj\Release\NHG.Web.dll
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\obj\Release\NHG.Web.pdb
+D:\SOFTWARE\RICONS-XNP\Presentation\NHG.Web\obj\Release\NHG.Web.csproj.ResolveComReference.cache
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Xml\Const\Default.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Xml\Const\QLCV.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Web.dll.config
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Web.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Web.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Antlr3.Runtime.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\ClosedXML.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\DocumentFormat.OpenXml.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\EntityFramework.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\EntityFramework.SqlServer.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.Common.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.Common.Logging.Log4Net.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.DataMapper.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\log4net.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Facebook.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Google.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Twitter.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Newtonsoft.Json.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Core.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\NHG.DataServices.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Logger.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Npgsql.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Owin.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Helpers.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Mvc.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Optimization.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Razor.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.Deployment.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.Razor.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\WebGrease.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Core.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\NHG.DataServices.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\NHG.Logger.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\ClosedXML.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.Common.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.Common.Logging.Log4Net.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\IBatisNet.DataMapper.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\log4net.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Npgsql.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Helpers.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Mvc.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Optimization.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.Razor.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.Deployment.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\System.Web.WebPages.Razor.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Newtonsoft.Json.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\EntityFramework.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\EntityFramework.SqlServer.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Facebook.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.OAuth.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Google.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Twitter.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\obj\Release\NHG.Web.csprojResolveAssemblyReference.cache
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\obj\Release\NHG.Web.csproj.ResolveComReference.cache
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\obj\Release\NHG.Web.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\obj\Release\NHG.Web.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Presentation\NHG.Web\bin\NPOI.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Xml\Const\Default.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Xml\Const\QLCV.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\NHG.Web.dll.config
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\NHG.Web.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\NHG.Web.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Antlr3.Runtime.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\ClosedXML.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\DocumentFormat.OpenXml.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\EntityFramework.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\EntityFramework.SqlServer.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\IBatisNet.Common.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\IBatisNet.Common.Logging.Log4Net.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\IBatisNet.DataMapper.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\log4net.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.Security.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Facebook.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Google.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Twitter.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Newtonsoft.Json.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\NHG.Core.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\NHG.DataServices.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\NHG.Logger.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Npgsql.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Owin.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\System.Web.Helpers.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\System.Web.Mvc.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\System.Web.Optimization.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\System.Web.Razor.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\System.Web.WebPages.Deployment.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\System.Web.WebPages.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\System.Web.WebPages.Razor.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\WebGrease.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\NPOI.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\NHG.Core.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\NHG.DataServices.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\NHG.Logger.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\ClosedXML.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\IBatisNet.Common.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\IBatisNet.Common.Logging.Log4Net.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\IBatisNet.DataMapper.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\log4net.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Npgsql.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\System.Web.Helpers.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\System.Web.Mvc.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\System.Web.Optimization.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\System.Web.Razor.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\System.Web.WebPages.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\System.Web.WebPages.Deployment.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\System.Web.WebPages.Razor.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Newtonsoft.Json.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\EntityFramework.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\EntityFramework.SqlServer.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.Security.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Facebook.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.Security.OAuth.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Google.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.Security.Twitter.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\obj\Release\NHG.Web.csproj.ResolveComReference.cache
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\obj\Release\NHG.Web.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\obj\Release\NHG.Web.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Presentation\NHG.Web\obj\Release\NHG.Web.csprojResolveAssemblyReference.cache

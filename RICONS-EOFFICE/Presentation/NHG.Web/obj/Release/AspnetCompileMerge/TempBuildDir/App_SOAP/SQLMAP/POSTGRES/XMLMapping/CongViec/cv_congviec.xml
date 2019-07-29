@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="cv_congviec"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+   
+
+  
+    
+    <insert id="InsertRow">
+      INSERT INTO cv_congviec(
+      macongviec,
+      madonvi,
+      congviecgoc,
+      makehoach,
+      tieude,
+      noidung,
+      ghichu,
+      ngaybatdau,
+      ngayketthuc,
+      ngayhoanthanh,
+      hoanthanh,
+      tinhtrang,
+      capdouutien,
+      is_taptin,
+      xoa,
+      nguoitao,
+      ngaytao,
+      nguoihieuchinh,
+      ngayhieuchinh
+      )
+      VALUES (
+      '$macongviec$'
+      ,'$madonvi$'
+      <isNotEmpty	property="congviecgoc">, '$congviecgoc$' </isNotEmpty>
+      <isEmpty	property="congviecgoc">,'0'</isEmpty>
+      <isNotEmpty	property="makehoach"> , '$makehoach$'</isNotEmpty>
+      <isEmpty	property="makehoach">,null </isEmpty>
+      <isNotEmpty	property="tieude">, '$tieude$'</isNotEmpty>
+      <isEmpty	property="tieude">,null </isEmpty>
+      <isNotEmpty	property="noidung"> , '$noidung$'</isNotEmpty>
+      <isEmpty	property="noidung">,null</isEmpty>
+      <isNotEmpty	property="ghichu"> , '$ghichu$'</isNotEmpty>
+      <isEmpty	property="ghichu">,null</isEmpty>
+      <isNotEmpty	property="ngaybatdau">, '$ngaybatdau$' </isNotEmpty>
+      <isEmpty	property="ngaybatdau">,null</isEmpty>
+      <isNotEmpty	property="ngayketthuc">, '$ngayketthuc$'</isNotEmpty>
+      <isEmpty	property="ngayketthuc">,null </isEmpty>
+      <isNotEmpty	property="ngayhoanthanh">, '$ngayhoanthanh$' </isNotEmpty>
+      <isEmpty	property="ngayhoanthanh">,null</isEmpty>
+      <isNotEmpty	property="hoanthanh"> , '$hoanthanh$'</isNotEmpty>
+      <isEmpty	property="hoanthanh"> ,null </isEmpty>
+      <isNotEmpty	property="tinhtrang">, '$tinhtrang$'</isNotEmpty>
+      <isEmpty	property="tinhtrang">,null </isEmpty>
+      <isNotEmpty	property="capdouutien">, '$capdouutien$'</isNotEmpty>
+      <isEmpty	property="capdouutien">,null</isEmpty>
+      <isNotEmpty	property="is_taptin">, '$is_taptin$' </isNotEmpty>
+      <isEmpty	property="is_taptin"> ,null</isEmpty>
+      <isNotEmpty	property="xoa"> , '$xoa$'</isNotEmpty>
+      <isEmpty	property="xoa"> ,'0' </isEmpty>
+      , '$nguoitao$'
+      ,GETDATE()
+      , '$nguoihieuchinh$'
+      ,GETDATE()
+      )
+    </insert>
+
+    <update id="UpdateRow">
+      UPDATE cv_congviec
+      SET
+      nguoihieuchinh = '$nguoihieuchinh$'
+      ,ngayhieuchinh = GETDATE()
+      <isNotEmpty	property="congviecgoc">, congviecgoc = #congviecgoc# </isNotEmpty>
+      <isEmpty	property="congviecgoc">, congviecgoc = null </isEmpty>
+      <isNotEmpty	property="makehoach"> , makehoach = '$makehoach$'</isNotEmpty>
+      <isEmpty	property="makehoach"> , makehoach = null</isEmpty>
+      <isNotEmpty	property="tieude">,tieude = '$tieude$'</isNotEmpty>
+      <isEmpty	property="tieude">,tieude = null</isEmpty>
+      <isNotEmpty	property="noidung"> , noidung = '$noidung$'</isNotEmpty>
+      <isEmpty	property="noidung"> , noidung = null</isEmpty>
+      <isNotEmpty	property="ghichu"> , ghichu = '$ghichu$'</isNotEmpty>
+      <isEmpty	property="ghichu"> , ghichu = null</isEmpty>
+      <isNotEmpty	property="ngaybatdau">, ngaybatdau = '$ngaybatdau$' </isNotEmpty>
+      <isEmpty	property="ngaybatdau">, ngaybatdau = null </isEmpty>
+      <isNotEmpty	property="ngayketthuc">, ngayketthuc = '$ngayketthuc$'</isNotEmpty>
+      <isEmpty	property="ngayketthuc">, ngayketthuc = null</isEmpty>
+      <isNotEmpty	property="ngayhoanthanh">, ngayhoanthanh = '$ngayhoanthanh$' </isNotEmpty>
+      <isEmpty	property="ngayhoanthanh">, ngayhoanthanh = null </isEmpty>
+      <isNotEmpty	property="hoanthanh"> , hoanthanh = '$hoanthanh$'</isNotEmpty>
+      <isNotEmpty	property="tinhtrang">, tinhtrang = '$tinhtrang$'</isNotEmpty>
+      <isNotEmpty	property="capdouutien">, capdouutien = '$capdouutien$'</isNotEmpty>
+      <isNotEmpty	property="is_taptin">, is_taptin = '$is_taptin$' </isNotEmpty>
+      <isNotEmpty	property="xoa"> , xoa = '$xoa$'</isNotEmpty>
+      WHERE
+      macongviec = '$macongviec$'
+      and madonvi = '$madonvi$'
+      and xoa = '$xoa$'
+
+    </update>
+
+    <update id="DeleteRow">
+      UPDATE cv_congviec
+      SET
+      nguoihieuchinh = '$nguoihieuchinh$'
+      ,ngayhieuchinh = GETDATE()
+      , xoa = '1'
+      WHERE
+      macongviec = '$macongviec$'
+      and xoa = '$xoa$'
+
+    </update>
+  </statements>
+</sqlMap>

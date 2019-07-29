@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="SuKien010000"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="loadSuKienTheoId" resultClass="System.Collections.Hashtable">
+      select
+      gccv.maghichu
+      ,tieude
+      ,noidung
+      ,taptin1
+      ,taptin2
+      ,taptin3
+      ,to_char( ngaythem , 'dd/MM/yyyy' ) AS ngaythem
+      ,ngaybatdau
+      ,ngayketthuc
+      ,thoigiannhacnho
+      ,loainhacnho
+      ,phuongtiendichuyen
+      ,thanhphan
+      ,nguoitaoghichucongviec
+      ,trangthai
+      FROM
+      cal_ghichucongviec AS gccv
+      INNER JOIN
+      cal_ghichucongviecnguoidung AS gccv_nd
+      ON
+      gccv.maghichu = gccv_nd.maghichu
+      LEFT JOIN
+      cal_congviec_lichchung AS cv
+      ON
+      gccv.maghichu = cv.maghichu
+      WHERE
+      gccv.xoa = '$xoa$'
+      AND
+      (
+      gccv_nd.mataikhoan = $mataikhoan$
+      or
+      (
+      cv.trangthai = '2'
+      and cv.xoa = '$xoa$'
+      )
+      )
+    </select>
+
+    <select id="loadSuKienTongHop" resultClass="System.Collections.Hashtable">
+      SELECT
+      gccv.maghichu
+      ,tieude
+      ,noidung
+      ,taptin1
+      ,taptin2
+      ,taptin3
+      ,to_char( ngaythem , 'dd/MM/yyyy' ) AS ngaythem
+      ,ngaybatdau
+      ,ngayketthuc
+      ,phuongtiendichuyen
+      ,thanhphan
+      ,nguoitaoghichucongviec
+      ,trangthai
+      FROM
+      cal_ghichucongviec AS gccv
+      INNER JOIN
+      cal_congviec_lichchung AS cv
+      ON
+      gccv.maghichu = cv.maghichu
+      INNER JOIN
+      cal_ghichucongviecnguoidung AS gccv_nd
+      ON
+      gccv.maghichu = gccv_nd.maghichu
+      WHERE
+      gccv.xoa = '$xoa$'
+      or gccv_nd.mataikhoan = $mataikhoan$
+    </select>
+
+    <select id="loadSuKien" resultClass="System.Collections.Hashtable">
+      SELECT
+      gccv.maghichu
+      ,loaighichu
+      ,tieude
+      ,noidung
+      ,taptin1
+      ,taptin2
+      ,taptin3
+      ,vitrikhac
+      ,to_char(ngaythem ,'dd/MM/yyyy') AS ngaythem
+      ,to_char(ngaybatdau, 'MM/dd/yyyy HH24:MI') as ngaybatdau
+      ,to_char(ngayketthuc, 'MM/dd/yyyy HH24:MI') as ngayketthuc
+      ,mucdouutien
+      ,dexuat
+      ,thanhphan
+      ,maulich
+      ,sukiencangay
+      ,nguoitaoghichucongviec
+      FROM
+      cal_ghichucongviec AS gccv      
+      where
+      gccv.xoa = '0'
+      <isNotEmpty	property="maghichu">	
+        and maghichu = '$maghichu$'	
+      </isNotEmpty>	
+     <isNotEmpty	property="ngaybatdau">
+        AND to_timestamp(to_char(ngaybatdau,'yyyy/MM/dd'),'yyyy/MM/dd') <![CDATA[>=]]> to_timestamp('$ngaybatdau$','yyyy/MM/dd')
+      </isNotEmpty>
+      <isNotEmpty	property="ngayketthuc">
+        AND to_timestamp(to_char(ngaybatdau,'yyyy/MM/dd'),'yyyy/MM/dd') <![CDATA[<=]]> to_timestamp('$ngayketthuc$','yyyy/MM/dd')
+      </isNotEmpty>
+    <isNotEmpty	property="nguoitaoghichucongviec">	
+        and nguoitaoghichucongviec = '$nguoitaoghichucongviec$'	
+      </isNotEmpty>	
+      order by ngaybatdau
+    </select>
+    
+    <select id="loadSuKienTheoIdEvent" resultClass="System.Collections.Hashtable">
+      SELECT
+      gccv.maghichu
+      ,loaighichu
+      ,tieude
+      ,noidung
+      ,taptin1
+      ,taptin2
+      ,taptin3
+      ,vitrikhac
+      ,to_char(ngaythem ,'dd/MM/yyyy') AS ngaythem
+      ,to_char(ngaybatdau, 'MM/dd/yyyy hh:mi:ss AM') as ngaybatdau
+      ,to_char(ngayketthuc, 'MM/dd/yyyy hh:mi:ss AM') as ngayketthuc
+      ,thoigiannhacnho
+      ,loainhacnho
+      ,mucdouutien
+      ,songaynhacnho
+      ,dexuat
+      ,thanhphan
+      ,nguoitaoghichucongviec
+      ,mataikhoan
+      ,trangthai
+      FROM
+      cal_ghichucongviec AS gccv
+      INNER JOIN
+      cal_ghichucongviecnguoidung AS gccv_nd
+      ON
+      gccv.maghichu = gccv_nd.maghichu
+      LEFT JOIN
+      cal_congviec_lichchung as cv
+      ON
+      gccv.maghichu = cv.maghichu
+      where
+      gccv.xoa = '$xoa$'
+      and gccv.maghichu = '$maghichu$'
+    </select>
+
+    <select id="getListCompare" resultClass="System.Collections.Hashtable">
+      SELECT
+      gccv.maghichu
+      ,tieude
+      ,noidung
+      ,taptin1
+      ,taptin2
+      ,taptin3
+      ,mavitri
+      ,vitrikhac
+      ,to_char( ngaythem , 'dd/MM/yyyy' ) AS ngaythem
+      ,to_char(ngaybatdau, 'yyyy-MM-dd HH24:mi:ss') AS ngaybatdau
+      ,to_char(ngayketthuc, 'yyyy-MM-dd HH24:mi:ss') AS ngayketthuc
+      ,phuongtiendichuyen
+      ,thanhphan
+      ,nguoitaoghichucongviec
+      FROM
+      cal_ghichucongviec AS gccv
+      WHERE
+      gccv.xoa = '$xoa$'
+    </select>
+
+    <insert id="insertEventWaitAccept">
+      INSERT INTO cal_congviec_lichchung
+      (
+      maghichu
+      ,trangthai
+      ,xoa
+      ,nguoitao
+      ,ngaytao
+      )
+      VALUES
+      (
+      $maghichu$
+      ,'$trangthai$'
+      ,'$xoa$'
+      ,$nguoitao$
+      ,GETDATE()
+      )
+    </insert>
+    
+    <insert id="insertSuKien">
+      INSERT INTO
+      cal_ghichucongviec
+      (
+      maghichu
+      ,tieude
+      ,noidung
+      ,vitrikhac
+      ,ngaythem
+      ,ngaybatdau
+      ,ngayketthuc
+      ,mucdouutien
+      ,dexuat
+      ,nguoitaoghichucongviec
+      ,xoa
+      ,maulich
+      ,sukiencangay
+      )
+      VALUES
+      (
+      $maghichu$
+      ,'$tieude$'
+      ,'$noidung$'
+      ,'$vitrikhac$'
+      ,GETDATE()
+      ,'$ngaybatdau$'
+      ,'$ngayketthuc$'
+      ,'$mucdouutien$'
+      ,'$dexuat$'
+      ,$nguoitaoghichucongviec$
+      ,'$xoa$'
+      <isNotEmpty	property="maulich">	
+        , '$maulich$'	
+      </isNotEmpty>	
+      <isEmpty	property="maulich">	
+        ,0	
+      </isEmpty>
+      <isNotEmpty	property="sukiencangay">	
+        , '$sukiencangay$'	
+      </isNotEmpty>	
+      <isEmpty	property="sukiencangay">	
+        ,0	
+      </isEmpty>
+      )
+    </insert>
+
+    <insert id="insertSuKienNguoiDung">
+      INSERT INTO
+      cal_ghichucongviecnguoidung
+      (
+      maghichunguoidung
+      ,maghichu
+      ,mataikhoan
+      ,loainhacnho
+      ,thoigiannhacnho
+      ,songaynhacnho
+      ,danhacnho
+      )
+      VALUES
+      (
+      '$maghichunguoidung$'
+      ,$maghichu$
+      ,'$mataikhoan$'
+      ,'$loainhacnho$'
+      ,'$thoigiannhacnho$'
+      ,'$songaynhacnho$'
+      ,'$danhacnho$'
+      )
+    </insert>
+
+    <update id="deleteSuKien">
+      UPDATE
+      cal_ghichucongviec
+      SET
+      xoa = '$xoa$'
+      WHERE
+      maghichu = $maghichu$
+    </update>
+
+    <update id="updateSuKien">
+      UPDATE
+      cal_ghichucongviec
+      SET
+      loaighichu = '$loaighichu$'
+      <isNotEmpty	property="tieude">
+        ,tieude='$tieude$'
+      </isNotEmpty>
+      <isNotEmpty	property="noidung">
+        ,noidung='$noidung$'
+      </isNotEmpty>
+      <isNotEmpty	property="phonghop">
+        ,vitrikhac='$phonghop$'
+      </isNotEmpty>
+      <isNotEmpty	property="ngaybatdau">
+        ,ngaybatdau='$ngaybatdau$'
+      </isNotEmpty>
+      <isNotEmpty	property="ngayketthuc">
+        ,ngayketthuc='$ngayketthuc$'
+      </isNotEmpty>
+      <isNotEmpty	property="phuongtiendichuyen">
+        ,phuongtiendichuyen='$phuongtiendichuyen$'
+      </isNotEmpty>
+      <isNotEmpty	property="dexuat">
+        ,dexuat='$dexuat$'
+      </isNotEmpty>
+      <isNotEmpty	property="mucdouutien">
+        ,mucdouutien = '$mucdouutien$'
+      </isNotEmpty>
+      <isNotEmpty	property="maulich">
+        ,maulich = '$maulich$'
+      </isNotEmpty>
+      <isNotEmpty	property="sukiencangay">
+        ,sukiencangay = '$sukiencangay$'
+      </isNotEmpty>
+      WHERE
+      maghichu = $maghichu$
+    </update>
+
+    <update id="updateSuKienRegist">
+      UPDATE
+      cal_congviec_lichchung
+      SET
+      trangthai = '$trangthai$'
+      ,nguoihieuchinh = $nguoihieuchinh$
+      ,ngayhieuchinh = GETDATE()
+      WHERE 
+      maghichu = $maghichu$
+    </update>
+
+    <update id="updateSuKienNguoiDung">
+      UPDATE
+      cal_ghichucongviecnguoidung
+      SET
+      loainhacnho = '$loainhacnho$'
+      <isNotEmpty	property="songaynhacnho">
+        ,songaynhacnho = $songaynhacnho$
+      </isNotEmpty>
+      <isNotEmpty	property="thoigiannhacnho">
+        ,thoigiannhacnho = '$thoigiannhacnho$'
+      </isNotEmpty>
+      WHERE
+      maghichu = '$maghichu$'
+    </update>
+
+
+    <update id="updateSuKienChung">
+      UPDATE
+      cal_ghichuphongban
+      SET
+      hienthitatca = '$hienthitatca$'
+      ,maphongban = '$maphongban$'
+      WHERE
+      maghichu = $maghichu$
+    </update>
+
+    <select id="selectSuKienNhacNho" resultClass="System.Collections.Hashtable">
+      SELECT
+      gccv.maghichu
+      ,tieude
+      ,noidung
+      ,ngaybatdau
+      ,ngayketthuc
+      ,thoigiannhacnho
+      ,loainhacnho
+      ,phuongtiendichuyen
+      FROM
+      cal_ghichucongviec AS gccv
+      INNER JOIN
+      cal_ghichucongviecnguoidung AS gccv_nd
+      ON
+      gccv.maghichu = gccv_nd.maghichu
+      WHERE
+      xoa = '$xoa$'
+      AND gccv_nd.mataikhoan = $mataikhoan$
+      AND danhacnho = '0'
+      AND GETDATE()
+      <![CDATA[>=]]> thoigiannhacnho
+    </select>
+
+    <update id="updateDaNhacNho">
+      UPDATE
+      cal_ghichucongviecnguoidung
+      SET
+      danhacnho='$danhacnho$'
+      WHERE
+      maghichu = $maghichu$
+    </update>
+
+    <!--Dùng cho menu left-->
+    <select id="loadSuKienGanNhat" resultClass="System.Collections.Hashtable">
+      SELECT
+      gccv.maghichu
+      ,tieude
+      ,noidung
+      ,to_char(ngaybatdau, 'dd/MM/yyyy HH24:mi') as ngaybatdau
+      FROM
+      cal_ghichucongviec AS gccv
+      INNER JOIN
+      cal_ghichucongviecnguoidung AS gccv_nd
+      ON
+      gccv.maghichu = gccv_nd.maghichu
+      WHERE
+      xoa = '$xoa$'
+      AND gccv_nd.mataikhoan = $manguoidung$
+      AND GETDATE()
+      <![CDATA[<=]]> ngaybatdau
+      ORDER BY ngaybatdau asc
+      LIMIT 1
+    </select>
+
+    <!--Dùng phân trang SuKien.aspx-->
+    <select id="selectNhacNho" resultClass="System.Collections.Hashtable">
+      SELECT
+      gccv.maghichu
+      ,tieude
+      ,noidung
+      ,taptin1
+      ,taptin2
+      ,taptin3
+      ,ngaybatdau
+      ,ngayketthuc
+      ,thoigiannhacnho
+      ,loainhacnho
+      ,phuongtiendichuyen
+      ,thanhphan
+      FROM
+      cal_ghichucongviec AS gccv
+      INNER JOIN
+      cal_ghichucongviecnguoidung AS gccv_nd
+      ON
+      gccv.maghichu = gccv_nd.maghichu
+      WHERE
+      xoa = '$xoa$'
+      AND gccv_nd.mataikhoan = $mataikhoan$
+      AND GETDATE() <![CDATA[<=]]> ngaybatdau
+      ORDER BY
+      ngaybatdau
+      LIMIT $limit$
+    </select>
+
+    <select id="countEvent" resultClass="int">
+      SELECT
+      COUNT(gccv.maghichu) AS count
+      FROM
+      cal_ghichucongviec AS gccv
+      INNER JOIN
+      cal_ghichucongviecnguoidung AS gccv_nd
+      ON
+      gccv.maghichu = gccv_nd.maghichu
+      WHERE
+      xoa = '$xoa$'
+      AND gccv_nd.mataikhoan = $mataikhoan$
+      AND GETDATE() <![CDATA[<=]]> ngaybatdau
+    </select>
+
+    <select id="selectNhacNhoPaging" resultClass="System.Collections.Hashtable">
+      SELECT
+      gccv.maghichu
+      ,tieude
+      ,noidung
+      ,taptin1
+      ,taptin2
+      ,taptin3
+      ,ngaybatdau
+      ,ngayketthuc
+      ,thoigiannhacnho
+      ,loainhacnho
+      ,phuongtiendichuyen
+      ,thanhphan
+      FROM
+      cal_ghichucongviec AS gccv
+      INNER JOIN
+      cal_ghichucongviecnguoidung AS gccv_nd
+      ON
+      gccv.maghichu = gccv_nd.maghichu
+      WHERE
+      xoa = '$xoa$'
+      AND gccv_nd.mataikhoan = $mataikhoan$
+      AND GETDATE() <![CDATA[<=]]> ngaybatdau
+      ORDER BY
+      ngaybatdau
+      LIMIT $limit$
+      OFFSET $offset$
+    </select>
+
+    <select id="selectPhongBan" resultClass="int">
+      SELECT
+      maphongban
+      FROM
+      m_taikhoan
+      WHERE
+      mataikhoan = $mataikhoan$
+    </select>
+
+    <insert id="insertSuKienPhongBan">
+      INSERT INTO cal_ghichuphongban
+      (
+      maghichuphongban
+      ,maghichu
+      ,maphongban
+      ,hienthitatca
+      )
+      VALUES
+      (
+      $maghichuphongban$
+      ,$maghichu$
+      ,'$maphongban$'
+      ,'$hienthitatca$'
+      )
+    </insert>
+
+    <select id="selectNguoiTaoEvent" resultClass="string">
+      SELECT
+      hoten
+      FROM
+      m_taikhoan
+      WHERE
+      mataikhoan = $manguoidung$
+    </select>
+
+    <select id="selectLichChung" resultClass="System.Collections.Hashtable">
+      SELECT
+      malichchung
+      ,tieude
+      ,tentaptin
+      ,xoa
+      ,nguoitao
+      ,to_char(ngaytao, 'dd/mm/yyyy') as ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      FROM
+      cal_lichchung
+      WHERE
+      xoa = '$xoa$'
+      ORDER BY
+      cal_lichchung.ngaytao
+    </select>
+    
+    <!--page thanhdoan-->
+    <select id="getCalInWeek" resultClass="System.Collections.Hashtable">
+      SELECT
+      cv.maghichu
+      ,tk.hoten
+      ,loaighichu
+      ,tieude
+      ,noidung
+      ,vitrikhac
+      ,taptin1
+      ,taptin2
+      ,taptin3
+      ,ngaythem
+      ,to_char(ngaybatdau, 'dd/MM/yyyy HH24:mi:ss') as ngaybatdau
+      ,to_char(ngayketthuc, 'dd/MM/yyyy HH24:mi:ss') as ngayketthuc
+      ,thanhphan
+      ,phuongtiendichuyen
+      ,mavitri
+      ,cv.xoa
+      ,mucdouutien
+      ,nguoitaoghichucongviec
+      FROM
+      cal_ghichucongviec cv
+      JOIN m_taikhoan tk
+      ON cv.nguoitaoghichucongviec = tk.mataikhoan
+      WHERE
+      cv.xoa = '$xoa$'
+      and '$ngaybatdau$' <![CDATA[<=]]> ngaybatdau
+      and '$ngayketthuc$' <![CDATA[>=]]> ngaybatdau
+      ORDER BY nguoitaoghichucongviec
+    </select>
+    
+    <select id="getInfoDK" resultClass="System.Collections.Hashtable">
+      SELECT
+      malichdk
+      ,to_char(tuanletu, 'MM/dd/yyyy HH24:mi:ss') as tuanletu
+      ,to_char(tuanleden, 'MM/dd/yyyy HH24:mi:ss') as tuanleden
+      ,to_char(ngaydktu, 'MM/dd/yyyy HH24:mi:ss') as ngaydktu
+      ,to_char(ngaydkden, 'MM/dd/yyyy HH24:mi:ss') as ngaydkden
+      ,tuanle
+      ,nam
+      ,luuy
+      ,chucvu
+      ,nguoiky
+      ,xoa
+      ,ngaytao
+      ,nguoitao
+      FROM
+      cal_lichchungdk
+      WHERE
+      xoa = '0'
+      ORDER BY
+      ngaytao desc
+      LIMIT
+      1
+    </select>
+    
+    <select id="getListCompareCal" resultClass="System.Collections.Hashtable">
+      SELECT
+      gccv.maghichu
+      ,tieude
+      ,noidung
+      ,taptin1
+      ,taptin2
+      ,taptin3
+      ,mavitri
+      ,vitrikhac
+      ,to_char( ngaythem , 'dd/MM/yyyy' ) AS ngaythem
+      ,to_char(ngaybatdau, 'yyyy-MM-dd HH24:mi:ss') AS ngaybatdau
+      ,to_char(ngayketthuc, 'yyyy-MM-dd HH24:mi:ss') AS ngayketthuc
+      ,phuongtiendichuyen
+      ,thanhphan
+      ,nguoitaoghichucongviec
+      FROM
+      cal_ghichucongviec AS gccv
+      WHERE
+      gccv.xoa = '$xoa$'
+    </select>
+
+    <insert id="insertLichChungDK">
+      INSERT INTO cal_lichchungdk
+      (
+      malichdk
+      ,tuanletu
+      ,tuanleden
+      ,ngaydktu
+      ,ngaydkden
+      ,tuanle
+      ,nam
+      ,luuy
+      ,chucvu
+      ,nguoiky
+      ,xoa
+      ,ngaytao
+      ,nguoitao
+      )
+      VALUES
+      (
+      $malichdk$
+      ,'$tuanletu$'
+      ,'$tuanleden$'
+      ,'$ngaydktu$'
+      ,'$ngaydkden$'
+      ,'$tuanle$'
+      ,'$nam$'
+      ,'$luuy$'
+      ,'$chucvu$'
+      ,'$nguoiky$'
+      ,'$xoa$'
+      ,GETDATE()
+      ,$nguoitao$
+      )
+    </insert>
+
+    <update id="updateLichChungDK">
+      UPDATE
+      cal_lichchungdk
+      SET
+      tuanletu = '$tuanletu$'
+      ,tuanleden = '$tuanleden$'
+      ,ngaydktu = '$ngaydktu$'
+      ,ngaydkden = '$ngaydkden$'
+      ,tuanle = '$tuanle$'
+      ,nam = '$nam$'
+      ,luuy = '$luuy$'
+      ,chucvu = '$chucvu$'
+      ,nguoiky = '$nguoiky$'
+      ,xoa = '$xoa$'
+      ,ngayhieuchinh = GETDATE()
+      ,nguoihieuchinh = $nguoihieuchinh$
+      WHERE malichdk = $malichdk$
+    </update>
+
+    <select id="getDetailsCal" resultClass="System.Collections.Hashtable">
+      SELECT
+      maghichu
+      ,loaighichu
+      ,tieude
+      ,noidung
+      ,vitrikhac
+      ,taptin1
+      ,taptin2
+      ,taptin3
+      ,ngaythem
+      ,to_char(ngaybatdau, 'dd/MM/yyyy HH24:mi:ss') as ngaybatdau
+      ,to_char(ngayketthuc, 'dd/MM/yyyy HH24:mi:ss') as ngayketthuc
+      ,thanhphan
+      ,phuongtiendichuyen
+      ,mavitri
+      ,xoa
+      ,mucdouutien
+      ,nguoitaoghichucongviec
+      FROM
+      cal_ghichucongviec
+      WHERE
+      xoa = '$xoa$'
+      AND maghichu = $maghichu$
+    </select>
+
+    <update id="editCal">
+      UPDATE
+      cal_ghichucongviec
+      SET
+      ngayhieuchinh = GETDATE()
+      <isNotEmpty property="loaighichu">
+        ,loaighichu = '$loaighichu$'
+      </isNotEmpty>
+      <isNotEmpty property="noidung">
+        ,noidung = '$noidung$'
+      </isNotEmpty>
+      ,vitrikhac = '$vitrikhac$'
+      <isNotEmpty property="ngaybatdau">
+        ,ngaybatdau = '$ngaybatdau$'
+      </isNotEmpty>
+      <isNotEmpty property="thanhphan">
+        ,thanhphan = '$thanhphan$'
+      </isNotEmpty>
+      ,phuongtiendichuyen = '$phuongtiendichuyen$'
+      <isEmpty property="mavitri">,mavitri = null</isEmpty>
+      <isNotEmpty property="mavitri">,mavitri = $mavitri$</isNotEmpty>
+      <isNotEmpty property="xoa">
+        ,xoa = '$xoa$'
+      </isNotEmpty>
+      <isNotEmpty property="nguoihieuchinh">
+        ,nguoihieuchinh = '$nguoihieuchinh$'
+      </isNotEmpty>
+      WHERE
+      maghichu = '$maghichu$'
+    </update>
+
+    <insert id="insertCal">
+      INSERT INTO cal_ghichucongviec
+      (
+      maghichu
+      <isNotEmpty property="loaighichu">
+        ,loaighichu
+      </isNotEmpty>
+      <isNotEmpty property="noidung">
+        ,noidung
+      </isNotEmpty>
+      <isNotEmpty property="vitrikhac">
+        ,vitrikhac
+      </isNotEmpty>
+      ,ngaythem
+      <isNotEmpty property="ngaybatdau">
+        ,ngaybatdau
+      </isNotEmpty>
+      <isNotEmpty property="thanhphan">
+        ,thanhphan
+      </isNotEmpty>
+      <isNotEmpty property="phuongtiendichuyen">
+        ,phuongtiendichuyen
+      </isNotEmpty>
+      <isNotEmpty property="mavitri">
+        ,mavitri
+      </isNotEmpty>
+      <isNotEmpty property="xoa">
+        ,xoa
+      </isNotEmpty>
+      <isNotEmpty property="nguoitaoghichucongviec">
+        ,nguoitaoghichucongviec
+      </isNotEmpty>
+      )
+      VALUES
+      (
+      $maghichu$
+      <isNotEmpty property="loaighichu">
+        ,'$loaighichu$'
+      </isNotEmpty>
+      <isNotEmpty property="noidung">
+        ,'$noidung$'
+      </isNotEmpty>
+      <isNotEmpty property="vitrikhac">
+        ,'$vitrikhac$'
+      </isNotEmpty>
+      ,GETDATE()
+      <isNotEmpty property="ngaybatdau">
+        ,'$ngaybatdau$'
+      </isNotEmpty>
+      <isNotEmpty property="thanhphan">
+        ,'$thanhphan$'
+      </isNotEmpty>
+      <isNotEmpty property="phuongtiendichuyen">
+        ,'$phuongtiendichuyen$'
+      </isNotEmpty>
+      <isNotEmpty property="mavitri">
+        ,$mavitri$
+      </isNotEmpty>
+      <isNotEmpty property="xoa">
+        ,'$xoa$'
+      </isNotEmpty>
+      <isNotEmpty property="nguoitaoghichucongviec">
+        ,'$nguoitaoghichucongviec$'
+      </isNotEmpty>
+      )
+    </insert>
+
+    <select id="getUserThanhDoan" resultClass="System.Collections.Hashtable">
+      SELECT
+      mataikhoan
+      ,tendangnhap
+      ,hoten
+      ,gioitinh
+      ,ngaysinh
+      ,thudientu
+      ,tk.diachi
+      ,sodienthoaididong
+      ,sodienthoaicodinh
+      ,hinhanh
+      ,tk.maphongban
+      ,tenphongban
+      ,machucvu
+      ,machucvukhac
+      ,toanquyen
+      ,donvi
+      FROM
+      m_taikhoan tk
+      JOIN
+      cms_phongban pb
+      ON
+      tk.maphongban = pb.maphongban
+      WHERE
+      tk.maphongban is not null
+      AND tk.xoa = '0'
+    </select>
+    <!--end page thanhdoan-->
+  </statements>
+</sqlMap>

@@ -1,0 +1,59 @@
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.Logger\bin\Release\NHG.Logger.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.Logger\bin\Release\NHG.Logger.pdb
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.Logger\bin\Release\log4net.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.Logger\bin\Release\log4net.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.Logger\obj\Release\NHG.Logger.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.Logger\obj\Release\NHG.Logger.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.Logger\bin\Release\NHG.Logger.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.Logger\bin\Release\NHG.Logger.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.Logger\bin\Release\log4net.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.Logger\bin\Release\log4net.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.Logger\obj\Release\NHG.Logger.csprojResolveAssemblyReference.cache
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.Logger\obj\Release\NHG.Logger.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.Logger\obj\Release\NHG.Logger.pdb
+D:\SOFTWARE\RICONS\Libraries\NHG.Logger\bin\Release\NHG.Logger.dll
+D:\SOFTWARE\RICONS\Libraries\NHG.Logger\bin\Release\NHG.Logger.pdb
+D:\SOFTWARE\RICONS\Libraries\NHG.Logger\bin\Release\log4net.dll
+D:\SOFTWARE\RICONS\Libraries\NHG.Logger\bin\Release\log4net.xml
+D:\SOFTWARE\RICONS\Libraries\NHG.Logger\obj\Release\NHG.Logger.csprojResolveAssemblyReference.cache
+D:\SOFTWARE\RICONS\Libraries\NHG.Logger\obj\Release\NHG.Logger.dll
+D:\SOFTWARE\RICONS\Libraries\NHG.Logger\obj\Release\NHG.Logger.pdb
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.Logger\bin\Release\NHG.Logger.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.Logger\bin\Release\NHG.Logger.pdb
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.Logger\bin\Release\log4net.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.Logger\bin\Release\log4net.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.Logger\obj\Release\NHG.Logger.csprojResolveAssemblyReference.cache
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.Logger\obj\Release\NHG.Logger.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.Logger\obj\Release\NHG.Logger.pdb
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Logger\bin\Release\NHG.Logger.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Logger\bin\Release\NHG.Logger.pdb
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Logger\bin\Release\ClosedXML.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Logger\bin\Release\DocumentFormat.OpenXml.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Logger\bin\Release\log4net.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Logger\bin\Release\ClosedXML.xml
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Logger\bin\Release\log4net.xml
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Logger\obj\Release\NHG.Logger.csprojResolveAssemblyReference.cache
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Logger\obj\Release\NHG.Logger.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Logger\obj\Release\NHG.Logger.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Logger\bin\Release\NHG.Logger.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Logger\bin\Release\NHG.Logger.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Logger\bin\Release\ClosedXML.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Logger\bin\Release\DocumentFormat.OpenXml.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Logger\bin\Release\log4net.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Logger\bin\Release\ClosedXML.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Logger\bin\Release\log4net.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Logger\obj\Release\NHG.Logger.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Logger\obj\Release\NHG.Logger.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Logger\obj\Release\NHG.Logger.csprojResolveAssemblyReference.cache
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Logger\bin\Release\NHG.Logger.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Logger\bin\Release\NHG.Logger.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Logger\bin\Release\ClosedXML.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Logger\bin\Release\DocumentFormat.OpenXml.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Logger\bin\Release\log4net.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Logger\bin\Release\ClosedXML.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Logger\bin\Release\log4net.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Logger\obj\Release\NHG.Logger.csprojAssemblyReference.cache
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Logger\obj\Release\NHG.Logger.csproj.CoreCompileInputs.cache
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Logger\obj\Release\NHG.Logger.csproj.CopyComplete
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Logger\obj\Release\NHG.Logger.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Logger\obj\Release\NHG.Logger.pdb

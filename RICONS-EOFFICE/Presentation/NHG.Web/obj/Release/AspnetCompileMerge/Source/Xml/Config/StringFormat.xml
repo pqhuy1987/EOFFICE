@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<formats>
+  <!--ewe-->
+  <format id="macongviec" >PB.{0}.{1}.{2}.{3}</format>
+  <!--KH.{MaNS}.Year.Month.00000000-->
+  <format id="makehoach" >KH.{0}.{1}.{2}.{3}</format>
+  
+  <format id="mamuctieu" >KH.{0}.{1}.{2}.{3}</format>
+  <!--dd/MM/yyyy HH:mm-->
+  <format id="NgayThangNam" >dd/MM/yyyy HH:mm</format>
+  <!--CAL.PhongBan.Year.thang.0000-->
+  <format id="malichlamviec" >CAL.{0}.{1}.{2}.{3}</format>
+  <!--TB.MaNhanSu.year.Month.000002-->
+  <format id="mathongbao" >TB.{0}.{1}.{2}.{3}</format>
+  <!--NS.{TenVietTatDonVi}.{CapDoNhanSu}.{0000001}-->
+  <format id="manhansu" >NS.{0}.{1}.{2}</format>
+</formats>

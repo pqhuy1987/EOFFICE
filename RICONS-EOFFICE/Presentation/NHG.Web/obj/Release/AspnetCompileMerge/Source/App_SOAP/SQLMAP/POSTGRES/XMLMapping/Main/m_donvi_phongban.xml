@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="m_donvi_phongban"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="SelectRows" resultClass="System.Collections.Hashtable">
+      SELECT
+      madonvi
+      ,maphongban
+      ,tenphongban
+      ,sodienthoai
+      ,xoa
+      ,nguoitao
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      FROM
+      m_donvi_phongban
+      WHERE
+      xoa = '0'
+      <isNotEmpty	property="madonvi">	and madonvi = '$madonvi$'	</isNotEmpty>
+      <isNotEmpty	property="maphongban">	and maphongban = '$maphongban$'	</isNotEmpty>
+      <isNotEmpty	property="tenphongban">	and tenphongban = '$tenphongban$'	</isNotEmpty>
+      <isNotEmpty	property="sodienthoai">	and sodienthoai = '$sodienthoai$'	</isNotEmpty>
+      <isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+      <isNotEmpty	property="truongban">	and truongban = '$truongban$'	</isNotEmpty>
+      <isNotEmpty	property="phoban">	and phoban = '$phoban$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+
+    </select>
+
+    <insert id="Insert">
+      INSERT INTO m_donvi_phongban
+      (
+      madonvi
+      ,maphongban
+      ,tenphongban
+      ,sodienthoai
+      ,xoa
+      ,truongban
+      ,phoban
+      ,nguoitao
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      )
+      VALUES
+      (
+      <isNotEmpty	property="madonvi">	, '$madonvi$'	</isNotEmpty>	<isEmpty	property="madonvi">	,null	</isEmpty>
+      <isNotEmpty	property="maphongban">	, '$maphongban$'	</isNotEmpty>	<isEmpty	property="maphongban">	,null	</isEmpty>
+      <isNotEmpty	property="tenphongban">	, '$tenphongban$'	</isNotEmpty>	<isEmpty	property="tenphongban">	,null	</isEmpty>
+      <isNotEmpty	property="sodienthoai">	, '$sodienthoai$'	</isNotEmpty>	<isEmpty	property="sodienthoai">	,null	</isEmpty>
+      <isNotEmpty	property="xoa">	, '$xoa$'	</isNotEmpty>	<isEmpty	property="xoa">	,null	</isEmpty>
+      <isNotEmpty	property="truongban">	, '$truongban$'	</isNotEmpty>	<isEmpty	property="truongban">	,null	</isEmpty>
+      <isNotEmpty	property="phoban">	, '$phoban$'	</isNotEmpty>	<isEmpty	property="phoban">	,null	</isEmpty>
+      <isNotEmpty	property="nguoitao">	, '$nguoitao$'	</isNotEmpty>	<isEmpty	property="nguoitao">	,null	</isEmpty>
+      <isNotEmpty	property="ngaytao">	, '$ngaytao$'	</isNotEmpty>	<isEmpty	property="ngaytao">	,null	</isEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	, '$nguoihieuchinh$'	</isNotEmpty>	<isEmpty	property="nguoihieuchinh">	,null	</isEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	, '$ngayhieuchinh$'	</isNotEmpty>	<isEmpty	property="ngayhieuchinh">	,null	</isEmpty>
+
+      );
+
+    </insert>
+    
+    <update id="Update">
+      UPDATE
+      m_donvi_phongban
+      SET
+      <isNotEmpty	property="madonvi">	and madonvi = '$madonvi$'	</isNotEmpty>
+      <isNotEmpty	property="maphongban">	and maphongban = '$maphongban$'	</isNotEmpty>
+      <isNotEmpty	property="tenphongban">	and tenphongban = '$tenphongban$'	</isNotEmpty>
+      <isNotEmpty	property="sodienthoai">	and sodienthoai = '$sodienthoai$'	</isNotEmpty>
+      <isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+      <isNotEmpty	property="truongban">	and truongban = '$truongban$'	</isNotEmpty>
+      <isNotEmpty	property="phoban">	and phoban = '$phoban$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+      WHERE
+      <isNotEmpty	property="madonvi">	and madonvi = '$madonvi$'	</isNotEmpty>
+      <isNotEmpty	property="maphongban">	and maphongban = '$maphongban$'	</isNotEmpty>
+      <isNotEmpty	property="tenphongban">	and tenphongban = '$tenphongban$'	</isNotEmpty>
+      <isNotEmpty	property="sodienthoai">	and sodienthoai = '$sodienthoai$'	</isNotEmpty>
+      <isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+      <isNotEmpty	property="truongban">	and truongban = '$truongban$'	</isNotEmpty>
+      <isNotEmpty	property="phoban">	and phoban = '$phoban$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+    </update>
+
+    <update id="Delete">
+      UPDATE
+      m_donvi_phongban
+      SET
+      <isNotEmpty	property="madonvi">	, '$madonvi$'	</isNotEmpty>	<isEmpty	property="madonvi">	,null	</isEmpty>
+      <isNotEmpty	property="maphongban">	, '$maphongban$'	</isNotEmpty>	<isEmpty	property="maphongban">	,null	</isEmpty>
+      <isNotEmpty	property="tenphongban">	, '$tenphongban$'	</isNotEmpty>	<isEmpty	property="tenphongban">	,null	</isEmpty>
+      <isNotEmpty	property="sodienthoai">	, '$sodienthoai$'	</isNotEmpty>	<isEmpty	property="sodienthoai">	,null	</isEmpty>
+      <isNotEmpty	property="xoa">	, '$xoa$'	</isNotEmpty>	<isEmpty	property="xoa">	,null	</isEmpty>
+      <isNotEmpty	property="truongban">	, '$truongban$'	</isNotEmpty>	<isEmpty	property="truongban">	,null	</isEmpty>
+      <isNotEmpty	property="phoban">	, '$phoban$'	</isNotEmpty>	<isEmpty	property="phoban">	,null	</isEmpty>
+      <isNotEmpty	property="nguoitao">	, '$nguoitao$'	</isNotEmpty>	<isEmpty	property="nguoitao">	,null	</isEmpty>
+      <isNotEmpty	property="ngaytao">	, '$ngaytao$'	</isNotEmpty>	<isEmpty	property="ngaytao">	,null	</isEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	, '$nguoihieuchinh$'	</isNotEmpty>	<isEmpty	property="nguoihieuchinh">	,null	</isEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	, '$ngayhieuchinh$'	</isNotEmpty>	<isEmpty	property="ngayhieuchinh">	,null	</isEmpty>
+
+      WHERE
+      <isNotEmpty	property="madonvi">	and madonvi = '$madonvi$'	</isNotEmpty>
+      <isNotEmpty	property="maphongban">	and maphongban = '$maphongban$'	</isNotEmpty>
+      <isNotEmpty	property="tenphongban">	and tenphongban = '$tenphongban$'	</isNotEmpty>
+      <isNotEmpty	property="sodienthoai">	and sodienthoai = '$sodienthoai$'	</isNotEmpty>
+      <isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+      <isNotEmpty	property="truongban">	and truongban = '$truongban$'	</isNotEmpty>
+      <isNotEmpty	property="phoban">	and phoban = '$phoban$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+
+    </update>
+  </statements>
+</sqlMap>

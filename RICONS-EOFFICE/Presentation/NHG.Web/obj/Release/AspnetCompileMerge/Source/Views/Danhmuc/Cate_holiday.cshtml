@@ -1,0 +1,214 @@
+﻿@model NHG.Web.Models.PhongBanModels
+@{
+    ViewBag.Title = "Danh mục ngày nghỉ";
+}
+@*--css--*@
+@section CSS
+{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/Chamcong/Holiday.css" />
+    @*<link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/MilestonesCSS.css" />*@
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/prism.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/MilestonesCSS.Create.css" />
+}
+
+@*--javascript--*@
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/controllers/Chamcong/Holiday.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/prism.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/table/buildTable.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/colResizale/colResizable-1.3.source.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery.datepick-vi.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")Themes/NHG-2015/css/TableBuild/global/plugins/jquery.blockui.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")Themes/NHG-2015/css/TableBuild/global/scripts/app.min.js"></script>
+
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/bootbox.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/custom.js"></script>
+}
+<script>
+    var linkContent = '@Url.Content("~")';
+</script>
+
+
+<div class="HeaderFixed">
+    <div class="b-b b-light">
+        <div class="p-left c-black">Danh mục ngày nghỉ lễ</div>
+        <div class="clearBoth"></div>
+    </div>
+</div>
+
+<div class="boxEdit">
+    <div id="frm-create">
+        @using (Html.BeginForm("Update_holiday", "Danhmuc", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+        {
+            <input type="hidden" name="act" value="create" />
+            <input type="hidden" name="ID" value="" />
+
+            <div class="row" style="width:100%">
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-7"><label style="color:red" id="lblthongbao" class="hidden"></label></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="width:100%">
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-1">Tên phòng ban:</div>
+                        <div class="col-md-3"><input type="text" style="width:100%;" autocomplete="off" placeholder="Tên ngày nghỉ" id="txtholidayname" name="holidayname" /></div>
+
+                        <div class="col-md-1">Họ tên quản lý:</div>
+                        <div class="col-md-3"><input type="text" style="width:100%;" autocomplete="off" placeholder="Ngày nghỉ" id="txdatevalue" name="datevalue" /></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="width:100%">
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-9">
+                            <input type="button" id="btn-create" class="buttoncustom WhiteButton" name="New" value="Thêm mới" />
+                            <input type="button" id="btn-save" class="buttoncustom WhiteButton" name="luu" value="Lưu" />
+                            <input type="button" id="btn-edit" class="hidden" class="buttoncustom WhiteButton" name="Update" value="Hiệu chỉnh" />
+                            <input type="button" class="hidden" id="btn-delete" class="buttoncustom WhiteButton" name="Delete" value="Xoá" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+
+</div>
+
+<br />
+
+<div style="width:100%; height:75%;">
+    <div id="boxContent">
+        <div class="row" style="padding-right:5px">
+            <div class="col-md-12">
+                <div class="portlet-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table_danhSach" id="tableContent">
+                            <thead>
+                            </thead>
+                            <tbody></tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="10" id="girdInfo">Tổng số: <span class="currentRow">0</span></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $('#btn-create').on('click', function (e) {
+            var form = $(this).closest('form');
+            form.find('input[name="act"]').val('create');
+            form.find('input[name="ID"]').val('');
+            form[0].reset();
+        });
+
+        $('#btn-save').on('click', function (e) {
+            $("#lblthongbao").removeClass('hidden');
+            if ($("#txtholidayname").val().length < 3) {
+                $('#lblthongbao').html('Nhập tên ngày nghỉ lễ?');
+                return false;
+            }
+            else if ($("#txdatevalue").val().length < 3) {
+                $('#lblthongbao').html('Nhập ngày nghỉ lễ?');
+                return false;
+            }
+
+            var form = $(this).closest('form');
+            form.submit();
+        });
+        // hieu chinh
+        $('#btn-edit').on('click', function (e) {
+            debugger;
+            var form = $(this).closest('form');
+            var checked = $('.chkCheck:checked');
+            if (checked && checked.length <= 0) {
+                alert('Vui lòng check dòng cần hiệu chỉnh');
+                return false;
+            } else {
+                var listChecked = $('.chkCheck:checked');
+                var ID = $(listChecked[0]).attr('mangaynghi'); //encodeURIComponent(ID)); //Encoder.htmlDecode(ID)
+                var row = $(listChecked[0]).closest('tr.rows-box');
+                form.find('input[name="act"]').val('update')
+                form.find('input[name="id"]').val(ID);
+                form.find('input[name="holidayname"]').val(row.find('.col3').text());
+                form.find('input[name="datevalue"]').val(row.find('.col4').text());
+            }
+        })
+
+        $('#content').on('click', 'a.edit', function (e) {
+
+            debugger;
+            e.preventDefault();
+            // Bo check tat ca
+            $('#tableContent input[type="checkbox"]').prop('checked', false);
+            // check dong dang chon
+            $(this).closest('tr').find('input[type="checkbox"]').prop('checked', true);
+            // Goi nut edit click
+            $('#btn-edit').trigger('click');
+        });
+
+        $('#content').on('click', 'a.del', function (e) {
+
+            debugger;
+            e.preventDefault();
+            // Bo check tat ca
+            $('#tableContent input[type="checkbox"]').prop('checked', false);
+            // check dong dang chon
+            $(this).closest('tr').find('input[type="checkbox"]').prop('checked', true);
+            // Goi nut edit click
+            var form = $('#frm-create > form');
+            var check = $('.chkCheck:checked');
+            form.find('input[name="act"]').val('delete');
+
+            var maphongban = $(check[0]).attr('mpb');
+            //alert(maphongban);
+            form.find('input[name="ID"]').val(maphongban);
+            $('#btn-delete').trigger('click');
+        });
+
+        $('#btn-delete').on('click', function (e) {
+            debugger;
+            var form = $(this).closest('form');
+            var checked = $('.chkCheck:checked');
+            if (checked && checked.length <= 0) {
+                alert('Vui long chon 1 ');
+                return false;
+            } else {
+
+                var listChecked = $('.chkCheck:checked');
+                var ID = $(listChecked[0]).attr('mpb');
+                var row = $(listChecked[0]).closest('tr.rows-box');
+                form.find('input[name="act"]').val('delete')
+                form.find('input[name="ID"]').val(ID);
+                form.submit();
+            }
+        })
+
+
+    })
+</script>
+
+
+
+

@@ -1,0 +1,81 @@
+﻿@using NHG.Web.Models;
+@model IList<ThongBaoModels>
+
+@if (Model == null)
+{
+    <div class="panel-heading b-light bg-light">
+        <strong>
+            Bạn có
+            <span style="display: inline;" class="count">0</span> thông báo
+        </strong>
+    </div>
+}
+@if (Model.Count == 0)
+{
+    <div class="panel-heading b-light bg-light">
+        <strong>
+            Bạn có
+            <span style="display: inline;" class="count">0</span> thông báo
+        </strong>
+    </div>
+}
+
+@if (Model != null)
+{
+    if (Model.Count > 0)
+    {
+        <div class="panel-heading b-light bg-light">
+            <strong>
+                Bạn có
+                <span style="display: inline;" class="count">@Model.Count</span> thông báo
+            </strong>
+        </div>
+        <div class="list-group list-group-alt">
+            @foreach (var item in Model)
+            {
+                @*
+                        Mẫu
+                    <a href="#" class="media list-group-item">
+                        <span class="pull-left thumb-sm">
+                            <img src="@Url.Content("~")Themes/NHG-2015/images/a0.png" alt="..." class="img-circle">
+                        </span>
+                        <span class="media-body block m-b-none">
+                            Use awesome animate.css<br>
+                            <small class="text-muted">10 minutes ago</small>
+                        </span>
+                    </a>
+                    <a href="#" class="media list-group-item">
+                        <span class="media-body block m-b-none">
+                            1.0 initial released<br>
+                            <small class="text-muted">1 hour ago</small>
+                        </span>
+                    </a>
+                *@
+                <a href="#" class="media list-group-item">
+                    <span class="pull-left thumb-sm bx-notifier-item-avatar">
+                        <img src="@Url.Content("~")Themes/NHG-2015/images/blank.gif" alt="..." class="img-circle bx-notifier-item-avatar-img-default-2 bx-notifier-item-avatar-img">
+                    </span>
+                    <span class="media-body block m-b-none">@item.noidung<br>
+                        <small class="text-muted">@NHG.Core.Functions.FunctionsDateTime.GetDateTimeClientCustomFormat(item.ngaytao)</small>
+                    </span>
+                </a>
+            }
+        </div>
+    }
+    else
+    {
+        <a href="#" class="media list-group-item">
+            <span class="media-body block m-b-none">
+                Không có thông báo mới!<br>
+            </span>
+        </a>
+    }
+}
+else
+{
+    <a href="#" class="media list-group-item">
+        <span class="media-body block m-b-none">
+            Không có thông báo mới!<br>
+        </span>
+    </a>
+}

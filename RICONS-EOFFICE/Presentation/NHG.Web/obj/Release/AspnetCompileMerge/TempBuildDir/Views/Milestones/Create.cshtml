@@ -1,0 +1,98 @@
+﻿@using NHG.Web.Models;
+@model KeHoachModels
+@{
+    ViewBag.Title = "Tạo models";
+}
+
+@*--css--*@
+@section CSS
+{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/MilestonesCSS.Create.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/prism.css" />
+}
+
+@*--javascript--*@
+@section JavaScript
+{
+    @*lay ngay gio hien tai Dua vao*@ 
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery-ui-1.10.0.custom.min.js"></script> 
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery.datepick-vi.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/controllers/MilestonesJS.Create.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/prism.js"></script>
+}
+<div class="HeaderFixed">
+    <div class="b-b b-light">
+        <div class="p-left c-black">Tạo kế hoạch hành động</div>
+        <div class="clearBoth"></div>
+    </div>
+</div>
+<div class="boxEdit">
+    @using (Html.BeginForm("Create", "Milestones", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>Tiêu đề:</td>
+                <td><input type="text" style="width:59%" autocomplete="off" placeholder="Nội dung mục tiêu" name="noidungmuctieu" /></td>
+            </tr>
+            <tr>
+                <td>Tỷ trọng:</td>
+                <td><input type="text" style="width:147px;" autocomplete="off" placeholder="Tỷ trọng (%)" name="tytrong" /></td>
+            </tr>
+            
+            <tr>
+                <td>Chỉ tiêu năm:</td>
+                <td><input type="text" style="width:59%" autocomplete="off" placeholder="Chỉ tiêu năm" name="chitieunam" /></td>
+            </tr>
+            <tr>
+                <td>Ngày bắt đầu:</td>
+                <td><input type="text" class="inputShort" id="txtNgayBatDau" name="ngaybatdau" /></td>
+            </tr>
+            <tr>
+                <td>Ngày kết thúc:</td>
+                <td><input type="text" class="inputShort" id="txtNgayKetThuc" name="ngayketthuc" /></td>
+            </tr>
+
+            <tr>
+                <td>Số thứ tự hiển thị:</td>
+                <td><input type="text" style="width:147px;" autocomplete="off" placeholder="Số thứ tự hiển thị" name="stt" /></td>
+            </tr>
+
+            <tr>
+                <td>Người thực hiện:</td>
+                <td>
+                    <select id="filter01" data-placeholder="Người thực hiện" class="chosen-select-nguoithuchien" name="nguoithuchien" multiple>
+                        @if (!string.IsNullOrEmpty(ViewBag.nguoiThucHiens))
+                        {
+                            @Html.Raw(ViewBag.nguoiThucHiens);
+                        }
+                    </select>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Kế hoạch gốc:</td>
+                <td>
+                    <select id="filter02" data-placeholder="Loại kế hoạch" class="chosen-select-loaikehoach" name="makehoachgoc">
+                        <option value="0">Kế hoạch gốc</option>
+                        @if (!string.IsNullOrEmpty(ViewBag.keHoachs))
+                        {
+                            @Html.Raw(ViewBag.keHoachs);
+                        }
+                    </select>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>Ghi chú:</td>
+                <td><textarea style="width:59%; resize:none;" rows="3" placeholder="Ghi chú giải thích kế hoạch" name="ghichu"></textarea> </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" class="buttoncustom WhiteButton" value="Lưu" /><a href="@Url.Action("Index","Milestones")">Trở về</a></td>
+            </tr>
+        </table>
+    }
+</div>

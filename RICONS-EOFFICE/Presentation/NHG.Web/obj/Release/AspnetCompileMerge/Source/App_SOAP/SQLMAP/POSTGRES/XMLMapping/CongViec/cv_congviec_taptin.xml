@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="cv_congviec_taptin"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="SelectRows" resultClass="System.Collections.Hashtable">
+      SELECT
+      macongviec
+      ,mataptin
+      ,tentaptin
+      ,extensionfile
+      ,filecontenttype
+      ,binarydata
+      ,xoa
+      ,nguoitao
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      FROM cv_congviec_taptin
+      WHERE
+      xoa = '0'
+      <isNotEmpty	property="macongviec">	and macongviec = '$macongviec$'	</isNotEmpty>
+      <isNotEmpty	property="mataptin">	and mataptin = '$mataptin$'	</isNotEmpty>
+      <isNotEmpty	property="tentaptin">	and tentaptin = '$tentaptin$'	</isNotEmpty>
+      <isNotEmpty	property="extensionfile">	and extensionfile = '$extensionfile$'	</isNotEmpty>
+      <isNotEmpty	property="filecontenttype">	and filecontenttype = '$filecontenttype$'	</isNotEmpty>
+      <isNotEmpty	property="binarydata">	and binarydata = '$binarydata$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+
+
+    </select>
+
+    <insert id="InsertRow">
+      INSERT INTO cv_congviec_taptin
+      (
+      macongviec
+      ,mataptin
+      ,tentaptin
+      ,extensionfile
+      ,filecontenttype
+      ,binarydata
+      ,xoa
+      ,nguoitao
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      )
+      VALUES
+      (
+      '$macongviec$'
+      <isNotEmpty	property="mataptin">	, '$mataptin$'	</isNotEmpty>	<isEmpty	property="mataptin">	,null	</isEmpty>
+      <isNotEmpty	property="tentaptin">	, '$tentaptin$'	</isNotEmpty>	<isEmpty	property="tentaptin">	,null	</isEmpty>
+      <isNotEmpty	property="extensionfile">	, '$extensionfile$'	</isNotEmpty>	<isEmpty	property="extensionfile">	,null	</isEmpty>
+      <isNotEmpty	property="filecontenttype">	, '$filecontenttype$'	</isNotEmpty>	<isEmpty	property="filecontenttype">	,null	</isEmpty>
+      <isNotEmpty	property="binarydata">	, '$binarydata$'	</isNotEmpty>	<isEmpty	property="binarydata">	,null	</isEmpty>
+      , '0'
+      , '$nguoitao$'
+      ,GETDATE()
+      , '$nguoihieuchinh$'
+      ,GETDATE()
+      );
+
+    </insert>
+
+    <update id="DeleteRow">
+      UPDATE cv_congviec_taptin
+      SET
+      xoa='1'
+      ,nguoihieuchinh = '$nguoihieuchinh$'
+      ,ngayhieuchinh = GETDATE()
+      WHERE
+      xoa='0'
+      and macongviec = '$macongviec$'
+      and mataptin = '$mataptin$'
+    </update>
+  </statements>
+</sqlMap>

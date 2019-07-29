@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Report2";
+}
+
+@section CSS
+{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/Controller/Report2.css" />
+}
+
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/Controllers/Report2JS.js"></script>
+}
+
+
+<script>
+    var linkContent = '@Url.Content("~")';
+</script>
+
+<div id="boxContent">
+
+    <div class="boxTable boxTable1">
+        <table class="table_danhSach table_fixed" id="tableFixedHeader"></table>
+    </div>
+
+    <div class="boxTable boxTable2">
+        <table class="table_danhSach table_fixed" id="tableContent">
+            <thead>
+            </thead>
+
+            <tbody></tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="4" id="girdInfo">@*Tổng số: <span class="currentRow">1</span>/<span class="sumRow">212</span>*@</td>
+                </tr>
+                <tr>
+                    <td colspan="4" id="girdInfoLoad">
+                        <div class="divExentd"><i class="retweet_32"></i>Xem thêm</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" id="footerInfo">
+                        <div class="companyName">CÔNG TY CỔ PHẦN ĐẦU TƯ PHÁT TRIỂN NGUYỄN HOÀNG</div>
+                        <div class="address">49 Phạm Ngọc Thạch, P.6, Q3, TP.HCM</div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+

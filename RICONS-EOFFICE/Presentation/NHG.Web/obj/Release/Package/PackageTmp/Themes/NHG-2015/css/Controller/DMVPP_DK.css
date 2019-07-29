@@ -1,0 +1,105 @@
+﻿.col1 {
+    text-align: center;
+    width: 50px;
+}
+
+.col2 {
+    text-align: center;
+    width: 50px;
+}
+
+.col3 {
+    text-align: center;
+     width: 70px;
+}
+
+.col4 {
+    text-align: left;
+    width: 200px;
+}
+
+.col5 {
+    text-align: right;
+    width: 100px;
+}
+
+.col6 {
+    text-align: center;
+    width: 80px;
+}
+
+.col7 {
+    text-align: right;
+    width: 100px;
+}
+
+.col8 {
+    text-align: right;
+    width: 150px;
+}
+.col9 {
+    text-align: right;
+    width: 100%;
+}
+
+
+.boxEdit input[type="text"] {
+    border-radius: 3px;
+    color: #333;
+    font-size: 12px;
+    padding: 0 5px;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    height: 27px;
+}
+
+    .boxEdit input[type="text"].inputShort {
+        width: 250px;
+    }
+
+.boxEdit textarea {
+    border-radius: 3px;
+    color: #333;
+    font-size: 12px;
+    padding: 0 5px;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    resize: none;
+}
+
+.boxEdit table td:first-child {
+    text-align: right;
+    padding-right: 6px;
+    vertical-align: text-top;
+    padding-top: 7px;
+    width: 150px;
+}
+
+
+.boxEdit table tr td {
+    margin: 5px 0;
+    height: 35px;
+}
+
+.boxEdit .boxEdit {
+    background-color: white;
+    border-radius: 4px;
+    margin: 28px auto;
+    width: 100%;
+}
+
+.boxEdit table {
+    /*width: 100%;*/
+}
+/*--End create--*/
+
+.WhiteButton {
+    height: 30px;
+    width: 90px;
+    display: inline-table;
+    line-height: 31px;
+}

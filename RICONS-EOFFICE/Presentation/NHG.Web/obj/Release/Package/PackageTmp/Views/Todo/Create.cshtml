@@ -1,0 +1,176 @@
+﻿@{
+    ViewBag.Title = "Tạo công việc";
+}
+<style>
+    .boxContent {
+        margin: 10px auto;
+        float: left;
+        width: 100%;
+    }
+    .boxContent .centerContent{
+        margin: 8px auto;
+        width: 96%;
+    }
+
+        .boxContent .boxLeft {
+            float: left;
+            width:373px;
+        }
+
+            .boxContent .boxLeft > div {
+                border: 1px solid #B39C9C;
+                border-radius: 3px;
+                background-color: white;
+                width:96%;
+            }
+
+        .boxContent .boxLeft table{
+            margin: 0 auto;
+            width:100%;
+            
+        }
+
+            .boxContent .boxLeft table tr td {
+                border-bottom: 1px solid #F3DEDE;
+            }
+
+            .boxContent .boxLeft table tr td.lable {
+               vertical-align:central;
+               font-weight:bold;
+               color:black;
+            }
+
+            .boxContent .boxLeft table tr td label{
+                font-weight:bold;
+            }
+
+            .boxContent .boxLeft table tr:last-child td {
+                border-bottom: none;
+            }
+
+        .boxContent .boxRight {
+            float: left;
+            width: 51%;
+        }
+
+        .boxContent .boxRight div{
+            margin-bottom: 18px;
+        }
+
+            .boxContent .boxRight div.divButton {
+                margin-bottom: 10px;
+            }
+</style>
+
+@*--css--*@
+@section CSS
+{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/TodoCSS.Create.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/prism.css" />
+}
+
+@*--javascript--*@
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/controllers/TodoJS.Create.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/prism.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/mfupload.js"></script>
+}
+<script>
+    var linkContent = '@Url.Content("~")';
+</script>
+<div class="HeaderFixed">
+    <div class="b-b b-light">
+        <div class="p-left c-black">Tạo công việc</div>
+        <div class="clearBoth"></div>
+    </div>
+</div>
+<div class="boxContent">
+    <div class="centerContent">
+        <div class="boxLeft">
+            <div>
+                <table>
+                    <tr>
+                        <td>Người tạo:</td>
+                        <td class="lable">Trần Học Khiêm</td>
+                    </tr>
+                    <tr>
+                        <td>Tình trạng:</td>
+                        <td>
+                            <select id="filter01" data-placeholder="Người thực hiện" class="chosen-select-tinhtrang">
+                                <option value="1">Mới</option>
+                                <option value="2">Đã nhận</option>
+                                <option value="3">Hoàn thành</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Độ ưu tiên:</td>
+                        <td>
+                            <select id="filter01" data-placeholder="Người thực hiện" class="chosen-select-douutien">
+                                <option value="1">Cao</option>
+                                <option value="2">Bình thường</option>
+                                <option value="3">Thấp</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Người thực hiện:</td>
+                        <td>
+                            <select id="filter01" data-placeholder="Người thực hiện" class="chosen-select-nguoithuchien">
+                                <option value="1">Khiem tran hoc</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Thuộc kế hoạch:</td>
+                        <td>
+                            <select id="filter01" data-placeholder="Người thực hiện" class="chosen-select-kehoach">
+                                <option value="1">Kế hoạch năm</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cấp độ công việc:</td>
+                        <td>
+                            <select id="filter01" data-placeholder="Người thực hiện" class="chosen-select-level">
+                                <option value="1">Kế hoạch tuần</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="boxRight">
+            <div><input type="text" style="width:100%" placeholder="Tiêu đề công việc" /></div>
+            <div><textarea rows="3" style="width:100%" placeholder="Nội dung công việc"></textarea></div>
+            <div>
+                <div class="divButton"><input type="button" class="appButton" value="Tập tin đính kèm" id="btnUpload" /><input type="button" class="appButton" value="Người theo dõi" /></div>
+                <div class="divBoxHTML">
+                    <div class="divDinhKemTapTin">
+                        <div class="imgUpload">
+                        </div>
+                        <div class="imgText">
+                            Chọn tập tin
+                            <div id="upload" style="float: left; margin-left: 137px;"></div>
+                        </div>
+                    </div>
+                    <div id='CUpFile'>
+                        <div id='CTUpFile' style='overflow: auto;'>
+                            <div class='fileUploadQueue' id='filesToUploadQueue'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divButton"><input type="button" class="appButton" value="Tạo công việc" /> <a href="@Url.Action("Index", "Todo")">Trở về</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+

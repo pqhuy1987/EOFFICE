@@ -1,0 +1,549 @@
+﻿@model NHG.Web.Models.TimekeepingModels
+
+@{
+    ViewBag.Title = "Danh mục phòng ban";
+}
+@*--css--*@
+@section CSS
+{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/Chamcong/Timekeeping.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/prism.css" />
+}
+
+@*--javascript--*@
+@section JavaScript
+{
+<script>
+    $(document).ready(function (e) {
+        setValueToCombobox();
+    });
+    function setValueToCombobox() {
+        //debugger;
+
+        $('#filter01').val(@Model.maphongban);
+        for (var selector in configChosenDanhmucphongban) {
+            $(selector).change();
+            $(selector).trigger('chosen:updated');
+        }
+
+        var chkchamcong='@Model.chamcong';
+        if(chkchamcong=="1")
+        {
+            $("#chkkiemtra").prop('checked', true);
+        }
+        else if(chkchamcong=="0")
+        {
+            $("#chkkiemtra").prop('checked', false);
+        }
+    }
+</script>
+
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/controllers/Chamcong/Timekeeping.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/prism.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/table/buildTable.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/colResizale/colResizable-1.3.source.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery.datepick-vi.js"></script>
+    @*<script type="text/javascript" src="@Url.Content("~")Themes/NHG-2015/css/TableBuild/global/plugins/jquery.blockui.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")Themes/NHG-2015/css/TableBuild/global/scripts/app.min.js"></script>*@
+
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/bootbox.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/custom.js"></script>
+
+
+
+
+}
+<script>
+    var linkContent = '@Url.Content("~")';
+</script>
+
+    <div class="HeaderFixed">
+        <div class="b-b b-light1">
+            @*<div class="p-left c-black">Bảng chấm công</div>*@
+            <div class="p-left c-black"><a href="@Url.Action("Create", "Timekeeping")" class="buttoncustom WhiteButton">Thêm</a></div>
+            
+            <div class="p-left c-black"><input type="button" id="btn-save" class="buttoncustom WhiteButton" name="luu" value="Lưu" /></div>
+            <div class="p-left c-black"><input type="button" style="width:75px;" id="btn-guimail" class="buttoncustom WhiteButton" name="luu" value="Gửi mail" /></div>
+           
+            <div class="p-left1 c-black">Lọc theo:&nbsp;</div>
+            <div class="p-left1 c-black" style="font-weight:normal;">
+                <select id="filter01" data-placeholder="Chọn phòng ban" class="chosen-select-loaikehoach" name="maphongban">
+                    @if (!string.IsNullOrEmpty(ViewBag.sbphongban))
+                    {
+                        @Html.Raw(ViewBag.sbphongban);
+                    }
+                </select>
+            </div>
+            <div class="p-left c-black boxEdit"><div class="col-md-1"><input type="text" style="width:70px; text-align:center" id="txtthang" name="thang" value="@Model.thang" /></div></div>
+            @*<div class="p-left1 c-black">&nbsp;Export:&nbsp;&nbsp;</div>*@
+            <div class="p-left1 c-black"><a id="btnXuatexcell" href="@Url.Action("ExportLicensing", "Timekeeping")"><i class="fa fa-file-excel-o" style="color:black;"></i>Excel</a></div>
+            <div class="p-left1 c-black">&nbsp;<input type="checkbox" id="chkkiemtra" name="kiemtra" value="0" /><span id="spNhanvien">Chấm công</span></div>
+            
+            @*<div class="p-left1 c-black">&nbsp;&nbsp;<i class="fa fa-print"></i>&nbsp;Print</div>*@
+
+            <div class="p-right p-right-item2">
+                <div class="p-right-item t-export c-black">
+                    @*<div class="p-right-item t-export c-black"><<</div>*@
+                    <div class="p-right-item t-export c-black"><a id="btnPre" style="cursor: pointer;"> < </a></div>
+                    <div class="p-right-item t-export c-black">
+                        <div class="col-md-1 boxEdit"><input type="text" style="width:40px; text-align:center" id="txttrangthu" name="trangthu" value="1" /></div>
+                    </div>
+                    <div class="p-right-item t-export c-black"><a id="btnNext" style="cursor: pointer;"> > </a></div>
+
+                </div>
+
+                @*<div class="p-right-item t-export c-black">>></div>*@
+
+                <div class="p-right-item1 t-export c-black" id="girdInfo">&nbsp; <span class="Pages">0</span>&nbsp; trang&nbsp; <span class="tongdong">0</span>&nbsp; kết quả &nbsp;</div>
+
+                <div class="clearBoth"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="boxEdit">
+        <div id="frm-create">
+        @using (Html.BeginForm("Index", "Timekeeping", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+        {
+            <input type="hidden" name="act" value="create" />
+            <input type="hidden" name="ID" value="" />
+            <div class="row" style="width:100%">
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-7"><label style="color:red;" id="lblthongbao" class="hidden"></label></div>
+                    </div>
+                    <div class="col-md-1"><input type="text" id="txtsongaytrongthang" name="songaytrongthang" class="hidden"/></div>
+                </div>
+            </div>
+        }
+        </div>
+    </div>
+
+    <div style="width:100%; overflow-x: scroll; padding-left:10px;">
+        <div id="boxContent">
+            <div @*class="row"*@ style="padding-right:5px">
+                <div @*class="col-md-12"*@ style="width:150%; height:90%">
+                    <div class="portlet-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table_danhSach" id="tableContent" style="font-size:10.5px;">
+                                <thead id="head-date">
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+<script>
+
+    $(document).ready(function (e) {
+        var curDt = new Date();
+        var MM = curDt.getMonth()+1;
+        var yyyy = curDt.getFullYear();
+        renderDate(MM+"/"+yyyy);
+        $('input#txtthang').on('keypress', function (event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == '13') {
+                renderDate($(this).val());
+            }
+        });
+
+        $('#boxContent').on('click', '.del', function () {
+            debugger;
+            if ($("#tableContent > tbody > tr").length > 1) {
+                //var target = $(this).closest('tr').attr('codeid');
+                //var targe = $(this).closest('td').attr('title');
+                var DataJson = $(this).closest('td').attr('title');
+                $(this).closest('tr').remove();               
+                $.ajax({
+                    type: 'POST',
+                    url: '/Timekeeping/Xoadulieu',
+                    datatype: "JSON",
+                    data: "DataJson=" + DataJson,
+                    cache: false,
+
+                })
+
+
+            }
+        });
+
+        $("#btnXuatexcell").click(function (e) {
+            e.preventDefault();
+            debugger;
+            var maphongban = $("#filter01").val();
+            var link = '';
+            link = $(this).attr('href') + '/' + encodeURIComponent(maphongban);
+            return window.open(link, "_self");
+        });
+
+
+        //$("#btnXuatexcell").click(function (e) {
+        //    e.preventDefault();
+        //    debugger;
+        //    var maphongban = $("#filter01").val();
+        //    var link = '';
+        //    link = $(this).attr('href') + '/?idmaphongban=' + encodeURIComponent(maphongban);
+        //    return window.open(link, "_self");
+        //});
+
+        $('#txtmanhanvien').on('keypress', function (event) {
+            debugger;
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == '13') {
+                document.getElementById('txttrangthu').value = 1;
+               // $("#chkkiemtra").prop('checked', false);
+                var thang = $('#txtthang').val();
+                var maphongban = $("#filter01").val();
+                GetData(true, "", "", thang, maphongban);
+            }
+        });
+
+
+        $('#txttrangthaiduyet').on('keypress', function (event) {
+            debugger;
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == '13') {
+                document.getElementById('txttrangthu').value = 1;
+                // $("#chkkiemtra").prop('checked', false);
+                var thang = $('#txtthang').val();
+                var maphongban = $("#filter01").val();
+                GetData(true, "", "", thang, maphongban);
+            }
+        });
+
+
+        $('#txthovatens').on('keypress', function (event) {
+            debugger;
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == '13') {
+                document.getElementById('txttrangthu').value = 1;
+                //$("#chkkiemtra").prop('checked', false);
+                var thang = $('#txtthang').val();
+                var maphongban = $("#filter01").val();
+                GetData(true, "", "", thang, maphongban);
+            }
+        });
+
+        //$("#chkkiemtra").click(function () {
+        //    debugger;
+        //    var maphongban = $("#filter01").val();
+        //    var thang = $('#txtthang').val();
+        //    document.getElementById('txttrangthu').value = 1;
+        //    GetData(true, "", "", thang, maphongban);
+        //});
+
+        $('#btn-guimail').on('click', function (e) {
+            e.preventDefault();
+
+            if ($("#filter01").val() == 0) {
+                alert("Chọn phòng ban/công trường?");
+                return false;
+            }
+            else if ($("#txtthang").val().length != 7) {
+                alert("Nhập tháng năm không đúng?");
+                return false;
+            }
+            var DataJson = "{";
+            DataJson += "'maphongban':'" + $('#filter01').val() + "',";
+            DataJson += "'thang':'" + $('#txtthang').val() + "'";
+            DataJson += "}";
+
+            $.ajax({
+                type: 'POST',
+                url: '/Timekeeping/Guimailxacnhan',
+                datatype: "JSON",
+                data: "DataJson=" + DataJson,
+                cache: false,
+            })
+            .done(function (result) {
+                debugger;
+                var tb = JSON.stringify(result.success);
+                if (tb == "true") {
+                    alert('Gửi Email thành công');
+                } else {
+                    alert('Lỗi gửi mail');
+                }
+            })
+            .fail(function (result) {
+                alert('Lỗi gửi mail');
+
+            });
+        })
+
+
+
+
+
+        $('#btn-save').on('click', function (e) {
+            e.preventDefault();
+           
+            if ($("#filter01").val() == 0) {
+                alert("Chọn phòng ban/công trường?");
+                return false;
+            }
+            else if ($("#txtthang").val().length != 7) {
+                alert("Nhập tháng năm không đúng?");
+                return false;
+            }
+
+            var data = [];
+            var DataJson = "{'data1':";
+            DataJson += "{";
+            DataJson += "'maphongban':'" + $('#filter01').val() + "',";
+            DataJson += "'thang':'" + $('#txtthang').val() + "',";
+            DataJson += "}, 'data2':[";
+
+            $('#boxContent table tbody tr').each(function (index, item) {
+                debugger;
+                var machamcong = encodeURIComponent($(item).attr('codeid'));
+
+                var ngaylamviectu = $(item).attr('ngaylamviectu');
+                var ngaylamviecden = $(item).attr('ngaylamviecden');
+
+                var manv = $(item).find('td.col33').text();
+                var email = $(item).find('td.col33').attr("title");
+                var hovaten = $(item).find('td.col34').text();
+                var ngaysinh = $(item).find('td.col34').attr("title");
+
+
+                var maphongban = $(item).find('td.col35').attr('title');
+                var ngay21 = $(item).find('td.col21').text();
+                var ngay22 = $(item).find('td.col22').text();
+                var ngay23 = $(item).find('td.col23').text();
+                var ngay24 = $(item).find('td.col24').text();
+                var ngay25 = $(item).find('td.col25').text();
+                var ngay26 = $(item).find('td.col26').text();
+                var ngay27 = $(item).find('td.col27').text();
+                var ngay28 = $(item).find('td.col28').text();
+                var ngay29 = $(item).find('td.col29').text();
+                var ngay30 = $(item).find('td.col30').text();
+                var ngay31 = $(item).find('td.col31').text();
+                var ngay1 = $(item).find('td.col1').text();
+                var ngay2 = $(item).find('td.col2').text();
+                var ngay3 = $(item).find('td.col3').text();
+                var ngay4 = $(item).find('td.col4').text();
+                var ngay5 = $(item).find('td.col5').text();
+                var ngay6 = $(item).find('td.col6').text();
+                var ngay7 = $(item).find('td.col7').text();
+                var ngay8 = $(item).find('td.col8').text();
+                var ngay9 = $(item).find('td.col9').text();
+                var ngay10 = $(item).find('td.col10').text();
+                var ngay11 = $(item).find('td.col11').text();
+                var ngay12 = $(item).find('td.col12').text();
+                var ngay13 = $(item).find('td.col13').text();
+                var ngay14 = $(item).find('td.col14').text();
+                var ngay15 = $(item).find('td.col15').text();
+                var ngay16 = $(item).find('td.col16').text();
+                var ngay17 = $(item).find('td.col17').text();
+                var ngay18 = $(item).find('td.col18').text();
+                var ngay19 = $(item).find('td.col19').text();
+                var ngay20 = $(item).find('td.col20').text();
+
+                var ngaycong_le = $(item).find('td.col36').text();
+                var nghiphep = $(item).find('td.col37').text();
+                var nghihieu_hi = $(item).find('td.col38').text();
+                var nghiom_thaisan = $(item).find('td.col39').text();
+                var nghikhongluong = $(item).find('td.col40').text();
+                var songayduoc_traluong = $(item).find('td.col41').text();
+                var songaypc_tiencom = $(item).find('td.col42').text();
+                var songay_congchuan = $(item).find('td.col43').text();
+                var chenhlech_ngaycong = $(item).find('td.col44').text();
+                var tieuchi = $(item).find('td.col45').text();
+                var hoanthanh_congviec = $(item).find('td.col46').text();
+                var tinhthan_trachnhiem = $(item).find('td.col47').text();
+                var cuxu_hoptac = $(item).find('td.col48').text();
+                var tuanthu_giogiac = $(item).find('td.col49').text();
+                var xeploai = $(item).find('td.col50').text();
+                var ghichu = $(item).find('td.col51').text();
+                
+
+                DataJson += "{";
+                DataJson += "'machamcong':'" + machamcong + "',";
+                DataJson += "'ngaylamviectu':'" + ngaylamviectu + "',";
+                DataJson += "'ngaylamviecden':'" + ngaylamviecden + "',";
+                DataJson += "'manhanvien':'" + manv + "',";
+                DataJson += "'email':'" + email + "',";
+                DataJson += "'ngaysinh':'" + ngaysinh + "',";
+
+                DataJson += "'hovaten':'" + hovaten + "',";
+                DataJson += "'maphongban':'" + maphongban + "',";
+                DataJson += "'ngay21':'" + ngay21 + "',";
+                DataJson += "'ngay22':'" + ngay22 + "',";
+                DataJson += "'ngay23':'" + ngay23 + "',";
+                DataJson += "'ngay24':'" + ngay24 + "',";
+                DataJson += "'ngay25':'" + ngay25 + "',";
+                DataJson += "'ngay26':'" + ngay26 + "',";
+                DataJson += "'ngay27':'" + ngay27 + "',";
+                DataJson += "'ngay28':'" + ngay28 + "',";
+                DataJson += "'ngay29':'" + ngay29 + "',";
+                DataJson += "'ngay30':'" + ngay30 + "',";
+                DataJson += "'ngay31':'" + ngay31 + "',";
+
+                DataJson += "'ngay1':'" + ngay1 + "',";
+                DataJson += "'ngay2':'" + ngay2 + "',";
+                DataJson += "'ngay3':'" + ngay3 + "',";
+                DataJson += "'ngay4':'" + ngay4 + "',";
+                DataJson += "'ngay5':'" + ngay5 + "',";
+                DataJson += "'ngay6':'" + ngay6 + "',";
+                DataJson += "'ngay7':'" + ngay7 + "',";
+                DataJson += "'ngay8':'" + ngay8 + "',";
+                DataJson += "'ngay9':'" + ngay9 + "',";
+                DataJson += "'ngay10':'" + ngay10 + "',";
+                DataJson += "'ngay11':'" + ngay11 + "',";
+                DataJson += "'ngay12':'" + ngay12 + "',";
+                DataJson += "'ngay13':'" + ngay13 + "',";
+                DataJson += "'ngay14':'" + ngay14 + "',";
+                DataJson += "'ngay15':'" + ngay15 + "',";
+                DataJson += "'ngay16':'" + ngay16 + "',";
+                DataJson += "'ngay17':'" + ngay17 + "',";
+                DataJson += "'ngay18':'" + ngay18 + "',";
+                DataJson += "'ngay19':'" + ngay19 + "',";
+                DataJson += "'ngay20':'" + ngay20 + "',";
+              
+                DataJson += "'ngaycong_le':'" + ngaycong_le + "',";
+                DataJson += "'nghiphep':'" + nghiphep + "',";
+                DataJson += "'nghihieu_hi':'" + nghihieu_hi + "',";
+                DataJson += "'nghiom_thaisan':'" + nghiom_thaisan + "',";
+                DataJson += "'nghikhongluong':'" + nghikhongluong + "',";
+                DataJson += "'songayduoc_traluong':'" + songayduoc_traluong + "',";
+                DataJson += "'songaypc_tiencom':'" + songaypc_tiencom + "',";
+                DataJson += "'songay_congchuan':'" + songay_congchuan + "',";
+                DataJson += "'chenhlech_ngaycong':'" + chenhlech_ngaycong + "',";
+                DataJson += "'tieuchi':'" + tieuchi + "',";
+                DataJson += "'hoanthanh_congviec':'" + hoanthanh_congviec + "',";
+                DataJson += "'tinhthan_trachnhiem':'" + tinhthan_trachnhiem + "',";
+                DataJson += "'cuxu_hoptac':'" + cuxu_hoptac + "',";
+                DataJson += "'tuanthu_giogiac':'" + tuanthu_giogiac + "',";
+                DataJson += "'xeploai':'" + xeploai + "',";
+                DataJson += "'ghichu':'" + ghichu + "',";
+
+                //DataJson += "'danhmuccha':'" + danhmuccha + "'";
+                DataJson += "}";
+                if (index != $('#boxContent table tbody tr').length - 1)
+                    DataJson += ",";
+            });
+            DataJson += "]}";
+
+            $.ajax({
+                type: 'POST',
+                url: '/Timekeeping/Save_index',
+                datatype: "JSON",
+                data: "DataJson=" + DataJson,
+                cache: false,
+
+            })
+            .done(function (result) {
+                debugger;
+                var tb = JSON.stringify(result.success);
+                if (tb == "true") {
+                    alert('Lưu dữ liệu thành công');
+
+                } else {
+                    alert('Lỗi lưu dữ liệu');
+                }
+            })
+            .fail(function (result) {
+                alert('Lỗi lưu dữ liệu');
+
+            });
+        })
+    });
+
+    function renderDate(selectedDate) {
+        debugger;
+        var date = new Date();
+        // Lấy số thứ tự của ngày hiện tại
+        var current_day1 = date.getDay();
+        var d = selectedDate.split('/');
+        var d1 = selectedDate.split('/');
+        if (d[0] == '01' || d[0] == '1')
+        {
+            d[0] = 13; d[1] = d[1] - 1;
+        }
+        var thang = d[0] - 1;
+        var numberDateofMonth = new Date(d[1], thang, 0).getDate();
+        var songaycuathang = numberDateofMonth - 20;
+        var html = '';
+        html += '<tr>';
+        html += '<th class="ovh col32" rowspan="2">STT</th>'
+             + '<th class="ovh col56" rowspan="2">Trạng thái</th>'
+            + '<th class="ovh col55" rowspan="2">Del</th>'
+             + '<th class="ovh col33" rowspan="2">MNV</th>'
+                    + '<th class="ovh col34" rowspan="2">HỌ VÀ TÊN</th>'
+                    + '<th class="ovh col35" rowspan="2">PHÒNG BAN</th>'
+                    + '<th colspan="' + songaycuathang + '"> ' + thang + "/" + d[1] + ' </th>'
+                    + '<th colspan="20">' + d1[0] + "/" + d1[1] + '</th>'
+                    +'<th colspan="9">QUY RA CÔNG ĐỂ TRẢ LƯƠNG</th>'
+                    +'<th colspan="5">ĐÁNH GIÁ CỦA TRƯỞNG BỘ PHẬN</th>'
+                    +'<th class="ovh col50" rowspan="2">XẾP LOẠI</th>'
+                    +'<th class="ovh col51" rowspan="2">GHI CHÚ</th>' 
+                +' </tr>';
+        html += '<tr>';
+        for (i = 21; i <= numberDateofMonth; i++) {
+            var tnn = thang + "/" + i + "/" + d[1];
+            var date = new Date(tnn);
+            var current_day = date.getDay();
+            if (current_day == 0) html += '<th class="ovhcn col' + i.toString() + '">' + i + "</br></br> CN" + '</th>';
+            else if (current_day == 1) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T2" + '</th>';
+            else if (current_day == 2) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T3" + '</th>';
+            else if (current_day == 3) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T4" + '</th>';
+            else if (current_day == 4) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T5" + '</th>';
+            else if (current_day == 5) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T6" + '</th>';
+            else if (current_day == 6) html += '<th class="ovht7 col' + i.toString() + '">' + i + "</br></br>T7" + '</th>';
+        }
+        
+        for (i = 1; i <= 20; i++) {
+            var tnn = d1[0] + "/" + i + "/" + d1[1];
+            var date = new Date(tnn);
+            var current_day = date.getDay();
+            if (current_day == 0) html += '<th class="ovhcn col' + i.toString() + '">' + i + "</br></br> CN" + '</th>';
+            else if (current_day == 1) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T2" + '</th>';
+            else if (current_day == 2) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T3" + '</th>';
+            else if (current_day == 3) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T4" + '</th>';
+            else if (current_day == 4) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T5" + '</th>';
+            else if (current_day == 5) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T6" + '</th>';
+            else if (current_day == 6) html += '<th class="ovht7 col' + i.toString() + '">' + i + "</br></br>T7" + '</th>'; 
+        }
+        html += '<th class="ovh col36">Ngày công + lễ</th>' 
+            +'<th class="ovh col37">Nghỉ phép</th>' 
+        +'<th class="ovh col38">Nghỉ hiếu, hỉ</th>'
+        +'<th class="ovh col39">Nghỉ ốm, TS</th>' 
+        +'<th class="ovh col40">Nghỉ không lương</th>' 
+        +'<th class="ovh col41">Số ngày được trả lương</th>' 
+        +'<th class="ovh col42">Số ngày PC tiền cơm</th>' 
+        +'<th class="ovh col43">Số ngày công chuẩn</th>' 
+        +'<th class="ovh col44">Chênh lệch ngày công</th>' 
+        +'<th class="ovh col45">Tiêu chí</th>' 
+        +'<th class="ovh col46">Hoàn thành công việc được giao</th>' 
+        +'<th class="ovh col47">Tinh thần trách nhiệm, năng động, sáng tạo</th>' 
+        +'<th class="ovh col48">Cư xử hợp tác trong công việc</th>' 
+        +'<th class="ovh col49">Tuân thủ giờ giấc, tác phong</th>'
+        + '</tr>';
+
+        html += '<tr>';
+        html += '<th class="ovh col32 boxEdit"></th>'
+            + '<th class="ovh col56 boxEdit"><input type="text" id="txttrangthaiduyet" style="width:100%" autocomplete="off" placeholder="" name="manhanvien" /></th>'
+            + '<th class="ovh col55 boxEdit"></th>'
+            + '<th class="ovh col1 boxEdit"><input type="text" id="txtmanhanvien" style="width:100%" autocomplete="off" placeholder="" name="manhanvien" /></th>'
+            + '<th class="ovh col1 boxEdit"><input type="text" id="txthovatens" style="width:100%" autocomplete="off" placeholder="" name="hovatens" /></th>'
+            + ' </tr>';
+
+        $('#head-date').html(html);
+    }
+
+</script>

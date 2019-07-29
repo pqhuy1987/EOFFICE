@@ -1,0 +1,85 @@
+﻿
+
+/*--Start create--*/
+.boxEdit {
+    padding-top: 17px;
+}
+
+.boxEdit input[type="text"] {
+    border-radius: 3px;
+    color: #333;
+    font-size: 12px;
+    padding: 0 5px;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    height: 27px;
+}
+
+    .boxEdit input[type="text"].inputShort {
+        width: 20px;
+    }
+
+.boxEdit textarea {
+    border-radius: 3px;
+    color: #333;
+    font-size: 12px;
+    padding: 0 5px;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    resize: none;
+}
+
+.boxEdit table td:first-child {
+    text-align: right;
+    padding-right: 10px;
+    vertical-align: text-top;
+    padding-top: 7px;
+    width: 170px;
+}
+
+
+.boxEdit table tr td {
+    margin: 5px 0;
+    height: 35px;
+}
+
+
+.boxEdit .boxEdit {
+    background-color: white;
+    border-radius: 4px;
+    margin: 28px auto;
+    width: 150px;
+}
+
+.boxEdit table {
+    width:0%;
+}
+/*--End create--*/
+
+.WhiteButton {
+    height: 30px;
+    width: 90px;
+    display: inline-table;
+    line-height: 31px;
+}
+
+.HeaderFixed1 {
+    height:30px;
+    line-height:41px;
+    width:100%;
+}
+.p-left1{
+    color:black;
+    font-size:16px;
+    font-weight:bold;
+}    
+.b-b {
+    border-bottom: 1px solid #eaeef1;
+}    
+
+
+

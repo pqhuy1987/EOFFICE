@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="m_loailichsuhoatdong"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="Select" resultClass="System.Collections.Hashtable">
+
+    </select>
+
+    <insert id="Insert">
+
+    </insert>
+
+    <update id="Update">
+    </update>
+  </statements>
+</sqlMap>

@@ -1,0 +1,120 @@
+﻿@model NHG.Web.Models.LichLamViecModels
+@{
+    ViewBag.Title = "Tạo mới lịch";
+}
+
+@*--css--*@
+@section CSS
+{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/CalendarCSS.CreateOrEdit.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/prism.css" />
+}
+
+@*--javascript--*@
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery.datepick-vi.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/controllers/CalendarJS.CreateOrEdit.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/TimePicker/jquery-ui-timepicker-addon.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/TimePicker/langue/jquery-ui-timepicker-vi.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/prism.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/mfupload.js"></script>
+}
+<script>
+    var linkContent = '@Url.Content("~")';
+    var jsTime = '@ViewBag.JsonChonGio';
+</script>
+<div class="HeaderFixed">
+    <div class="b-b b-light">
+        <div class="p-left c-black">Chi tiết sự kiện</div>
+        <div class="clearBoth"></div>
+    </div>
+</div>
+@using (Html.BeginForm("Create", "Calendar", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+{
+    <div class="boxButton">
+        <button type="submit" class="buttoncustom WhiteButton">Lưu</button>
+        <a href="@Url.Action("Index", "Calendar")"><button type="submit" class="buttoncustom WhiteButton">Hủy</button></a>
+    </div>
+    <div class="boxChiTiet">
+
+        <div class="divNoiDung"><input type="text" id="txtNoiDung" placeholder="Nội dung sự kiện" name="noidung" autocomplete="off"/></div>
+        <div class="divThoiGian">
+            <table>
+                <tr>
+                    <td><input type="text" id="txtTuNgay" name="ngaybatdau" autocomplete="off" /> </td>
+                    <td><input type="text" id="txtTuGio" name="giobatdau" autocomplete="off" /> </td>
+                    <td>Đến</td>
+                    <td><input type="text" id="txtDenNgay" name="ngayketthuc" autocomplete="off" /> </td>
+                    <td><input type="text" id="txtDenGio" name="gioketthuc" autocomplete="off" /></td>
+                    
+                </tr>
+            </table>
+            <div class='chosen-drop-grid'></div>
+        </div>
+        <div>
+            <label><input type="checkbox" name="sukiencangay" value="1"/>&nbsp;Cả ngày</label>
+        </div>
+        <div class="divLabel1">Thông tin sự kiện</div>
+        <div>
+            <table class="tableChitiet">
+                <tr>
+                    <td>Địa điểm</td>
+                    <td><input type="text" id="txtDiaDiem" placeholder="Địa điểm hoặc phòng ban làm việc" name="diadiem" autocomplete="off" /></td>
+                </tr>
+                <tr>
+                    <td>Mô tả</td>
+                    <td><textarea rows="4" name="ghichu" autocomplete="off"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Tài liệu đính kèm</td>
+                    <td>
+                        <div class="divBoxHTML">
+                            <div class="divDinhKemTapTin">
+                                <div class="imgUpload">
+                                </div>
+                                <div class="imgText">
+                                    Chọn tập tin
+                                    <div id="upload" style="float: left; margin-left: 137px;"></div>
+                                </div>
+                            </div>
+                            <div id='CUpFile'>
+                                <div id='CTUpFile' style='overflow: auto;'>
+                                    <div class='fileUploadQueue' id='filesToUploadQueue'>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Thông báo</td>
+                    <td>
+                        <div>
+                            <select>
+                                <option>Email</option>
+                            </select>
+                            <input type="text" class="txtValueAlert" autocomplete="off" value="15"/>
+                            <select>
+                                <option>Phút</option>
+                                <option>Giờ</option>
+                                <option>Ngày</option>
+                            </select>
+                            <label>Xóa</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Chế độ hiển thị</td>
+                    <td>
+                        <label><input type="radio" name="viewMode" checked /> Riêng tư</label>&nbsp;&nbsp;
+                        <label><input type="radio" name="viewMode" /> Công cộng</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+}

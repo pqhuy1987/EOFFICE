@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="m_phonghop_lichsu"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="Select" resultClass="System.Collections.Hashtable">
+      SELECT
+      maphonghop
+      ,nguoidatphong
+      ,thoigianhop
+      ,thoigianketthuc
+      ,xoa
+      ,nguoitao
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      FROM
+      m_phonghop_lichsu 
+    </select>
+
+    <insert id="Insert">
+      INSERT INTO m_phonghop_lichsu
+      (
+      maphonghop
+      ,nguoidatphong
+      ,thoigianhop
+      ,thoigianketthuc
+      ,xoa
+      ,nguoitao
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      )
+      VALUES
+      (
+      );
+
+    </insert>
+
+    <update id="Update">
+
+    </update>
+  </statements>
+</sqlMap>

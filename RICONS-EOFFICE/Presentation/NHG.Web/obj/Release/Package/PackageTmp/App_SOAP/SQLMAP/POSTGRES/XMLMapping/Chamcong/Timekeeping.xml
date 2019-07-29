@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="Timekeeping"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+
+    <select id="CountRows" resultClass="int">
+      SELECT
+      count(*)
+      FROM Employees emp
+      left join (select ID,OrgName from Organizations where Active=1) org on(org.ID=emp.OrgID)
+      left join (select EmployeeID,BirthDate,email from EmployeeProfiles) empro on(empro.EmployeeID=emp.EmployeeID)
+      left join (select id, EmployeeID, WorkingType from EmpWorkings
+      where id = (select max(id) from EmpWorkings as f where f.EmployeeID = EmpWorkings.EmployeeID))work on(work.EmployeeID=emp.EmployeeID)
+      where emp.WorkStatus <![CDATA[<>]]> 59
+      <isNotEmpty	property="maphongban">	and orgid = $maphongban$</isNotEmpty>
+      <isNotEmpty	property="manhanvien">	and emp.employeeid = '$manhanvien$'</isNotEmpty>
+      <isNotEmpty	property="hovaten">	and ( rtrim(lower(emp.lastname +' ' + emp.firstname)) like rtrim(lower(N'%$hovaten$%')) or rtrim(lower(empro.email)) = rtrim(lower(N'$hovaten$'))) </isNotEmpty>
+    </select>
+
+    <select id="CountRows_ktchamcong" resultClass="int">
+      SELECT
+      count(*)
+      FROM Timekeeping where xoa='0' and rtrim(lower(thang))=rtrim(lower('$thangnam$'))
+      <isNotEmpty	property="maphongban"> and maphongban = '$maphongban$'</isNotEmpty>
+      <isNotEmpty	property="manhanvien">	and manhanvien = '$manhanvien$'</isNotEmpty>
+
+      <isNotEmpty	property="trangthaiduyet">	and daduyet = '$trangthaiduyet$'</isNotEmpty>
+      
+      <isNotEmpty	property="hovaten">	and ( rtrim(lower(hovaten)) like rtrim(lower(N'%$hovaten$%')) or rtrim(lower(email)) = rtrim(lower(N'$hovaten$'))) </isNotEmpty>
+      
+    </select>
+    
+   
+     <select id="SelectRows" resultClass="System.Collections.Hashtable">
+       select * from(SELECT
+       emp.id as id
+       ,emp.employeeid as manhanvien
+       ,emp.lastname +' ' + emp.firstname as hovaten
+       ,orgid as maphongban
+       ,org.OrgName as tenphongban
+       ,org.Construction as phongban_congtruong
+       ,PositionID as machucdanh
+       ,CONVERT(date, empro.BirthDate, 103) as ngaysinh
+       ,empro.email as email
+       <!--,work.WorkingType as WorkingType-->
+       ,ROW_NUMBER() OVER (ORDER BY emp.id  ASC) as row
+       FROM Employees emp
+       left join (select ID,OrgName,Construction from Organizations where Active=1) org on(org.ID=emp.OrgID)
+
+       left join (select EmployeeID,BirthDate,email from EmployeeProfiles) empro on(empro.EmployeeID=emp.EmployeeID)
+
+       <!--left join (select id, EmployeeID, WorkingType from EmpWorkings
+       where id = (select max(id) from EmpWorkings as f where f.EmployeeID = EmpWorkings.EmployeeID))work on(work.EmployeeID=emp.EmployeeID)-->
+       where emp.WorkStatus <![CDATA[<>]]> 59
+       <isNotEmpty	property="maphongban">	and orgid = $maphongban$</isNotEmpty>
+       <isNotEmpty	property="manhanvien">	and emp.employeeid = '$manhanvien$'</isNotEmpty>
+       <isNotEmpty	property="hovaten">	and ( rtrim(lower(emp.lastname +' ' + emp.firstname)) like rtrim(lower(N'%$hovaten$%')) or rtrim(lower(empro.email)) = rtrim(lower(N'$hovaten$'))) </isNotEmpty>
+       )tbl1
+       where tbl1.row <![CDATA[>=]]> $trangbd$ and tbl1.row <![CDATA[<=]]> $trangkt$
+     </select>
+
+
+    <select id="SelectRows_hieuchinh_machamcong" resultClass="System.Collections.Hashtable">
+      select * from Timekeeping where xoa='0' and machamcong=$machamcong$
+    </select>
+
+
+    <select id="SelectRows_manhanvien_thang" resultClass="System.Collections.Hashtable">
+      SELECT
+      tk.*
+      ,org.tenphongban as tenphongban
+      ,org.phongban_congtruong as phongban_congtruong
+      from Timekeeping tk
+      left join (select m_donvi_phongban.maphongban,m_donvi_phongban.tenphongban,m_donvi_phongban.phongban_congtruong from m_donvi_phongban where xoa='0') org on(org.maphongban=tk.maphongban)
+      where xoa='0'
+      and rtrim(lower(tk.manhanvien))=rtrim(lower('$manhanvien$'))
+      and rtrim(lower(tk.thang))=rtrim(lower('$thang$'))
+      and tk.maphongban = '$maphongban$'
+      <isNotEmpty	property="email">
+        and rtrim(lower(tk.email))=rtrim(lower('$email$'))
+      </isNotEmpty>
+      
+    </select>
+    
+    
+    <select id="SelectRows_manhanvien_thang_xuatexcel" resultClass="System.Collections.Hashtable">
+      SELECT       tk.*
+      ,org.tenphongban as tenphongban
+      ,org.phongban_congtruong as phongban_congtruong
+      from Timekeeping tk
+      left join (select m_donvi_phongban.maphongban,m_donvi_phongban.tenphongban,m_donvi_phongban.phongban_congtruong from m_donvi_phongban where xoa='0') org on(org.maphongban=tk.maphongban)
+      where tk.xoa='0'  and rtrim(lower(tk.thang))=rtrim(lower('$thang$'))
+      <isNotEmpty	property="maphongban">and  rtrim(tk.maphongban) = rtrim('$maphongban$')</isNotEmpty>
+    </select>
+    
+    
+    <select id="SelectRows_manhanvien_thang_lllll" resultClass="System.Collections.Hashtable">
+      select * from(SELECT
+      tk.*
+      ,org.tenphongban as tenphongban
+      ,org.phongban_congtruong as phongban_congtruong
+      ,ROW_NUMBER() OVER (ORDER BY tk.machamcong  ASC) as row
+      from Timekeeping tk
+      left join (select m_donvi_phongban.maphongban,m_donvi_phongban.tenphongban,m_donvi_phongban.phongban_congtruong from m_donvi_phongban where xoa='0') org on(org.maphongban=tk.maphongban)
+      where tk.xoa='0'  and rtrim(lower(tk.thang))=rtrim(lower('$thang$'))
+      <isNotEmpty	property="manhanvien">and rtrim(lower(tk.manhanvien))=rtrim(lower('$manhanvien$')) </isNotEmpty>
+      <isNotEmpty	property="maphongban">and  rtrim(tk.maphongban) = rtrim('$maphongban$')</isNotEmpty>
+
+      <isNotEmpty	property="trangthaiduyet">	and daduyet = '$trangthaiduyet$'</isNotEmpty>
+      
+      <isNotEmpty	property="hovaten">	and rtrim(lower(tk.hovaten)) like rtrim(lower(N'%$hovaten$%'))</isNotEmpty>
+      )tbl1
+      where tbl1.row <![CDATA[>=]]> $trangbd$ and tbl1.row <![CDATA[<=]]> $trangkt$
+      order by maphongban
+    </select>
+
+
+    <select id="SelectRows_hieuchinh_manhanvien_email" resultClass="System.Collections.Hashtable">
+      SELECT
+      emp.id as id
+      ,emp.employeeid as manhanvien
+      ,emp.lastname + ' ' + emp.firstname as hovaten
+      ,emp.orgid as maphongban
+      ,CONVERT(date, empro.BirthDate, 103) as ngaysinh
+      ,empro.email as email
+      FROM Employees emp
+      left join (select EmployeeID,BirthDate,email from EmployeeProfiles) empro on(empro.EmployeeID=emp.EmployeeID)
+      where WorkStatus <![CDATA[<>]]> 59
+      <isNotEmpty	property="manhanvien">
+      and rtrim(lower(emp.employeeid))=rtrim(lower('$manhanvien$'))
+      </isNotEmpty>
+      <isNotEmpty	property="email">
+        and rtrim(lower(empro.email))=rtrim(lower('$email$'))
+      </isNotEmpty>
+    </select>
+    
+
+    <select id="SelectRows_hieuchinh_manhanvien" resultClass="System.Collections.Hashtable">
+      SELECT
+      emp.id as id
+      ,emp.employeeid as manhanvien
+      ,emp.lastname + ' ' + emp.firstname as hovaten
+      ,emp.orgid as maphongban
+      ,CONVERT(date, empro.BirthDate, 103) as ngaysinh
+      ,empro.email as email
+      FROM Employees emp
+      left join (select EmployeeID,BirthDate,email from EmployeeProfiles) empro on(empro.EmployeeID=emp.EmployeeID)
+      where WorkStatus <![CDATA[<>]]> 59 and rtrim(lower(emp.employeeid))=rtrim(lower('$manhanvien$'))
+    </select>
+    
+
+    <select id="SelectRows_Danhsachnghiphep" resultClass="System.Collections.Hashtable">
+      select
+      manghiphep
+      ,manhanvien
+      ,hovaten
+      ,maphongban
+      ,ngayxinnghitu
+      ,rtrim(songayxinnghi) as songayxinnghi
+      ,ngayxinnghiden
+      ,rtrim(duyetcap1) as duyetcap1
+      ,rtrim(duyetcap2) as duyetcap2
+      ,rtrim(nghiphep) as nghiphep
+      ,rtrim(nghiom) as nghiom
+      ,rtrim(nghithaisan) as nghithaisan
+      ,rtrim(nghikhongluong) as nghikhongluong
+      ,rtrim(nghiviecrieng) as nghiviecrieng
+      ,rtrim(nghikhac) as nghikhac
+      ,rtrim(canhankh) as canhankh
+      ,rtrim(conkh) as conkh
+      ,rtrim(chame_mat) as chame_mat
+      ,rtrim(songayphepconlai) as songayphepconlai
+      from Dondangkynghiphep
+      where xoa='0' and rtrim(duyetcap1) <![CDATA[<>]]> '2'
+      <isNotEmpty property="manhanvien">
+        and manhanvien = '$manhanvien$'
+      </isNotEmpty>
+      <!--and (CONVERT(smalldatetime, ngayxinnghitu, 103) BETWEEN CONVERT(smalldatetime, '$tungay$', 103) AND CONVERT(smalldatetime, '$denngay$', 103) or
+      CONVERT(smalldatetime, ngayxinnghiden, 103) BETWEEN CONVERT(smalldatetime, '$tungay$', 103) AND CONVERT(smalldatetime, '$denngay$', 103))-->
+      
+      and
+      (
+      (CONVERT(smalldatetime, ngayxinnghitu, 103) <![CDATA[>=]]> CONVERT(smalldatetime, '$tungay$', 103)
+      and
+      CONVERT(smalldatetime, ngayxinnghitu, 103) <![CDATA[<=]]> CONVERT(smalldatetime, '$denngay$', 103)
+      or
+      (CONVERT(smalldatetime, ngayxinnghiden, 103)<![CDATA[>=]]> CONVERT(smalldatetime, '$tungay$', 103)
+      and
+      CONVERT(smalldatetime, ngayxinnghiden, 103) <![CDATA[>=]]> CONVERT(smalldatetime, '$denngay$', 103))
+
+      ))
+
+
+
+      order by manghiphep DESC
+    </select>
+
+    <select id="SelectRows_Danhsachngayle" resultClass="System.Collections.Hashtable">
+      select
+      holidayname
+      ,rtrim(CONVERT(varchar, datevalue, 103)) as datevalue
+      from AtHoliday
+      where datevalue BETWEEN CONVERT(smalldatetime, '$tungay$', 103) and CONVERT(smalldatetime, '$denngay$', 103)
+
+
+      <!--select
+      holidayname
+      ,CONVERT(smalldatetime, datevalue, 103) as datevalue
+      from AtHoliday
+      where datevalue BETWEEN '$tungay$' and '$denngay$'-->
+    </select>
+
+    <insert id="InsertRow_chamcong">
+      INSERT INTO Timekeeping
+      (
+      machamcong
+      ,manhanvien
+      ,hovaten
+      ,maphongban
+      ,thang
+      ,ngay21
+      ,ngay22
+      ,ngay23
+      ,ngay24
+      ,ngay25
+      ,ngay26
+      ,ngay27
+      ,ngay28
+      ,ngay29
+      ,ngay30
+      ,ngay31
+      ,ngay1
+      ,ngay2
+      ,ngay3
+      ,ngay4
+      ,ngay5
+      ,ngay6
+      ,ngay7
+      ,ngay8
+      ,ngay9
+      ,ngay10
+      ,ngay11
+      ,ngay12
+      ,ngay13
+      ,ngay14
+      ,ngay15
+      ,ngay16
+      ,ngay17
+      ,ngay18
+      ,ngay19
+      ,ngay20
+      ,ngaycong_le
+      ,nghiphep
+      ,nghihieu_hi
+      ,nghiom_thaisan
+      ,nghikhongluong
+      ,songayduoc_traluong
+      ,songaypc_tiencom
+      ,songay_congchuan
+      ,chenhlech_ngaycong
+      ,tieuchi
+      ,hoanthanh_congviec
+      ,tinhthan_trachnhiem
+      ,cuxu_hoptac
+      ,tuanthu_giogiac
+      ,xeploai
+      ,ghichu
+      ,email
+      ,ngaysinh
+      ,ngaylamviectu
+      ,ngaylamviecden
+      ,daduyet
+      ,xoa
+      ,ngaytao
+      ,nguoitao
+      )
+      VALUES
+      (
+      $machamcong$
+      ,'$manhanvien$'
+      ,N'$hovaten$'
+      ,'$maphongban$'
+      ,'$thang$'
+      ,'$ngay21$'
+      ,'$ngay22$'
+      ,'$ngay23$'
+      ,'$ngay24$'
+      ,'$ngay25$'
+      ,'$ngay26$'
+      ,'$ngay27$'
+      ,'$ngay28$'
+      ,'$ngay29$'
+      ,'$ngay30$'
+      ,'$ngay31$'
+      ,'$ngay1$'
+      ,'$ngay2$'
+      ,'$ngay3$'
+      ,'$ngay4$'
+      ,'$ngay5$'
+      ,'$ngay6$'
+      ,'$ngay7$'
+      ,'$ngay8$'
+      ,'$ngay9$'
+      ,'$ngay10$'
+      ,'$ngay11$'
+      ,'$ngay12$'
+      ,'$ngay13$'
+      ,'$ngay14$'
+      ,'$ngay15$'
+      ,'$ngay16$'
+      ,'$ngay17$'
+      ,'$ngay18$'
+      ,'$ngay19$'
+      ,'$ngay20$'
+      ,'$ngaycong_le$'
+      ,'$nghiphep$'
+      ,'$nghihieu_hi$'
+      ,'$nghiom_thaisan$'
+      ,'$nghikhongluong$'
+      ,'$songayduoc_traluong$'
+      ,'$songaypc_tiencom$'
+      ,'$songay_congchuan$'
+      ,'$chenhlech_ngaycong$'
+      ,N'$tieuchi$'
+      ,'$hoanthanh_congviec$'
+      ,'$tinhthan_trachnhiem$'
+      ,'$cuxu_hoptac$'
+      ,'$tuanthu_giogiac$'
+      ,'$xeploai$'
+      ,'$ghichu$'
+      ,'$email$'
+      ,'$ngaysinh$'
+      ,'$ngaylamviectu$'
+      ,'$ngaylamviecden$'
+      ,'0'
+      ,'0'
+      ,GETDATE()
+      ,$nguoitao$
+      )
+    </insert>
+
+    <update id="UpdateRow_chamcong">
+      UPDATE
+      Timekeeping
+      SET
+      manhanvien='$manhanvien$'
+      ,hovaten=N'$hovaten$'
+      ,maphongban='$maphongban$'
+      ,thang='$thang$'
+      ,ngay21='$ngay21$'
+      ,ngay22='$ngay22$'
+      ,ngay23='$ngay23$'
+      ,ngay24='$ngay24$'
+      ,ngay25='$ngay25$'
+      ,ngay26='$ngay26$'
+      ,ngay27='$ngay27$'
+      ,ngay28='$ngay28$'
+      ,ngay29='$ngay29$'
+      ,ngay30='$ngay30$'
+      ,ngay31='$ngay31$'
+      ,ngay1='$ngay1$'
+      ,ngay2='$ngay2$'
+      ,ngay3='$ngay3$'
+      ,ngay4='$ngay4$'
+      ,ngay5='$ngay5$'
+      ,ngay6='$ngay6$'
+      ,ngay7='$ngay7$'
+      ,ngay8='$ngay8$'
+      ,ngay9='$ngay9$'
+      ,ngay10='$ngay10$'
+      ,ngay11='$ngay11$'
+      ,ngay12='$ngay12$'
+      ,ngay13='$ngay13$'
+      ,ngay14='$ngay14$'
+      ,ngay15='$ngay15$'
+      ,ngay16='$ngay16$'
+      ,ngay17='$ngay17$'
+      ,ngay18='$ngay18$'
+      ,ngay19='$ngay19$'
+      ,ngay20='$ngay20$'
+      ,ngaycong_le='$ngaycong_le$'
+      ,nghiphep='$nghiphep$'
+      ,nghihieu_hi='$nghihieu_hi$'
+      ,nghiom_thaisan='$nghiom_thaisan$'
+      ,nghikhongluong='$nghikhongluong$'
+      ,songayduoc_traluong='$songayduoc_traluong$'
+      ,songaypc_tiencom='$songaypc_tiencom$'
+      ,songay_congchuan='$songay_congchuan$'
+      ,chenhlech_ngaycong='$chenhlech_ngaycong$'
+      ,tieuchi=N'$tieuchi$'
+      ,hoanthanh_congviec='$hoanthanh_congviec$'
+      ,tinhthan_trachnhiem='$tinhthan_trachnhiem$'
+      ,cuxu_hoptac='$cuxu_hoptac$'
+      ,tuanthu_giogiac='$tuanthu_giogiac$'
+      ,xeploai='$xeploai$'
+      ,ghichu='$ghichu$'
+      ,email='$email$'
+      ,ngaysinh='$ngaysinh$'
+      ,ngaylamviectu='$ngaylamviectu$'
+      ,ngaylamviecden='$ngaylamviecden$'
+      ,xoa='0'
+      ,nguoihieuchinh=$nguoitao$
+      ,ngayhieuchinh = GETDATE()
+      WHERE machamcong=$machamcong$ and rtrim(daduyet)='0'
+    </update>
+
+
+    <update id="DeletedRow_chamcongthang">
+      UPDATE
+      Timekeeping
+      SET
+      xoa='1'
+      ,nguoihieuchinh=$nguoitao$
+      ,ngayhieuchinh = GETDATE()
+      WHERE machamcong=$machamcong$
+    </update>
+
+    <select id="SelectRow_Duyetpheponline" resultClass="System.Collections.Hashtable">
+      select * from Timekeeping where xoa='0' and  rtrim(daduyet) ='1' and rtrim(thang) = '$thang$' and rtrim(maphongban)='$maphongban$'
+    </select>
+
+    <update id="UpdateRow_Duyetpheponline">
+      UPDATE
+      Timekeeping
+      SET
+      daduyet='$dongy$'
+      ,nguoihieuchinh=$nguoitao$
+      ,ngayhieuchinh = GETDATE()
+      WHERE rtrim(thang)='$thang$' and rtrim(maphongban)='$maphongban$'
+    </update>
+
+
+    <update id="Update_trangthaiguiemail">
+      UPDATE
+      Timekeeping
+      SET
+      daduyet='3'
+      WHERE rtrim(thang)='$thang$' and rtrim(maphongban)='$maphongban$'
+    </update>
+    
+    
+  </statements>
+</sqlMap>

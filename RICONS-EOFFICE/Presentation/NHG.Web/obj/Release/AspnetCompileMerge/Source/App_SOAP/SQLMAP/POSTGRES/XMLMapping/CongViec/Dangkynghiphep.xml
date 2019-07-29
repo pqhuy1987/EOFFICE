@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="Dangkynghiphep"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+
+    <select id="SelectRows_Danhsachnghiphep" resultClass="System.Collections.Hashtable">
+      select * from (select manghiphep
+      ,manhanvien
+      ,hovaten
+      ,ngaysinh
+      ,machucdanh
+      ,maphongban
+      ,ngayxinnghitu
+      ,songayxinnghi
+      ,ngayxinnghiden
+      ,songayphepconlai
+      ,loaithoigian
+      ,lydoxinnghi
+      ,sodienthoai
+      ,email
+      ,nguoithaythetamthoi
+      ,loaiphepnam
+      ,duyetcap1
+      ,duyetcap1_ghichu
+      ,duyetcap2
+      ,duyetcap2_ghichu
+      ,xacnhantruockhivaolamlai
+      ,xoa
+      ,nguoitao
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      ,nghiphep
+      ,nghiom
+      ,nghithaisan
+      ,nghikhongluong
+      ,nghiviecrieng
+      ,nghikhac
+      ,xacnhantruockhivaolamlaiten
+      ,tenchucdanh
+      ,(select tenphongban from m_donvi_phongban pb where pb.xoa='0' and pb.maphongban=Dondangkynghiphep.maphongban) as tenphongban
+      ,thangsinh
+      ,namsinh
+      ,canhankh
+      ,conkh
+      ,chame_mat
+      ,ongba_mat,ROW_NUMBER() OVER (ORDER BY manghiphep  desc) as row
+      from Dondangkynghiphep where xoa='0'
+      and (CONVERT(smalldatetime, ngayxinnghitu, 103) BETWEEN CONVERT(smalldatetime, '$nghitu$', 103) AND CONVERT(smalldatetime, '$nghiden$', 103)
+      or
+      CONVERT(smalldatetime, ngayxinnghiden, 103) BETWEEN CONVERT(smalldatetime, '$nghitu$', 103) AND CONVERT(smalldatetime, '$nghiden$', 103))
+      <isNotEmpty property="maphongban"> and maphongban='$maphongban$'</isNotEmpty>) tbl1
+      where tbl1.xoa='0' and  tbl1.row <![CDATA[>=]]> $trangbd$ and tbl1.row <![CDATA[<=]]> $trangkt$
+      <isNotEmpty property="manghiphep">
+        and manghiphep=$manghiphep$
+      </isNotEmpty>
+      <isNotEmpty property="maphongban">
+        and maphongban='$maphongban$'
+      </isNotEmpty>
+
+      <isNotEmpty property="nguoitao">
+        and nguoitao=$nguoitao$
+      </isNotEmpty>
+
+     
+
+      order by manghiphep desc
+
+    </select>
+
+
+    <select id="SelectRows_Danhsachnghiphep_11111" resultClass="System.Collections.Hashtable">
+      select manghiphep
+      ,manhanvien
+      ,hovaten
+      ,ngaysinh
+      ,machucdanh
+      ,maphongban
+      ,ngayxinnghitu
+      ,songayxinnghi
+      ,ngayxinnghiden
+      ,songayphepconlai
+      ,loaithoigian
+      ,lydoxinnghi
+      ,sodienthoai
+      ,email
+      ,nguoithaythetamthoi
+      ,loaiphepnam
+      ,duyetcap1
+      ,duyetcap1_ghichu
+      ,duyetcap2
+      ,duyetcap2_ghichu
+      ,xacnhantruockhivaolamlai
+      ,xoa
+      ,nguoitao
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      ,nghiphep
+      ,nghiom
+      ,nghithaisan
+      ,nghikhongluong
+      ,nghiviecrieng
+      ,nghikhac
+      ,xacnhantruockhivaolamlaiten
+      ,tenchucdanh
+      ,(select tenphongban from m_donvi_phongban pb where pb.xoa='0' and pb.maphongban=Dondangkynghiphep.maphongban) as tenphongban
+      ,thangsinh
+      ,namsinh
+      ,canhankh
+      ,conkh
+      ,chame_mat
+      ,ongba_mat
+      ,thoigian
+      from Dondangkynghiphep
+      where xoa='0'
+      <isNotEmpty property="manghiphep">
+        and manghiphep=$manghiphep$
+      </isNotEmpty>
+      order by manghiphep ASC
+
+    </select>
+
+    <select id="SelectRows_Danhsachnghiphep_songayphep" resultClass="System.Collections.Hashtable">
+      select
+      manghiphep
+      ,hovaten
+      ,songayxinnghi
+      ,nguoitao
+      ,nghiphep
+      ,canhankh
+      ,conkh
+      ,chame_mat
+      ,ongba_mat
+      from Dondangkynghiphep
+      where xoa='0' and duyetcap1='1'
+      <isNotEmpty property="nguoitao">
+        and nguoitao=$nguoitao$
+      </isNotEmpty>
+      and (CONVERT(smalldatetime, ngayxinnghitu, 103) BETWEEN CONVERT(smalldatetime, '$nghitu$', 103) AND CONVERT(smalldatetime, '$nghiden$', 103)
+      or
+      CONVERT(smalldatetime, ngayxinnghiden, 103) BETWEEN CONVERT(smalldatetime, '$nghitu$', 103) AND CONVERT(smalldatetime, '$nghiden$', 103))
+
+    </select>
+    
+    
+    <select id="CountRows" resultClass="int">
+      SELECT
+      count(*)
+      FROM
+      Dondangkynghiphep
+      WHERE
+      xoa = '0'
+      <isNotEmpty property="manghiphep">
+        and manghiphep=$manghiphep$
+      </isNotEmpty>
+      <isNotEmpty property="maphongban">
+        and maphongban='$maphongban$'
+      </isNotEmpty>
+      <isNotEmpty property="nguoitao">
+        and nguoitao=$nguoitao$
+      </isNotEmpty>
+        and (CONVERT(smalldatetime, ngayxinnghitu, 103) BETWEEN CONVERT(smalldatetime, '$nghitu$', 103) AND CONVERT(smalldatetime, '$nghiden$', 103) 
+        or
+        CONVERT(smalldatetime, ngayxinnghiden, 103) BETWEEN CONVERT(smalldatetime, '$nghitu$', 103) AND CONVERT(smalldatetime, '$nghiden$', 103))
+    </select>
+    
+    <update id="UpdateRow_Dondangkynghiphep">
+      UPDATE
+      Dondangkynghiphep
+      SET
+      manhanvien='$manhanvien$'
+      ,hovaten=N'$hovaten$'
+      ,ngaysinh='$ngaysinh$'
+      ,machucdanh='$machucdanh$'
+      ,maphongban='$maphongban$'
+      ,ngayxinnghitu='$ngayxinnghitu$'
+      ,songayxinnghi='$songayxinnghi$'
+      ,ngayxinnghiden='$ngayxinnghiden$'
+      ,songayphepconlai='$songayphepconlai$'
+      ,loaithoigian='$loaithoigian$'
+      ,lydoxinnghi=N'$lydoxinnghi$'
+      ,sodienthoai='$sodienthoai$'
+      ,email='$email$'
+      ,nguoithaythetamthoi=N'$nguoithaythetamthoi$'
+      ,nghiphep='$nghiphep$'
+      ,nghiom='$nghiom$'
+      ,nghithaisan='$nghithaisan$'
+      ,nghikhongluong='$nghikhongluong$'
+      ,nghiviecrieng='$nghiviecrieng$'
+      ,nghikhac='$nghikhac$'
+      ,duyetcap1='0'
+      ,duyetcap1_ghichu=N'$duyetcap1_ghichu$'
+      ,duyetcap2='0'
+      ,duyetcap2_ghichu=N'$duyetcap2_ghichu$'
+      ,xacnhantruockhivaolamlai='$xacnhantruockhivaolamlai$'
+      ,xoa='0'
+      ,nguoihieuchinh=$nguoitao$
+      ,ngayhieuchinh = GETDATE()
+      ,canhankh='$canhankh$'
+      ,conkh='$conkh$'
+      ,chame_mat='$chame_mat$'
+      ,ongba_mat='$ongba_mat$'
+      ,hieuchinh=$hieuchinh$
+      ,thoigian='$thoigian$'
+      WHERE manghiphep=$manghiphep$
+    </update>
+
+
+    <update id="UpdateRow_capnhathotennguoiduyet">
+      UPDATE
+      Dondangkynghiphep
+      SET
+      duyetcap1='$duyetcap1$'
+      ,duyetcap2='$duyetcap2$'
+      ,duyetcap1_ghichu=N'$duyetcap1_ghichu$'
+      ,duyetcap2_ghichu= N'$duyetcap2_ghichu$'
+      WHERE manghiphep=$manghiphep$
+    </update>
+    
+    
+    <update id="DeletedRow_Dondangkynghiphep">
+      UPDATE
+      Dondangkynghiphep
+      SET
+      xoa='1'
+      ,nguoihieuchinh=$nguoitao$
+      ,ngayhieuchinh= GETDATE()
+      WHERE manghiphep=$manghiphep$
+    </update>
+
+
+    <update id="UpdateRow_Duyetnghiphep1">
+      UPDATE
+      Dondangkynghiphep
+      SET
+      duyetcap1='$duyetcap1$'
+      ,ngayhieuchinh= GETDATE()
+      WHERE manghiphep=$manghiphep$
+    </update>
+
+    <update id="UpdateRow_Duyetnghiphep2">
+      UPDATE
+      Dondangkynghiphep
+      SET
+      duyetcap2='$duyetcap2$'
+      ,ngayhieuchinh= GETDATE()
+      WHERE manghiphep=$manghiphep$
+    </update>
+
+    <select id="CountRows_duyetdadongy1" resultClass="int">
+      SELECT
+      count(*)
+      FROM
+      Dondangkynghiphep
+      WHERE
+      xoa = '0' and manghiphep=$manghiphep$ and duyetcap1='1'
+
+    </select>
+
+    <select id="CountRows_duyetdadongy2" resultClass="int">
+      SELECT
+      count(*)
+      FROM
+      Dondangkynghiphep
+      WHERE
+      xoa = '0' and manghiphep=$manghiphep$ and duyetcap2='1'
+    </select>
+
+
+    <select id="CountRows_hieuchinh" resultClass="int">
+      SELECT
+      hieuchinh
+      FROM
+      Dondangkynghiphep
+      WHERE
+      xoa = '0' and manghiphep=$manghiphep$
+    </select>
+    
+    
+    
+  </statements>
+</sqlMap>

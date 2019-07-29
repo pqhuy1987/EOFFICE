@@ -1,0 +1,206 @@
+﻿.btnHide {
+    display: none !important;
+}
+
+input[type='button'].buttoncustom {
+    font-family: 'Helvetica Neue',Arial,sans-serif;
+}
+
+.buttoncustom.windowConform {
+    width: 90px;
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+.buttoncustom.width_78 {
+    width: 78px;
+}
+
+.buttoncustom {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+    -webkit-border-radius: 2px !important;
+    border-radius: 3px !important;
+    cursor: default;
+    font-size: 13px;
+    text-align: center;
+    white-space: nowrap;
+    height: 33px;
+    font-weight: bold;
+    min-width: 54px;
+    outline: 0;
+    cursor: pointer;
+    padding: 0px 8px;
+    margin: 0 8px 0 0;
+}
+
+/*.blueButton {
+    text-shadow: 0px 1px 0px rgba(0,0,0,.6);
+    background-color: #357ae8;
+    background-image: -webkit-linear-gradient(top,#4d90fe,#357ae8);
+    background-image: linear-gradient(top,#4d90fe,#357ae8);
+    border: 1px solid #2f5bb7;
+    border-bottom-color: #2f5bb7;
+    display: inline-table;
+    line-height: 31px;
+    color: #fff;
+}*/
+
+
+.blueButton {
+    text-shadow: 0px 1px 0px rgba(0,0,0,.6);
+    background-color: #00abf1;
+    background-image: -webkit-linear-gradient(top,#0090d9,#0090d9);
+    background-image: linear-gradient(top,#0090d9,#0090d9);
+    border: 1px solid #04b3fb;
+    border-bottom-color: #04b0f7;
+    display: inline-table;
+    line-height: 31px;
+    color: #fff;
+}
+
+    .blueButton:hover, .blueButton:focus {
+        -webkit-box-shadow: inset 0 0 0 1px #fff;
+        box-shadow: inset 0 0 0 1px #fff;
+        border: 1px solid rgba(0,0,0,0);
+        outline: 1px solid #4d90fe;
+        outline: 0 rgba(0,0,0,0);
+    }
+
+    .blueButton.height_25 {
+        height: 25px;
+    }
+
+.WhiteButton {
+    color: #fff;
+    height: 25px;
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: bold;
+    border: none;
+    -moz-border-radius-bottomright: 0;
+    border-bottom-right-radius: 0;
+    -moz-border-radius-bottomleft: 0;
+    border-bottom-left-radius: 0;
+    background-color: #0090d9;
+}
+
+    .WhiteButton:hover, .WhiteButton:focus {
+        -webkit-box-shadow: inset 0 0 0 1px #fff;
+        box-shadow: inset 0 0 0 1px #fff;
+        border: 1px solid #4d90fe;
+        outline: 1px solid #4d90fe;
+        outline: 0 rgba(0,0,0,0);
+    }
+
+.RedButton {
+    color: #fff;
+    height: 25px;
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: bold;
+    border: none;
+    -moz-border-radius-bottomright: 0;
+    border-bottom-right-radius: 0;
+    -moz-border-radius-bottomleft: 0;
+    border-bottom-left-radius: 0;
+    background-color: #E92A2A;
+}
+
+.RedButton:hover, .RedButton:focus {
+    -webkit-box-shadow: inset 0 0 0 1px #fff;
+    box-shadow: inset 0 0 0 1px #fff;
+    border: 1px solid #4d90fe;
+    outline: 1px solid #4d90fe;
+    outline: 0 rgba(0,0,0,0);
+}
+
+.btn-trash {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #F04F4F;
+    background-image: -moz-linear-gradient(center top, #EE5F5B, #BD362F);
+    background-repeat: repeat-x;
+    border-color: #BD362F #BD362F #802420;
+    border-image: none;
+    border-left: 1px solid #BD362F;
+    border-radius: 4px;
+    border-right: 1px solid #BD362F;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    text-align: center;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    vertical-align: middle;
+}
+
+    .btn-trash .icon-trash {
+        background-image: url("../images/glyphicons-halflings-white.png");
+        background-position: -456px 0;
+        background-repeat: no-repeat;
+        display: inline-block;
+        height: 14px;
+        line-height: 14px;
+        margin-right: 3px;
+        margin-top: 1px;
+        vertical-align: text-top;
+        width: 14px;
+        font-style: normal;
+        cursor: pointer;
+    }
+
+.btnDialog {
+    border-radius: 2px !important;
+    font-size: 13px;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: bold;
+    min-width: 54px;
+    cursor: pointer;
+    padding: 0 8px;
+    text-shadow: 0 1px 0 rgba(0,0,0,.6);
+    background-color: #357ae8;
+    background-image: -webkit-linear-gradient(top,#4d90fe,#357ae8);
+    background-image: linear-gradient(top,#4d90fe,#357ae8);
+    border: 1px solid #2f5bb7;
+    border-bottom-color: #2f5bb7;
+    color: #fff;
+    outline: 0;
+    height: 25px;
+    margin: 0 8px 6px;
+    width: 88px;
+}
+
+    .btnDialog:hover, .btnDialog:focus {
+        -webkit-box-shadow: inset 0 0 0 1px #fff;
+        box-shadow: inset 0 0 0 1px #fff;
+        border: 1px solid rgba(0,0,0,0);
+        outline: 1px solid #4d90fe;
+        outline: 0 rgba(0,0,0,0);
+    }
+
+.appButton {
+    background: transparent -moz-linear-gradient(center top, #FFF 17%, #E6E6E6 99%) repeat scroll 0% 0%;
+    border: 1px solid #AAA;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold !important;
+    color: #0060AC !important;
+    border-radius: 3px;
+    text-decoration: none !important;
+    margin: 0px 3px 0px 0px;
+}
+
+.HeaderFixed .btnHeader {
+    padding: 7px;
+}

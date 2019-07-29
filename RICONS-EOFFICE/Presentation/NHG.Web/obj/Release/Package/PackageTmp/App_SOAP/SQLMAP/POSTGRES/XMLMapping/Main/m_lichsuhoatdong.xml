@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="m_lichsuhoatdong"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="Select" resultClass="System.Collections.Hashtable">
+      SELECT
+      id
+      ,maloailichsuhoatdong
+      ,mataikhoan
+      ,ghichu
+      ,ngaytao
+      FROM
+      m_lichsuhoatdong
+      <isNotEmpty	property="id">	and id = '$id$'	</isNotEmpty>
+      <isNotEmpty	property="maloailichsuhoatdong">	and maloailichsuhoatdong = '$maloailichsuhoatdong$'	</isNotEmpty>
+      <isNotEmpty	property="mataikhoan">	and mataikhoan = '$mataikhoan$'	</isNotEmpty>
+      <isNotEmpty	property="ghichu">	and ghichu = '$ghichu$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+
+    </select>
+
+    <insert id="Insert">
+      INSERT INTO m_lichsuhoatdong
+      (
+      id
+      ,maloailichsuhoatdong
+      ,mataikhoan
+      ,ghichu
+      ,ngaytao
+      )
+      VALUES
+      (
+      <isNotEmpty	property="id">	, '$id$'	</isNotEmpty>	<isEmpty	property="id">	,null	</isEmpty>
+      <isNotEmpty	property="maloailichsuhoatdong">	, '$maloailichsuhoatdong$'	</isNotEmpty>	<isEmpty	property="maloailichsuhoatdong">	,null	</isEmpty>
+      <isNotEmpty	property="mataikhoan">	, '$mataikhoan$'	</isNotEmpty>	<isEmpty	property="mataikhoan">	,null	</isEmpty>
+      <isNotEmpty	property="ghichu">	, '$ghichu$'	</isNotEmpty>	<isEmpty	property="ghichu">	,null	</isEmpty>
+      <isNotEmpty	property="ngaytao">	, '$ngaytao$'	</isNotEmpty>	<isEmpty	property="ngaytao">	,null	</isEmpty>
+
+      );
+
+    </insert>
+
+    <update id="Update">
+
+    </update>
+  </statements>
+</sqlMap>

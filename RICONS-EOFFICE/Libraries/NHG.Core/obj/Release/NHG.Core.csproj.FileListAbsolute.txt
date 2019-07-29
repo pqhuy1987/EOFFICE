@@ -1,0 +1,72 @@
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.Core\bin\Release\NHG.Core.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.Core\bin\Release\NHG.Core.pdb
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.Core\bin\Release\NHG.Logger.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.Core\bin\Release\log4net.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.Core\bin\Release\NHG.Logger.pdb
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.Core\bin\Release\log4net.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.Core\obj\Release\NHG.Core.csprojResolveAssemblyReference.cache
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.Core\obj\Release\NHG.Core.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.Core\obj\Release\NHG.Core.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.Core\bin\Release\NHG.Core.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.Core\bin\Release\NHG.Core.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.Core\bin\Release\NHG.Logger.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.Core\bin\Release\log4net.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.Core\bin\Release\NHG.Logger.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.Core\bin\Release\log4net.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.Core\obj\Release\NHG.Core.csprojResolveAssemblyReference.cache
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.Core\obj\Release\NHG.Core.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.Core\obj\Release\NHG.Core.pdb
+D:\SOFTWARE\RICONS\Libraries\NHG.Core\bin\Release\NHG.Core.dll
+D:\SOFTWARE\RICONS\Libraries\NHG.Core\bin\Release\NHG.Core.pdb
+D:\SOFTWARE\RICONS\Libraries\NHG.Core\bin\Release\NHG.Logger.dll
+D:\SOFTWARE\RICONS\Libraries\NHG.Core\bin\Release\log4net.dll
+D:\SOFTWARE\RICONS\Libraries\NHG.Core\bin\Release\NHG.Logger.pdb
+D:\SOFTWARE\RICONS\Libraries\NHG.Core\bin\Release\log4net.xml
+D:\SOFTWARE\RICONS\Libraries\NHG.Core\obj\Release\NHG.Core.csprojResolveAssemblyReference.cache
+D:\SOFTWARE\RICONS\Libraries\NHG.Core\obj\Release\NHG.Core.dll
+D:\SOFTWARE\RICONS\Libraries\NHG.Core\obj\Release\NHG.Core.pdb
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.Core\bin\Release\NHG.Core.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.Core\bin\Release\NHG.Core.pdb
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.Core\bin\Release\NHG.Logger.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.Core\bin\Release\log4net.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.Core\bin\Release\NHG.Logger.pdb
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.Core\bin\Release\log4net.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.Core\obj\Release\NHG.Core.csprojResolveAssemblyReference.cache
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.Core\obj\Release\NHG.Core.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.Core\obj\Release\NHG.Core.pdb
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Core\bin\Release\NHG.Core.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Core\bin\Release\NHG.Core.pdb
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Core\bin\Release\ClosedXML.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Core\bin\Release\DocumentFormat.OpenXml.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Core\bin\Release\NHG.Logger.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Core\bin\Release\log4net.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Core\bin\Release\NHG.Logger.pdb
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Core\bin\Release\ClosedXML.xml
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Core\bin\Release\log4net.xml
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Core\obj\Release\NHG.Core.csprojResolveAssemblyReference.cache
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Core\obj\Release\NHG.Core.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.Core\obj\Release\NHG.Core.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Core\bin\Release\NHG.Core.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Core\bin\Release\NHG.Core.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Core\bin\Release\ClosedXML.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Core\bin\Release\DocumentFormat.OpenXml.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Core\bin\Release\NHG.Logger.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Core\bin\Release\log4net.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Core\bin\Release\NHG.Logger.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Core\bin\Release\ClosedXML.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Core\bin\Release\log4net.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Core\obj\Release\NHG.Core.csprojResolveAssemblyReference.cache
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Core\obj\Release\NHG.Core.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.Core\obj\Release\NHG.Core.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Core\bin\Release\NHG.Core.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Core\bin\Release\NHG.Core.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Core\bin\Release\ClosedXML.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Core\bin\Release\DocumentFormat.OpenXml.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Core\bin\Release\NHG.Logger.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Core\bin\Release\log4net.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Core\bin\Release\NHG.Logger.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Core\bin\Release\ClosedXML.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Core\bin\Release\log4net.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Core\obj\Release\NHG.Core.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Core\obj\Release\NHG.Core.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.Core\obj\Release\NHG.Core.csprojResolveAssemblyReference.cache

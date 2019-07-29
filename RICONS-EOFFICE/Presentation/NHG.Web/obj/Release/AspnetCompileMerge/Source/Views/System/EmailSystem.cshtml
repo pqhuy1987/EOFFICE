@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Email hệ thống";
+}
+@model NHG.Web.Models.EmailSystem
+@*--css--*@
+@section CSS
+{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/System.EmailSystemCSS.css" />
+}
+
+@*--javascript--*@
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/controllers/System.EmailSystemJS.js"></script>
+}
+<div class="HeaderFixed">
+    <div class="b-b b-light">
+        <div class="p-left c-black">Email hệ thống</div>
+        <div class="clearBoth"></div>
+    </div>
+</div>
+@if (Model != null)
+{
+    <div class="boxEdit">
+        @using (Html.BeginForm("EmailSystem", "System", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td>Tên hiển thị</td>
+                    <td><input type="text" name="displayName" value="@Model.displayName" autocomplete="off"/></td>
+                </tr>
+                <tr>
+                    <td>Host</td>
+                    <td><input type="text" name="host" value="@Model.host" autocomplete="off" /></td>
+                </tr>
+                <tr>
+                    <td>Port</td>
+                    <td><input type="text" name="port" value="@Model.port" autocomplete="off" /></td>
+                </tr>
+                <tr>
+                    <td>Tên đăng nhập</td>
+                    <td><input type="text" name="user" value="@Model.user" autocomplete="off" /></td>
+                </tr>
+                <tr>
+                    <td>Mật khẩu</td>
+                    <td><input type="password" name="pass" value="@Model.pass" autocomplete="off" /></td>
+                </tr>
+                <tr>
+                    <td>Kích hoạt SSL</td>
+                    <td><input type="checkbox" name="enableSSL" value="@Model.enableSSL" autocomplete="off" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" class="buttoncustom WhiteButton" value="Lưu" /></td>
+                </tr>
+            </table>
+        }
+    </div>
+}

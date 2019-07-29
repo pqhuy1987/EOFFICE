@@ -1,0 +1,246 @@
+﻿.boxChiTiet {
+    margin: 0px 22px;
+    width: 629px;
+}
+
+
+    .boxChiTiet input[type="text"] {
+        margin: 0;
+        vertical-align: baseline;
+        line-height: normal;
+        height: 24px;
+        font: 13px/1.231 arial,helvetica,clean,sans-serif;
+        color:#150E0E;
+        padding: 0 3px;
+    }
+
+    .boxChiTiet textarea {
+        box-sizing: content-box;
+        -ms-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        padding: 0;
+        margin: 0;
+        overflow: auto;
+        outline: none;
+        resize: none;
+        font: 13px/1.231 arial,helvetica,clean,sans-serif;
+    }
+
+    .boxChiTiet #txtNoiDung {
+        width: 427px;
+    }
+
+    .boxChiTiet #txtTuNgay, .boxChiTiet #txtDenNgay {
+        width: 103px;
+        margin-right: 4px;
+    }
+
+    .boxChiTiet #txtTuGio, .boxChiTiet #txtDenGio {
+        width: 89px;
+        margin-right: 4px;
+    }
+
+    .boxChiTiet #txtDenNgay {
+        margin-left: 6px;
+    }
+
+    .boxChiTiet #txtTuGio {
+        margin-right: 6px;
+    }
+
+
+    .boxChiTiet .divNoiDung {
+        margin: 15px 0 10px;
+    }
+
+    .boxChiTiet .divLabel1 {
+        color: black;
+        margin-bottom: 10px;
+        border-bottom: 4px double #807474;
+    }
+
+    .boxChiTiet table.tableChitiet tr td {
+        margin: 3px 0;
+    }
+
+        .boxChiTiet table.tableChitiet tr td:first-child {
+            text-align: right;
+            padding-right: 10px;
+            width: 130px;
+            vertical-align: top;
+            padding: 10px 10px 10px 0;
+        }
+
+        .boxChiTiet table.tableChitiet tr td #txtDiaDiem {
+            width: 469px;
+        }
+
+        .boxChiTiet table.tableChitiet tr td .txtValueAlert {
+            width: 28px;
+        }
+
+        .boxChiTiet table.tableChitiet tr td textarea {
+            width: 465px;
+        }
+
+        .boxChiTiet table.tableChitiet tr td #txtDiaDiem {
+            width: 467px;
+        }
+
+        .boxChiTiet table.tableChitiet tr td .txtValueAlert {
+            height: 20px;
+        }
+
+.boxButton {
+    margin: 3px 23px;
+}
+
+    .boxButton .WhiteButton {
+        height: 30px;
+        width: 100px;
+       display: inline-table;
+    line-height: 31px;
+    }
+
+.divDinhKemTapTin .imgText {
+    border: 2px dashed #C5B7B7;
+    margin: 5px 0;
+}
+.divDinhKemTapTin .imgText  .mf_upload_ins{
+    top:-7px !important;
+}
+    .divDinhKemTapTin .imgText #upload {
+        margin-left: 0 !important;
+        width: 100%;
+        position: relative;
+        left: 0px;
+        top: 0px;
+    }
+
+        .divDinhKemTapTin .imgText #upload form {
+            top: -5px !important;
+            
+        }
+
+
+        
+.col1 {
+    text-align: center;
+    width: 27px;
+}
+
+.col2 {
+    text-align: center;
+    width: 60px;
+}
+
+.col3 {
+    width: 405px;
+}
+
+.col4 {
+    width: 29%;
+}
+
+.col5 {
+    width: 70%;
+}
+
+.col6 {
+    text-align: center;
+    width: 150px;
+}
+
+
+.col7 {
+    width: 75px;
+}
+
+/*--Start create--*/
+.boxEdit input[type="text"] {
+    border-radius: 3px;
+    color: #333;
+    font-size: 12px;
+    padding: 0 5px;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    height: 27px;
+}
+
+    .boxEdit input[type="text"].inputShort {
+        width: 20px;
+    }
+
+.boxEdit textarea {
+    border-radius: 3px;
+    color: #333;
+    font-size: 12px;
+    padding: 0 5px;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    resize: none;
+}
+
+.boxEdit table td:first-child {
+    text-align: right;
+    padding-right: 6px;
+    vertical-align: text-top;
+    padding-top: 7px;
+    width: 170px;
+}
+
+
+.boxEdit table tr td {
+    margin: 5px 0;
+    height: 35px;
+}
+
+.boxEdit .boxEdit {
+    background-color: white;
+    border-radius: 4px;
+    margin: 28px auto;
+    width: 150px;
+}
+
+.boxEdit table {
+    /*width: 100%;*/
+}
+/*--End create--*/
+
+.WhiteButton {
+    height: 30px;
+    width: 80px;
+    display: inline-table;
+    line-height: 31px;
+}
+
+.HeaderFixed1 {
+    width:100%;
+    font-size:16px;
+    color:black;
+}
+.HeaderFixed1 .b-b {
+    padding: 10px 10px;
+}
+
+
+.HeaderFixed1 .p-left1 {
+    height:50px;
+    font-weight:bold;
+    line-height:34px;
+    
+}
+.b-b {
+    border-bottom: 1px solid #eaeef1;
+}
+
+
+
+
+
+

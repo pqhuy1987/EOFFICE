@@ -1,0 +1,139 @@
+﻿@model NHG.Web.Models.PhongBanModels
+@{
+    ViewBag.Title = "Đăng ký nghỉ phép";
+}
+@*--css--*@
+
+@section CSS
+{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/TableBuild/global/css/components-rounded.min.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/TableBuild/layouts/css/blue.min.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/Danhsachnghiphep.css" />
+    
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/prism.css" />
+   
+}
+
+@*--javascript--*@
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/controllers/Danhsachnghiphep.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery.datepick-vi.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/prism.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/table/buildTable.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/colResizale/colResizable-1.3.source.js"></script>
+
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/TableBuild/global/plugins/jquery.blockui.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/TableBuild/global/scripts/app.min.js"></script>
+
+}
+<script>
+    var linkContent = '@Url.Content("~")';
+</script>
+
+<div class="HeaderFixed">
+    <div class="b-b b-light1" style="padding-left:0px">
+        <div class="col-md-12">
+            <div class="col-md-3" style="padding-left:0px;width:302px;">
+                <a href="@Url.Action("Registerforleave", "Absent")" class="buttoncustom WhiteButton">Thêm mới</a>
+                <a id="btnHieuChinh" href="@Url.Action("Editforleave", "Absent")" class="buttoncustom WhiteButton">Hiệu chỉnh</a>
+                <a id="btnDeleted" href="@Url.Action("Deleted", "Absent")" class="buttoncustom WhiteButton">Xoá</a>
+            </div>
+            <div class="col-md-1" style="width: 74px; line-height: 31px">Lọc theo:</div>
+            <div class="col-md-2" style="line-height: 31px; width:250px">
+                <select id="filter01" data-placeholder="Chọn phòng ban" class="chosen-select-loaikehoach" name="maphongban">
+                    <option value="0">Chọn phòng ban</option>
+                    @if (!string.IsNullOrEmpty(ViewBag.sbphongban))
+                    {
+                        @Html.Raw(ViewBag.sbphongban);
+                    }
+                </select>
+            </div>
+            <div class="col-md-1" style="width: 70px; line-height: 31px">Từ ngày</div>
+            <div class="col-md-1 boxEdit" style="width: 85px; line-height: 31px"><input type="text" style="width:80px; text-align:center" id="txtnghitu" name="nghitu" value="" /></div>
+            <div class="col-md-1 boxEdit" style="width: 75px; line-height: 31px">Đến ngày</div>
+            <div class="col-md-1 boxEdit" style="width: 90px; line-height: 31px"><input type="text" style="width:80px; text-align:center" id="txtnghiden" name="nghiden" value="" /></div>
+            <div class="col-md-1" style="line-height: 31px"> <a href="@Url.Action("ExportLicensing", "Absent")"><i class="fa fa-file-excel-o" style="color:black;"></i>Excel</a></div>
+            <div class="p-right p-right-item2">
+                <div class="p-right-item t-export c-black">
+                    <div class="p-right-item t-export c-black"><a id="btnPre" style="cursor: pointer;"> < </a></div>
+                    <div class="p-right-item t-export c-black">
+                        <div class="col-md-1 boxEdit"><input type="text" style="width:50px; text-align:center" id="txttrangthu" name="trangthu" value="1" /></div>
+                    </div>
+                    <div class="p-right-item t-export c-black"><a id="btnNext" style="cursor: pointer;"> > </a></div>
+
+                </div>
+                <div class="p-right-item1 t-export c-black" id="girdInfo">&nbsp; <span class="Pages">0</span>&nbsp; trang&nbsp; <span class="tongdong">0</span>&nbsp; kết quả &nbsp;</div>
+            </div>
+        </div>
+
+        <div class="clearBoth"></div>
+    </div>
+</div>
+
+
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
+
+        <div id="boxContent">
+            <div class="page-container">
+                <div class="page-content-wrapper">
+
+                    <div class="page-content">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="portlet box blue">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="fa fa-cogs"> Danh sách nghỉ phép</i>
+                                        </div>
+                                        <div class="tools">
+                                            <a href="javascript:;" class="reload"> </a>
+                                            <a href="#portlet-config" data-toggle="modal" class=""> </a>
+                                            <a href="javascript:;" class="collapse"> </a>
+                                            <a href="javascript:;" class=""> </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="portlet-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered" id="tableContent">
+                                                <thead>
+                                                </thead>
+                                                <tbody></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="page-footer-inner">
+                <div class="companyName">Ricons Construction Investment JSC</div>
+                <div class="address">236/6 Dien Bien Phu, Ward 17, Binh Thanh Dist., HCMC, Vietnam</div>
+            </div>
+        </div>
+
+</body>
+
+
+
+
+
+
+
+
+

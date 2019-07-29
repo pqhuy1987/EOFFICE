@@ -1,0 +1,122 @@
+﻿
+.col1 {
+    text-align: center;
+    width: 2.7%;
+}
+
+.col2 {
+    text-align: center;
+    width: 2.7%;
+}
+
+.col3 {
+    width: 6.8%;
+    text-align: center;
+}
+
+.col4 {
+    width: 9%;
+}
+
+.col5 {
+    width: 11.6%;
+}
+
+.col6 {
+    text-align: left;
+    width: 10.2%;
+}
+.col7 {
+    text-align: left;
+    width: 12.6%;
+}
+.col8 {
+    text-align: left;
+    width: 12.6%;
+}
+.col9 {
+    text-align: left;
+    width: 12.6%;
+}
+
+.col10 {
+    width: 18.6%;
+}
+
+/*--Start create--*/
+.boxEdit input[type="text"] {
+    border-radius: 3px;
+    color: #333;
+    font-size: 12px;
+    padding: 0 5px;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    height: 27px;
+}
+
+    .boxEdit input[type="text"].inputShort {
+        width: 20px;
+    }
+
+.boxEdit textarea {
+    border-radius: 3px;
+    color: #333;
+    font-size: 12px;
+    padding: 0 5px;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    resize: none;
+}
+
+.boxEdit table td:first-child {
+    text-align: right;
+    padding-right: 6px;
+    vertical-align: text-top;
+    padding-top: 7px;
+    width: 170px;
+}
+
+
+.boxEdit table tr td {
+    margin: 5px 0;
+    height: 35px;
+}
+
+.boxEdit .boxEdit {
+    background-color: white;
+    border-radius: 4px;
+    margin: 28px auto;
+    width: 150px;
+}
+
+.boxEdit table {
+    /*width: 100%;*/
+}
+/*--End create--*/
+
+.WhiteButton {
+    height: 30px;
+    width: 80px;
+    display: inline-table;
+    line-height: 31px;
+}
+
+.HeaderFixed1 {
+    width:100%;
+    font-size:16px;
+    color:black;
+}
+.HeaderFixed1 .p-left1 {
+    height:40px;
+    font-weight:bold;
+    line-height:40px;
+    
+}
+
+
+
+

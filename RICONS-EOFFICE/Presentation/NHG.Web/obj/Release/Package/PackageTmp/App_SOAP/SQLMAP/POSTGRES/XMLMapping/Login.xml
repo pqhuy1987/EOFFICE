@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="COM_LoginService"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    
+    <select id ="GetUserAD" resultClass ="System.Collections.Hashtable">
+      SELECT
+      tk.mataikhoan
+      ,tk.hoten
+      ,tk.manhansu
+      ,is_ada
+      ,tk.grouptk
+      ,tk.thudientu
+      FROM
+      M_TAIKHOAN tk
+      WHERE
+      tk.Xoa = '0'
+      AND lower(TenDangNhap) = lower('$tendangnhap$')
+    </select>
+    
+    <select id ="GetLogin" resultClass ="System.Collections.Hashtable">
+      SELECT
+      tk.mataikhoan
+      ,tk.manhansu
+      ,tk.hoten
+      ,tk.machucdanh
+      ,tk.maphongban
+      ,tk.grouptk
+      ,tk.thudientu
+      FROM
+      M_TAIKHOAN tk
+      WHERE
+      tk.Xoa = '0'
+      <isNotEmpty property="kichhoat">
+        AND tk.KichHoat ='$kichhoat$'
+      </isNotEmpty>
+      <isNotEmpty property="tendangnhap">
+        AND lower(TenDangNhap) = lower('$tendangnhap$')
+      </isNotEmpty>
+      <isNotEmpty property="matkhau">
+        AND lower(MatKhau) = lower('$matkhau$')
+      </isNotEmpty>
+    </select>
+
+    <select id ="GetDataEmployees" resultClass ="System.Collections.Hashtable">
+      select emp.EmployeeID as manhansu
+      ,emp.LastName+' '+emp.FirstName as hoten
+      ,emp.OrgID as maphongban
+      ,org.OrgName as tenphongban
+      ,emp.PositionID as machucdanh
+      ,pos.PositionName as tenchucdanh
+      ,CONVERT(date, pro.BirthDate, 103) as ngaysinh
+      ,pro.Mobile as sodienthoai
+      ,pro.Email as Email
+      ,pro.Email as thudientu
+      from  Employees emp
+      left join(select EmployeeID,Email, BirthDate,Mobile from EmployeeProfiles)pro on(pro.EmployeeID=emp.EmployeeID)
+      left join(select ID,PositionName from Positions)pos on(pos.ID=emp.PositionID)
+      left join(select ID,OrgName from Organizations)org on(org.ID=emp.OrgID)
+      where lower(pro.Email) = lower('$thudientu$')
+    </select>
+    
+    <select id ="GetRoles" resultClass ="System.Collections.Hashtable">
+      SELECT
+      machucnang
+      FROM
+      m_vaitro_chucnang cn
+      join
+      m_taikhoan_vaitro tkvt
+      on
+      cn.mavaitro = tkvt.mavaitro
+      and tkvt.mataikhoan = '$mataikhoan$'
+    </select>
+    
+    <select id ="GetUsers" resultClass ="System.Collections.Hashtable">
+      SELECT
+      tk.tendangnhap
+      ,tk.hoten
+      FROM
+      M_TAIKHOAN tk
+    </select>
+
+    <insert id="AddUser">
+      INSERT INTO m_taikhoan
+      (
+      tendangnhap
+      ,matkhau
+      ,hoten
+      ,thudientu
+      ,madonvi
+      ,maphongban
+      ,machucdanh
+      ,is_ada
+      ,xoa
+      ,kichhoat
+      ,ngaytao
+      ,nguoitao
+      )
+      VALUES
+      (
+      '$tendangnhap$'
+      <isNotEmpty	property="matkhau">	, '$matkhau$'	</isNotEmpty>	<isEmpty	property="matkhau">	,null	</isEmpty>
+      <isNotEmpty	property="hoten">	, N'$hoten$'	</isNotEmpty>	<isEmpty	property="hoten">	,null	</isEmpty>
+      <isNotEmpty	property="thudientu">	, '$thudientu$'	</isNotEmpty>	<isEmpty	property="thudientu">	,null	</isEmpty>
+      <isNotEmpty	property="madonvi">	, '$madonvi$'	</isNotEmpty>	<isEmpty	property="madonvi">	,null	</isEmpty>
+      <isNotEmpty	property="maphongban">	, '$maphongban$'	</isNotEmpty>	<isEmpty	property="maphongban">,0</isEmpty>
+      <isNotEmpty	property="machucdanh">	, '$machucdanh$'	</isNotEmpty>	<isEmpty	property="machucdanh">,0</isEmpty>
+      <isNotEmpty	property="is_ada">	, '$is_ada$'	</isNotEmpty>	<isEmpty	property="is_ada">,0</isEmpty>
+      ,'0'
+      ,'1'
+      ,GETDATE()
+      ,$nguoitao$
+      )
+    </insert>
+
+    <update id="Updatemanhansu">
+      UPDATE
+      m_taikhoan
+      SET
+      manhansu = '$manhansu$'
+      ,machucdanh = '$machucdanh$'
+      ,maphongban = '$maphongban$'
+      ,hoten = N'$hoten$'
+      WHERE mataikhoan=$mataikhoan$
+    </update>
+    
+
+    <update id="UpdateUser">
+      UPDATE
+      m_taikhoan
+      SET
+        matkhau = '$matkhau$'
+      <isNotEmpty	property="hoten">
+        ,hoten = N'$hoten$'
+      </isNotEmpty>
+      <isNotEmpty	property="thudientu">
+        ,thudientu = '$thudientu$'
+      </isNotEmpty>
+      <isNotEmpty	property="maphongban">
+        ,maphongban = '$maphongban$'
+      </isNotEmpty>
+      <isNotEmpty	property="machucdanh">
+        ,machucdanh = '$machucdanh$'
+      </isNotEmpty>
+      <isNotEmpty	property="kichhoat">
+        ,kichhoat = '$kichhoat$'
+      </isNotEmpty>
+      <isNotEmpty	property="grouptk">
+        ,grouptk = '$grouptk$'
+      </isNotEmpty>
+      ,nguoihieuchinh=$nguoihieuchinh$
+      ,ngayhieuchinh = GETDATE()
+      WHERE mataikhoan=$mataikhoan$
+    </update>
+
+    <update id="DeletedUser">
+      UPDATE
+      m_taikhoan
+      SET
+      xoa='1'
+      ,nguoihieuchinh=$nguoihieuchinh$
+      ,ngayhieuchinh = GETDATE()
+      WHERE lower(mataikhoan) = lower($mataikhoan$)
+    </update>
+    
+
+    <insert id="HistoryLogin">
+      INSERT INTO m_lichsudangnhap
+      (
+      sessionid
+      ,tendangnhap
+      ,ipaddress
+      ,browser
+      ,useragent
+      ,thoigian_dangnhap
+      ,thoigian_dangxuat
+      ,dangnhapthatbai
+      ,ketqua_dangnhap
+      ,isonline
+      ,nguoitao
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      )
+      VALUES
+      (
+      '$sessionid$'
+      , '$tendangnhap$'
+      <isNotEmpty	property="ipaddress">
+        , '$ipaddress$'
+      </isNotEmpty>
+      <isEmpty	property="ipaddress">
+        ,null
+      </isEmpty>
+      <isNotEmpty	property="browser">
+        , '$browser$'
+      </isNotEmpty>
+      <isEmpty	property="browser">
+        ,null
+      </isEmpty>
+      <isNotEmpty	property="useragent">
+        , '$useragent$'
+      </isNotEmpty>
+      <isEmpty	property="useragent">
+        ,null
+      </isEmpty>
+      ,GETDATE()
+      ,null
+      <isNotEmpty	property="dangnhapthatbai">
+        , '$dangnhapthatbai$'
+      </isNotEmpty>
+      <isEmpty	property="dangnhapthatbai">
+        ,0
+      </isEmpty>
+      <isNotEmpty	property="ketqua_dangnhap">
+        , '$ketqua_dangnhap$'
+      </isNotEmpty>
+      <isEmpty	property="ketqua_dangnhap">
+        ,0
+      </isEmpty>
+      <isNotEmpty	property="isonline">
+        , '$isonline$'
+      </isNotEmpty>
+      <isEmpty	property="isonline">
+        ,1
+      </isEmpty>
+      <isNotEmpty	property="nguoitao">
+        , '$nguoitao'
+      </isNotEmpty>
+      <isEmpty	property="nguoitao">
+        ,null
+      </isEmpty>
+      ,GETDATE()
+      <isNotEmpty	property="nguoitao">
+        , '$nguoitao'
+      </isNotEmpty>
+      <isEmpty	property="nguoitao">
+        ,null
+      </isEmpty>
+      ,GETDATE()
+      );
+
+    </insert>
+
+    <update id="UpdateHistoryLogin">
+      UPDATE
+      m_lichsudangnhap
+      SET
+      ngayhieuchinh = GETDATE()
+      <isNotEmpty	property="thoigian_dangxuat">
+        ,thoigian_dangxuat = $thoigian_dangxuat$
+      </isNotEmpty>
+      <isNotEmpty	property="dangnhapthatbai">
+        ,dangnhapthatbai = '$dangnhapthatbai$'
+      </isNotEmpty>
+      <isNotEmpty	property="ketqua_dangnhap">
+        ,ketqua_dangnhap = '$ketqua_dangnhap$'
+      </isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">
+        ,nguoihieuchinh = '$nguoihieuchinh$'
+      </isNotEmpty>
+      <isNotEmpty	property="isonline">
+        ,isonline = '$isonline$'
+      </isNotEmpty>
+      WHERE sessionid = '$sessionid$' and lower(tendangnhap) = lower('$tendangnhap$')
+    </update>
+
+    <select id ="GetUserInfoHistory" resultClass ="System.Int32">
+      SELECT
+      dangnhapthatbai
+      FROM
+      m_lichsudangnhap
+      WHERE
+      sessionid = '$sessionid$' and lower(tendangnhap) = lower('$tendangnhap$')
+    </select>
+
+    <select id ="CheckExistUserInfoHistory" resultClass ="System.Int32">
+      SELECT
+      count(distinct dangnhapthatbai)
+      FROM
+      m_lichsudangnhap
+      WHERE
+      sessionid = '$sessionid$' and lower(tendangnhap) = lower('$tendangnhap$')
+    </select>
+    
+  </statements>
+</sqlMap>

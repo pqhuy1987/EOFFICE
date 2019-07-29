@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<const>
+  <group id="status">
+    <item name="new" id="1">Mới</item>
+    <item name="accepted" id="2">Đã nhận</item>
+    <item name="completed" id="3">Hoàn thành</item>
+  </group>
+  <group id="priority">
+    <item name="highest" id="1">Cao nhất</item>
+    <item name="high" id="2">Cao</item>
+    <item name="normal" id="3">Bình thường</item>
+    <item name="low" id="4">Thấp</item>
+    <item name="lowest" id="5">Thấp nhất</item>
+  </group>
+  <group id="estimate">
+    <item name="none" id="1">Không</item>
+    <item name="small" id="2">Nhỏ</item>
+    <item name="normall" id="3">Trung bình</item>
+    <item name="large" id="4">Lớn</item>
+  </group>
+  <group id="plan">
+    <item name="year" id="1">Kế hoạch năm</item>
+    <item name="month" id="2">Kế hoạch tháng</item>
+  </group>
+</const>

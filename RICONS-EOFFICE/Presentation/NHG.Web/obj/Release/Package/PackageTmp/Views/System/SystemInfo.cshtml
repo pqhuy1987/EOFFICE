@@ -1,0 +1,74 @@
+﻿@model NHG.Web.Models.SystemInfoModel
+@{
+    ViewBag.Title = "Thông tin hệ thống";
+}
+
+@*--css--*@
+@section CSS
+{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/System.SystemInfoCSS.css" />
+}
+
+<div class="HeaderFixed">
+    <div class="b-b b-light">
+        <div class="p-left c-black">Thông tin hệ thống</div>
+        <div class="clearBoth"></div>
+    </div>
+</div>
+<table class="adminContent">
+    <tr>
+        <td class="adminTitle">
+            Hệ điều hành
+        </td>
+        <td class="se">:</td>
+        <td class="adminData">
+            @Model.OperatingSystem
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            Phiên bản Asp.Net
+        </td>
+        <td class="se">:</td>
+        <td class="adminData">
+            @Model.AspNetInfo
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            Múi giờ
+        </td>
+        <td class="se">:</td>
+        <td class="adminData">
+            @Model.ServerTimeZone
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            Thời gian trên Server
+        </td>
+        <td class="se">:</td>
+        <td class="adminData">
+            @Model.ServerLocalTime
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+           GMT/UTC
+        </td>
+        <td class="se">:</td>
+        <td class="adminData">
+            @Model.UtcTime
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            HTTP_HOST
+        </td>
+        <td class="se">:</td>
+        <td class="adminData">
+            @Model.HttpHost
+        </td>
+    </tr>
+</table>
+

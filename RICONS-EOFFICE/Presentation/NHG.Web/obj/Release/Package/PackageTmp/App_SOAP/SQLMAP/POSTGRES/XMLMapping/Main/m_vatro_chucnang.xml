@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="m_vaitro_chucnang"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="Select" resultClass="System.Collections.Hashtable">
+      SELECT
+      machucnang
+      ,mavaitro
+      FROM
+      m_vaitro_chucnang
+      WHERE
+        machucnang = '$machucnang$'
+        AND mavaitro = '$mavaitro$'
+    </select>
+    
+    <insert id="Insert">
+      INSERT INTO m_vaitro_chucnang
+      (
+      machucnang
+      ,mavaitro
+      )
+      VALUES
+      (
+      '$machucnang$'
+      ,'$mavaitro$'
+      )
+    </insert>
+    
+    <update id="Deleted">
+      DELETE FROM m_vaitro_chucnang
+      WHERE
+      machucnang = '$machucnang$'
+      AND mavaitro = '$mavaitro$'
+    </update>
+  </statements>
+</sqlMap>

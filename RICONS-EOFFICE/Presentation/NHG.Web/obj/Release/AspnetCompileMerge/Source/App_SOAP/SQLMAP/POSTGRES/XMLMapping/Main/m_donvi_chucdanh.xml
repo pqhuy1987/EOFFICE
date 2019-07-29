@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="m_donvi_chucdanh"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="Select" resultClass="System.Collections.Hashtable">
+      SELECT
+    madonvi
+    ,machucdanh
+    ,tengiaodich
+    ,tenchucdanh
+    ,capbac
+    ,xoa
+    ,nguoitao
+    ,ngaytao
+    ,nguoihieuchinh
+    ,ngayhieuchinh
+FROM
+    m_donvi_chucdanh 
+	WHERE
+	<isNotEmpty	property="madonvi">	and madonvi = '$madonvi$'	</isNotEmpty>
+<isNotEmpty	property="machucdanh">	and machucdanh = '$machucdanh$'	</isNotEmpty>
+<isNotEmpty	property="tengiaodich">	and tengiaodich = '$tengiaodich$'	</isNotEmpty>
+<isNotEmpty	property="tenchucdanh">	and tenchucdanh = '$tenchucdanh$'	</isNotEmpty>
+<isNotEmpty	property="capbac">	and capbac = '$capbac$'	</isNotEmpty>
+<isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+<isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+<isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+<isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+<isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+
+    </select>
+    
+    <insert id="Insert">
+      INSERT INTO m_donvi_chucdanh
+(
+    madonvi
+    ,machucdanh
+    ,tengiaodich
+    ,tenchucdanh
+    ,capbac
+    ,xoa
+    ,nguoitao
+    ,ngaytao
+    ,nguoihieuchinh
+    ,ngayhieuchinh
+)
+VALUES
+(
+    <isNotEmpty	property="madonvi">	, '$madonvi$'	</isNotEmpty>	<isEmpty	property="madonvi">	,null	</isEmpty>
+<isNotEmpty	property="machucdanh">	, '$machucdanh$'	</isNotEmpty>	<isEmpty	property="machucdanh">	,null	</isEmpty>
+<isNotEmpty	property="tengiaodich">	, '$tengiaodich$'	</isNotEmpty>	<isEmpty	property="tengiaodich">	,null	</isEmpty>
+<isNotEmpty	property="tenchucdanh">	, '$tenchucdanh$'	</isNotEmpty>	<isEmpty	property="tenchucdanh">	,null	</isEmpty>
+<isNotEmpty	property="capbac">	, '$capbac$'	</isNotEmpty>	<isEmpty	property="capbac">	,null	</isEmpty>
+<isNotEmpty	property="xoa">	, '$xoa$'	</isNotEmpty>	<isEmpty	property="xoa">	,null	</isEmpty>
+<isNotEmpty	property="nguoitao">	, '$nguoitao$'	</isNotEmpty>	<isEmpty	property="nguoitao">	,null	</isEmpty>
+<isNotEmpty	property="ngaytao">	, '$ngaytao$'	</isNotEmpty>	<isEmpty	property="ngaytao">	,null	</isEmpty>
+<isNotEmpty	property="nguoihieuchinh">	, '$nguoihieuchinh$'	</isNotEmpty>	<isEmpty	property="nguoihieuchinh">	,null	</isEmpty>
+<isNotEmpty	property="ngayhieuchinh">	, '$ngayhieuchinh$'	</isNotEmpty>	<isEmpty	property="ngayhieuchinh">	,null	</isEmpty>
+
+)
+    </insert>
+
+    <update id="Update">
+	UPDATE
+    m_donvi_chucdanh
+SET
+    <isNotEmpty	property="madonvi">	, '$madonvi$'	</isNotEmpty>	<isEmpty	property="madonvi">	,null	</isEmpty>
+<isNotEmpty	property="machucdanh">	, '$machucdanh$'	</isNotEmpty>	<isEmpty	property="machucdanh">	,null	</isEmpty>
+<isNotEmpty	property="tengiaodich">	, '$tengiaodich$'	</isNotEmpty>	<isEmpty	property="tengiaodich">	,null	</isEmpty>
+<isNotEmpty	property="tenchucdanh">	, '$tenchucdanh$'	</isNotEmpty>	<isEmpty	property="tenchucdanh">	,null	</isEmpty>
+<isNotEmpty	property="capbac">	, '$capbac$'	</isNotEmpty>	<isEmpty	property="capbac">	,null	</isEmpty>
+<isNotEmpty	property="xoa">	, '$xoa$'	</isNotEmpty>	<isEmpty	property="xoa">	,null	</isEmpty>
+<isNotEmpty	property="nguoitao">	, '$nguoitao$'	</isNotEmpty>	<isEmpty	property="nguoitao">	,null	</isEmpty>
+<isNotEmpty	property="ngaytao">	, '$ngaytao$'	</isNotEmpty>	<isEmpty	property="ngaytao">	,null	</isEmpty>
+<isNotEmpty	property="nguoihieuchinh">	, '$nguoihieuchinh$'	</isNotEmpty>	<isEmpty	property="nguoihieuchinh">	,null	</isEmpty>
+<isNotEmpty	property="ngayhieuchinh">	, '$ngayhieuchinh$'	</isNotEmpty>	<isEmpty	property="ngayhieuchinh">	,null	</isEmpty>
+ WHERE 
+<isNotEmpty	property="madonvi">	and madonvi = '$madonvi$'	</isNotEmpty>
+<isNotEmpty	property="machucdanh">	and machucdanh = '$machucdanh$'	</isNotEmpty>
+<isNotEmpty	property="tengiaodich">	and tengiaodich = '$tengiaodich$'	</isNotEmpty>
+<isNotEmpty	property="tenchucdanh">	and tenchucdanh = '$tenchucdanh$'	</isNotEmpty>
+<isNotEmpty	property="capbac">	and capbac = '$capbac$'	</isNotEmpty>
+<isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+<isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+<isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+<isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+<isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty> 
+    </update>
+	
+	<update id="Delete">
+	UPDATE
+    m_donvi_chucdanh
+SET
+    <isNotEmpty	property="madonvi">	, '$madonvi$'	</isNotEmpty>	<isEmpty	property="madonvi">	,null	</isEmpty>
+<isNotEmpty	property="machucdanh">	, '$machucdanh$'	</isNotEmpty>	<isEmpty	property="machucdanh">	,null	</isEmpty>
+<isNotEmpty	property="tengiaodich">	, '$tengiaodich$'	</isNotEmpty>	<isEmpty	property="tengiaodich">	,null	</isEmpty>
+<isNotEmpty	property="tenchucdanh">	, '$tenchucdanh$'	</isNotEmpty>	<isEmpty	property="tenchucdanh">	,null	</isEmpty>
+<isNotEmpty	property="capbac">	, '$capbac$'	</isNotEmpty>	<isEmpty	property="capbac">	,null	</isEmpty>
+<isNotEmpty	property="xoa">	, '$xoa$'	</isNotEmpty>	<isEmpty	property="xoa">	,null	</isEmpty>
+<isNotEmpty	property="nguoitao">	, '$nguoitao$'	</isNotEmpty>	<isEmpty	property="nguoitao">	,null	</isEmpty>
+<isNotEmpty	property="ngaytao">	, '$ngaytao$'	</isNotEmpty>	<isEmpty	property="ngaytao">	,null	</isEmpty>
+<isNotEmpty	property="nguoihieuchinh">	, '$nguoihieuchinh$'	</isNotEmpty>	<isEmpty	property="nguoihieuchinh">	,null	</isEmpty>
+<isNotEmpty	property="ngayhieuchinh">	, '$ngayhieuchinh$'	</isNotEmpty>	<isEmpty	property="ngayhieuchinh">	,null	</isEmpty>
+ WHERE 
+<isNotEmpty	property="madonvi">	and madonvi = '$madonvi$'	</isNotEmpty>
+<isNotEmpty	property="machucdanh">	and machucdanh = '$machucdanh$'	</isNotEmpty>
+<isNotEmpty	property="tengiaodich">	and tengiaodich = '$tengiaodich$'	</isNotEmpty>
+<isNotEmpty	property="tenchucdanh">	and tenchucdanh = '$tenchucdanh$'	</isNotEmpty>
+<isNotEmpty	property="capbac">	and capbac = '$capbac$'	</isNotEmpty>
+<isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+<isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+<isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+<isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+<isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty> 
+    </update>
+  </statements>
+</sqlMap>

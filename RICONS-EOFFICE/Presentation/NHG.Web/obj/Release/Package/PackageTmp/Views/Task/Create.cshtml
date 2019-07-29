@@ -1,0 +1,121 @@
+﻿@using NHG.Web.Models;
+@model KeHoachModels
+@{
+    ViewBag.Title = "Create";
+}
+<link href="~/Themes/NHG-2015/css/Controller/TaskCSS.Create.css" rel="stylesheet" />
+<link href="~/Themes/NHG-2015/css/chosen/chosen.css" rel="stylesheet" />
+<link href="~/Themes/NHG-2015/css/chosen/prism.css" rel="stylesheet" />
+
+
+
+<script src="~/Themes/NHG-2015/js/jquery-ui-1.10.0.custom.min.js"></script>
+<script src="~/Themes/NHG-2015/js/jquery.datepick-vi.js"></script>
+<script src="~/Themes/NHG-2015/js/Controllers/TaskJS.Create.js"></script>
+<script src="~/Themes/NHG-2015/js/chosen/chosen.jquery.js"></script>
+<script src="~/Themes/NHG-2015/js/chosen/prism.js"></script>
+
+<div class="HeaderFixed">
+    <div class="b-b b-light">
+        <div class="p-left c-black">Tạo giao mục tiêu công việc</div>
+        <div class="clearBoth"></div>
+    </div>
+</div>
+
+<div class="boxEdit">
+    @using (Html.BeginForm("Create", "Task", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>Nội dung mục tiêu:</td>
+                <td><input type="text" style="width:52%" autocomplete="off" placeholder="Nội dung mục tiêu" name="noidungmuctieu" /></td>
+            </tr>
+            <tr>
+                <td>Tỷ trọng (%):</td>
+                <td><input type="text" style="width:147px" autocomplete="off" placeholder="Tỷ trọng %" name="tytrong" /></td>
+            </tr>
+            
+            <tr>
+                <td>Chỉ tiêu năm:</td>
+                <td><input type="text" style="width:52%" autocomplete="off" placeholder="Chỉ tiêu năm" name="chitieunam" /></td>
+            </tr>
+
+            <tr>
+                <td>Ngày bắt đầu:</td>
+                <td><input type="text" class="inputShort" id="txtNgayBatDau" name="ngaybatdau" /></td>
+            </tr>
+            <tr>
+                <td>Ngày kết thúc:</td>
+                <td><input type="text" class="inputShort" id="txtNgayKetThuc" name="ngayketthuc" /></td>
+            </tr>
+
+            @*<tr>
+                <td>Số thứ tự hiển thị:</td>
+                <td><input type="text" style="width:147px" autocomplete="off" placeholder="Số thứ tự" name="stt" /></td>
+            </tr>*@
+
+            <tr>
+                <td>Người nhận mục tiêu chính:</td>
+                <td>
+                    <select id="filter01" data-placeholder="Chọn người nhận mục tiêu chính" class="chosen-select-nguoithuchien" name="nguoinhanmuctieu" multiple>
+                        @if (!string.IsNullOrEmpty(ViewBag.nguoiThucHiens))
+                        {
+                            @Html.Raw(ViewBag.nguoiThucHiens);
+                        }
+                    </select>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>Người nhận mục tiêu phụ:</td>
+                <td>
+                    <select id="filter01" data-placeholder="Chọn người nhận mục tiêu phụ" class="chosen-select-nguoithuchien" name="nguoinhanmuctieuphu" multiple>
+                        @if (!string.IsNullOrEmpty(ViewBag.nguoiThucHiens))
+                        {
+                            @Html.Raw(ViewBag.nguoiThucHiens);
+                        }
+                    </select>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>Người phê duyệt mục tiêu:</td>
+                <td>
+                    <select id="filter01" data-placeholder="Chọn người phê duyệt mục tiêu" class="chosen-select-nguoithuchien" name="nguoiduyetmuctieu" multiple>
+                        @if (!string.IsNullOrEmpty(ViewBag.nguoiDuyetHoso))
+                        {
+                            @Html.Raw(ViewBag.nguoiDuyetHoso);
+                        }
+                    </select>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>Ghi chú:</td>
+                <td><textarea style="width:52%; resize:none;" rows="4" placeholder="Ghi chú giải thích kế hoạch" name="ghichu"></textarea> </td>
+            </tr>
+
+            @*<tr>
+                <td>Kế hoạch gốc:</td>
+                <td>
+                    <select id="filter02" data-placeholder="Loại kế hoạch" class="chosen-select-loaikehoach" name="makehoachgoc">
+                        <option value="0">Kế hoạch gốc</option>
+                        @if (!string.IsNullOrEmpty(ViewBag.keHoachs))
+                        {
+                            @Html.Raw(ViewBag.keHoachs);
+                        }
+                    </select>
+
+                </td>
+            </tr>*@
+            <tr>
+                <td></td>
+                <td><input type="submit" class="buttoncustom WhiteButton" value="Lưu" /> <a href="@Url.Action("Index", "Task")">Trở về</a></td>
+            </tr>
+        </table>
+    }
+</div>
+

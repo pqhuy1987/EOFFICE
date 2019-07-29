@@ -1,0 +1,186 @@
+﻿@model NHG.Web.Models.Danhmuc_VanPhongPhamModels
+@{
+    ViewBag.Title = "Danh mục văn phòng phẩm";
+}
+@*--css--*@
+@section CSS
+{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/Danhmucvanphongpham.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/prism.css" />
+    @*<link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/MilestonesCSS.Create.css" />*@
+}
+
+@*--javascript--*@
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/controllers/Danhmucvanphongpham.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/prism.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/table/buildTable.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/colResizale/colResizable-1.3.source.js"></script>
+}
+<script>
+    var linkContent = '@Url.Content("~")';
+</script>
+
+
+<div class="HeaderFixed">
+    <div class="b-b b-light">
+        <div class="p-left c-black">Danh mục văn phòng phẩm</div>
+        <div class="clearBoth"></div>
+    </div>
+</div>
+
+<div class="boxEdit">
+    <div id="frm-create">
+        @using (Html.BeginForm("UpdateVanphongpham", "Danhmuc", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+        {
+            <input type="hidden" name="act" value="create"/>
+            <input type="hidden" name="ID" value=""/>
+            <table>
+                <tr>
+                    <td>Tên văn phòng phẩm:</td>
+                    <td><input type="text" style="width:357px" autocomplete="off" placeholder="Tên văn phòng phẩm" name="tenvanphongpham" /></td>
+
+                    <td style="width:100px; text-align:right; padding-right:7px">Đơn giá:</td>
+                    <td><input type="text" style="width:357px" autocomplete="off" placeholder="Đơn giá" name="dongia" /></td>
+                </tr>
+
+                <tr>
+                    
+                    <td>Chọn danh mục cha:</td>
+                    <td>
+                        <select id="filter01" data-placeholder="Danh mục cha" class="chosen-select-loaikehoach" name="danhmuccha">
+                            <option value="0">Danh mục cha</option>
+                            @if (!string.IsNullOrEmpty(ViewBag.keHoachs))
+                            {
+                                @Html.Raw(ViewBag.keHoachs);
+                            }
+                        </select>
+                    </td>
+
+                    <td style="width:100px; text-align:right; padding-right:7px">Đơn vị tính:</td>
+                    <td><input type="text" style="width:357px" autocomplete="off" placeholder="Đơn vị tính" name="donvitinh" /></td>
+
+                </tr>
+
+                <tr>
+                    <td style="width:157px; text-align:right; padding-right:7px">Ghi chú thông tin:</td>
+                    <td><input type="text" style="width: 357px" autocomplete="off" placeholder="Ghi chú thông tin" name="ghichu" /></td>
+                </tr>
+
+                <tr>
+                    <td style="padding-top:50px;"></td>
+                    <td>
+                        <input type="button" id="btn-create" class="buttoncustom WhiteButton" name="New" value="Thêm mới" />
+                        <input type="button" id="btn-save" class="buttoncustom WhiteButton" name="luu" value="Lưu" />
+                        <input type="button" id="btn-edit" class="buttoncustom WhiteButton" name="Update" value="Hiệu chỉnh" />
+                        <input type="button" id="btn-delete" class="buttoncustom WhiteButton" name="Delete" value="Xoá" />
+                        
+                    </td>
+                </tr>
+            </table>
+        }
+
+    </div>
+
+</div>
+
+<div id="boxContent">
+    <div class="boxTable boxTable1">
+        <table class="table_danhSach table_fixed" id="tableFixedHeader"></table>
+    </div>
+
+    <div class="boxTable boxTable2">
+        <table class="table_danhSach table_fixed" id="tableContent">
+            <thead>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="7" id="girdInfo">Tổng số: <span class="currentRow">0</span>/<span class="sumRow">0</span></td>
+                </tr>
+                <tr>
+                    <td colspan="16" id="girdInfoLoad">
+                        <div class="divExentd"><i class="retweet_32"></i>Xem thêm</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="16" id="footerInfo">
+                        <div class="companyName">Ricons Construction Investment JSC</div>
+                        <div class="address">236/6 Dien Bien Phu, Ward 17, Binh Thanh Dist., HCMC, Vietnam</div>
+                    </td>
+                </tr>
+            </tfoot>
+
+
+
+        </table>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#btn-create').on('click', function (e) {
+            var form = $(this).closest('form');
+            form.find('input[name="act"]').val('create');
+            form.find('input[name="id"]').val('');
+            form[0].reset();
+        });
+
+        $('#btn-save').on('click', function (e) {
+            var form = $(this).closest('form');
+            form.submit();
+        });
+        // hieu chinh
+        $('#btn-edit').on('click', function (e) {
+            var form = $(this).closest('form');
+            var checked = $('.chkCheck:checked');
+            if ( checked && checked.length <= 0) {
+                alert('Vui lòng check dòng cần hiệu chỉnh');
+                return false;
+            } else {
+                var listChecked = $('.chkCheck:checked');
+                var ID = $(listChecked[0]).attr('mpb'); //encodeURIComponent(ID)); //Encoder.htmlDecode(ID)
+                var row = $(listChecked[0]).closest('tr.rows-box');
+                form.find('input[name="act"]').val('update')
+                form.find('input[name="ID"]').val(ID);
+                form.find('input[name="tenvanphongpham"]').val(row.find('.col4').text());
+                form.find('input[name="dongia"]').val(row.find('.col5').text());
+                form.find('input[name="donvitinh"]').val(row.find('.col6').text());
+                form.find('input[name="ghichu"]').val(row.find('.col7').text());
+                form.find('input[name="danhmuccha"]').val(row.find('.col8').text());
+                var danhmuccha = $(row).find('.col8').text().trim();
+                //alert(danhmuccha);
+                $('#filter01').val(danhmuccha);
+                for (var selector in configChosenDanhmucvanphongpham) {
+                    $(selector).change();
+                    $(selector).trigger('chosen:updated');
+                }
+            }
+        })
+
+        $('#btn-delete').on('click', function (e) {
+            var form = $(this).closest('form');
+            var checked = $('.chkCheck:checked');
+            if (checked && checked.length <= 0) {
+                alert('Vui long chon 1 ');
+                return false;
+            } else {
+                var listChecked = $('.chkCheck:checked');
+                var ID = $(listChecked[0]).attr('mpb');
+                var row = $(listChecked[0]).closest('tr.rows-box');
+                form.find('input[name="act"]').val('delete')
+                form.find('input[name="ID"]').val(ID);
+                form.submit();
+            }
+        })
+
+
+    })  
+</script>

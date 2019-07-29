@@ -1,0 +1,80 @@
+﻿@model NHG.Web.Models.TaiKhoanModels
+
+@{
+    Layout = null;
+    ViewBag.Title = "Login";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="@Url.Content("~")themes/login/css/style.css" type="text/css">
+    <title>Đăng nhập hệ thống thông tin</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <img class="center-block" width="300" src="@Url.Content("~")themes/login/images/Logo.png" alt="Alternate Text" />
+            <h1 style="font-weight: 350; color: #fff; text-shadow: 0px 3px 1px #080800, 3px 3px 5px rgba(0,0,0,0.15), 2x 1x 6x rba(0,0,0,0.1), 0x 3px 2px rba(0,0,0,0.1);">QUẢN LÝ THÔNG TIN</h1>
+            @*<h1>QUẢN LÝ THÔNG TIN</h1>*@
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="col-md-10">
+                    <input class="form-control" data-val="true" id="UserName" name="tendangnhap" placeholder="Tên đăng nhập" value="" type="text">
+                </div>
+                <div class="col-md-10">
+                    <input class="form-control" data-val="true" id="Password" placeholder="Mật khẩu" type="password" value="">
+                </div>
+                if (ViewBag.isNhapCaptcha)
+                {
+                    <img id="imgCaptcha" src="@Url.Content("~")Ajax/captcha.ashx" alt="Captch" />
+                    <input type="text" id="txtCaptcha" autocomplete="off" name="captcha" />
+                }
+                else
+                {
+                    <div id="lblError">@Html.Raw(ViewBag.strAlert)</div>
+                }
+                @Html.ValidationSummary(true)
+                <button type="submit" id="login-button">Đăng nhập</button>
+                <input type="hidden" id="hdPassword" value="" name="matkhau" />
+                <input type="hidden" ID="hdCaptcha" Value="" />
+            }
+        </div>
+
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script src="@Url.Content("~")themes/nhg-2015/js/jquery-1.9.1.js"></script>
+    <script src="@Url.Content("~")themes/login/js/core.js"></script>
+    <script src="@Url.Content("~")themes/login/js/aes.js"></script>
+    <script type="text/javascript">
+    $('#login-button').click(function () {
+        var key = CryptoJS.enc.Utf8.parse('3928255200621136');
+        var iv = CryptoJS.enc.Utf8.parse('8080808080808080');
+        var encryptedpassword = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse($('#Password').val()), key,
+        {
+            keySize: 128 / 8,
+            iv: iv,
+            mode: CryptoJS.mode.CBC,
+            padding: CryptoJS.pad.Pkcs7
+        });
+
+
+        $("#hdCaptcha").attr('value', $('#txtCaptcha').val());
+        $('#hdPassword').attr('Value', encryptedpassword);
+    });
+</script>
+</body>
+</html>

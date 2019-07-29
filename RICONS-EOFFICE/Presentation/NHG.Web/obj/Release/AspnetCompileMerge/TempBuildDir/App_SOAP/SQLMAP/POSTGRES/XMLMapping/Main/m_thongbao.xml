@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="m_thongbao"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="SelectRows" resultClass="System.Collections.Hashtable">
+      SELECT
+      mathongbao
+      ,noidung
+      ,hienthi
+      ,ngaynhacviec
+      ,is_danhacviec
+      ,to_char( tb.ngaytao , 'dd/MM/yyyy HH24:MI' ) as ngaytao
+      FROM
+      m_thongbao as tb
+      WHERE
+      xoa = '0'
+      <isNotEmpty	property="mathongbao">
+       AND mathongbao = '$mathongbao$'
+      </isNotEmpty>
+      <isNotEmpty	property="noidung">
+        AND (convertunikey(lower(noidung)) like convertunikey(lower('%$noidung$%')))
+      </isNotEmpty>
+      order by tb.ngaytao desc
+      <isNotEmpty	property="limit">
+        LIMIT $limit$
+      </isNotEmpty>
+      <isNotEmpty	property="offset">
+        OFFSET $offset$
+      </isNotEmpty>
+    </select>
+
+    <select id="CountRows" resultClass="int">
+      SELECT
+      count(mathongbao)
+      FROM
+      m_thongbao as tb
+      WHERE
+      xoa = '0'
+      <isNotEmpty	property="mathongbao">
+        AND mathongbao = '$mathongbao$'
+      </isNotEmpty>
+      <isNotEmpty	property="noidung">
+        AND (convertunikey(lower(noidung)) like convertunikey(lower('%$noidung$%')))
+      </isNotEmpty>
+    </select>
+
+    <select id="SelectQuickAlerts" resultClass="System.Collections.Hashtable">
+      SELECT
+      mathongbao
+      ,noidung
+      ,to_char( tb.ngaytao , 'dd/MM/yyyy HH24:MI' ) as ngaytao
+      FROM
+      m_thongbao as tb
+      WHERE
+      xoa = '0'
+      AND hienthi = '1'
+      <isNotEmpty	property="nguoinhan">
+        AND nguoinhan = '$nguoinhan$'
+      </isNotEmpty>
+      order by tb.ngaytao desc
+        LIMIT 3
+        OFFSET 0
+    </select>
+
+
+    <insert id="InsertRow">
+      INSERT INTO m_thongbao(
+      mathongbao
+      , noidung
+      , hienthi
+      , ngaynhacviec
+      , is_danhacviec
+      , xoa
+      , nguoitao
+      , ngaytao
+      , nguoihieuchinh
+      , ngayhieuchinh
+      )
+      VALUES
+      (
+      '$mathongbao$'
+    <isNotEmpty	property="noidung">	, '$noidung$'	</isNotEmpty>	<isEmpty	property="noidung">	,null	</isEmpty>
+    <isNotEmpty	property="hienthi">	, '$hienthi$'	</isNotEmpty>	<isEmpty	property="hienthi">	,1	</isEmpty>
+    <isNotEmpty	property="ngaynhacviec">	, '$ngaynhacviec$'	</isNotEmpty>	<isEmpty	property="ngaynhacviec">	,null	</isEmpty>
+    <isNotEmpty	property="is_danhacviec">	, '$is_danhacviec$'	</isNotEmpty>	<isEmpty	property="is_danhacviec">	,0	</isEmpty>
+    <isNotEmpty	property="xoa">	, '$xoa$'	</isNotEmpty>	<isEmpty	property="xoa">	,0	</isEmpty>
+      , '$nguoitao$'
+      ,GETDATE()
+      , '$nguoihieuchinh$'
+      ,GETDATE()
+      )
+    </insert>
+
+    <update id="UpdateRow">
+      UPDATE
+      m_thongbao
+      SET
+      <isNotEmpty	property="mathongbao">	and mathongbao = '$mathongbao$'	</isNotEmpty>
+      <isNotEmpty	property="noidung">	and noidung = '$noidung$'	</isNotEmpty>
+      <isNotEmpty	property="hienthi">	and hienthi = '$hienthi$'	</isNotEmpty>
+      <isNotEmpty	property="ngaynhacviec">	and ngaynhacviec = '$ngaynhacviec$'	</isNotEmpty>
+      <isNotEmpty	property="is_danhacviec">	and is_danhacviec = '$is_danhacviec$'	</isNotEmpty>
+      <isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+
+    WHERE
+    mathongbao = '$mathongbao$'
+    and noidung = '$noidung$'
+  </update>
+
+    <update id="DeletedRow">
+      DELETE FROM m_thongbao
+      WHERE 
+      mathongbao = '$mathongbao$'
+      and noidung = '$noidung$'
+    </update>
+  </statements>
+</sqlMap>

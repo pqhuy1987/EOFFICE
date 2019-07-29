@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="m_thamso"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="SelectRows" resultClass="System.Collections.Hashtable">
+      SELECT
+      tenthamso
+      ,giatri
+      FROM
+      m_thamso
+      WHERE
+      tenthamso = '$tenthamso$'
+      <isNotEmpty	property="madonvi">	and madonvi = '$madonvi$'	</isNotEmpty>
+      order by tenthamso
+    </select>
+
+    <update id="UpdateRow">
+      UPDATE
+      m_thamso
+      SET
+      tenthamso = '$tenthamso$'
+      ,giatri = '$giatri$'
+      WHERE
+      madonvi = '$madonvi$'
+      and tenthamso = '$tenthamso$'
+    </update>
+    
+  </statements>
+</sqlMap>

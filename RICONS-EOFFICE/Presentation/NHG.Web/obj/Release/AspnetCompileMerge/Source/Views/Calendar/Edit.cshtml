@@ -1,0 +1,126 @@
+﻿@{
+    ViewBag.Title = "Chi tiết sự kiện";
+}
+@model NHG.Web.Models.LichLamViecModels
+@*--css--*@
+@section CSS
+{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/CalendarCSS.CreateOrEdit.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/prism.css" />
+}
+
+@*--javascript--*@
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery.datepick-vi.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/controllers/CalendarJS.CreateOrEdit.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/prism.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/mfupload.js"></script>
+}
+<script>
+    var linkContent = '@Url.Content("~")';
+    var jsTime = '@ViewBag.JsonChonGio';
+</script>
+@if (Model != null)
+{
+    var dataResult = Model;
+    <script>
+        var linkContent = '@Url.Content("~")';
+    </script>
+    <div class="HeaderFixed">
+        <div class="b-b b-light">
+            <div class="p-left c-black">Chi tiết sự kiện</div>
+            <div class="clearBoth"></div>
+        </div>
+    </div>
+    using (Html.BeginForm("Edit", "Calendar", new { ReturnUrl = ViewBag.ReturnUrl}, FormMethod.Post))
+    {
+        string[] splitNgayBatDau = Model.ngaybatdau.Split(' ');
+        string[] splitNgayKetThuc = Model.ngayketthuc.Split(' ');
+        <input type="hidden" name="malichlamviec" value="@NHG.Core.Functions.AES.Encrypt(Model.malichlamviec, Convert.FromBase64String(Session.SessionID))" />
+        <div class="boxButton">
+            <button type="submit" class="buttoncustom WhiteButton">Lưu</button>
+            <a href="@Url.Action("Index", "Calendar")"><button type="submit" class="buttoncustom WhiteButton">Hủy</button></a>
+        </div>
+        <div class="boxChiTiet">
+
+            <div class="divNoiDung"><input type="text" id="txtNoiDung" placeholder="Nội dung sự kiện" name="noidung" value="@dataResult.noidung" /></div>
+            <div class="divThoiGian">
+                <table>
+                    <tr>
+                        <td><input type="text" id="txtTuNgay" name="ngaybatdau" autocomplete="off" value="@splitNgayBatDau[0]" /> </td>
+                        <td><input type="text" id="txtTuGio" name="giobatdau" autocomplete="off" value="@splitNgayBatDau[1]" /> </td>
+                        <td>Đến</td>
+                        <td><input type="text" id="txtDenNgay" name="ngayketthuc" autocomplete="off" value="@splitNgayKetThuc[0]" /> </td>
+                        <td><input type="text" id="txtDenGio" name="gioketthuc" autocomplete="off" value="@splitNgayKetThuc[1]" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <label><input type="checkbox" />&nbsp;Cả ngày</label>
+            </div>
+            <div class="divLabel1">Thông tin sự kiện</div>
+            <div>
+                <table class="tableChitiet">
+                    <tr>
+                        <td>Địa điểm</td>
+                        <td><input type="text" id="txtDiaDiem" value="@dataResult.diadiem" name="diadiem" /></td>
+                    </tr>
+                    <tr>
+                        <td>Mô tả</td>
+                        <td><textarea rows="3" name="ghichu">@dataResult.ghichu</textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Tài liệu đính kèm</td>
+                        <td>
+                            <div class="divBoxHTML">
+                                <div class="divDinhKemTapTin">
+                                    <div class="imgUpload">
+                                    </div>
+                                    <div class="imgText">
+                                        Chọn tập tin
+                                        <div id="upload" style="float: left; margin-left: 137px;"></div>
+                                    </div>
+                                </div>
+                                <div id='CUpFile'>
+                                    <div id='CTUpFile' style='overflow: auto;'>
+                                        <div class='fileUploadQueue' id='filesToUploadQueue'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Thông báo</td>
+                        <td>
+                            <div>
+                                <select>
+                                    <option>Email</option>
+                                    <option>Cửa sổ bật lên</option>
+                                </select>
+                                <input type="text" class="txtValueAlert" />
+                                <select>
+                                    <option>Giờ</option>
+                                    <option>Phút</option>
+                                    <option>Ngày</option>
+                                </select>
+                                <label>Xóa</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Chế độ hiển thị</td>
+                        <td>
+                            <label><input type="radio" name="viewMode" checked /> Riêng tư</label>&nbsp;&nbsp;
+                            <label><input type="radio" name="viewMode" /> Công cộng</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    }
+}

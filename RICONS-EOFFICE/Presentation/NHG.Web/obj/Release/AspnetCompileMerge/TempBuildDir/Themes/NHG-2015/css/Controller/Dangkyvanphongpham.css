@@ -1,0 +1,41 @@
+﻿.col1 {
+    text-align: center;
+    width: 50px;
+}
+
+.col2 {
+    text-align: center;
+    width: 50px;
+}
+
+.col3 {
+    text-align: center;
+     width: 70px;
+}
+
+.col4 {
+    text-align: left;
+    width: 200px;
+}
+
+.col5 {
+    text-align: left;
+    width: 200px;
+}
+
+.col6 {
+    text-align: left;
+    width: 200px;
+}
+.col7 {
+    text-align: center;
+    width: 120px;
+}
+.col8 {
+    text-align: right;
+    width: 120px;
+}
+.col9 {
+    text-align: left;
+    width: 100%;
+}

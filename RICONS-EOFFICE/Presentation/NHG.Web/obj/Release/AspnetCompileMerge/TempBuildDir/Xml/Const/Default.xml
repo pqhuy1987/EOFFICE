@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<const>
+  <group id="kichhoat">
+    <item name="notactive" id="0">Không kích hoạt</item>
+    <item name="actived" id="1">Đã kích hoạt</item>
+  </group>
+
+  <group id="paging">
+    <item name="limted" id="0">5</item>
+  </group>
+</const>

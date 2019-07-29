@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "Lịch làm việc";
+}
+@section CSS
+{
+    <link href="@Url.Content("~")themes/NHG-2015/css/fullcalendar/dailog.css" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~")themes/NHG-2015/css/fullcalendar/calendar.css" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~")themes/NHG-2015/css/fullcalendar/dp.css" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~")themes/NHG-2015/css/fullcalendar/alert.css" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~")themes/NHG-2015/css/fullcalendar/main.css" rel="stylesheet" type="text/css" />
+}
+
+@*--javascript fullcalendar--*@
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery.start.lichcoquan.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/fullcalendar/Common.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/fullcalendar/datepicker_lang_VN.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/fullcalendar/jquery.datepicker.js"></script>
+
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/fullcalendar/jquery.alert.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/fullcalendar/jquery.ifrmdailog.js" defer="defer"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/fullcalendar/wdCalendar_lang_VN.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/fullcalendar/jquery.calendar.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/controllers/calendar010000.js"></script>
+}
+<script>
+    var linkContent = '@Url.Content("~")';
+</script>
+<div id="calhead" style="padding-left: 1px; padding-right: 1px;">
+    <div id="caltoolbar" class="ctoolbar">
+        <div id="faddbtn" class="fbutton">
+            <div>
+                <span title='Tạo sự kiện' class="addcal">
+                    Tạo sự kiện
+                </span>
+            </div>
+        </div>
+        <div class="btnseparator"></div>
+        <div id="showtodaybtn" class="fbutton">
+            <div>
+                <span title='Hôm nay' class="showtoday">Hôm nay</span>
+            </div>
+        </div>
+        <div class="btnseparator"></div>
+
+        <div id="showdaybtn" class="fbutton">
+            <div><span title='Ngày' class="showdayview">Ngày</span></div>
+        </div>
+        <div id="showweekbtn" class="fbutton fcurrent">
+            <div><span title='Tuần' class="showweekview">Tuần</span></div>
+        </div>
+        <div id="showmonthbtn" class="fbutton">
+            <div><span title='Tháng' class="showmonthview">Tháng</span></div>
+
+        </div>
+        <div class="btnseparator"></div>
+        <div id="showreflashbtn" class="fbutton">
+            <div><span title='Cập nhật lịch' class="showdayflash">Làm mới</span></div>
+        </div>
+        <div class="btnseparator"></div>
+        <div id="sfprevbtn" title="Trước" class="fbutton">
+            <span class="fprev"></span>
+        </div>
+        <div id="sfnextbtn" title="Tiếp theo" class="fbutton">
+            <span class="fnext"></span>
+        </div>
+        <div class="fshowdatep fbutton">
+            <div>
+                <input type="hidden" name="txtshow" id="hdtxtshow" />
+                <span id="txtdatetimeshow">Đang tải...</span>
+
+            </div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</div>
+<div style="padding: 1px;">
+
+    <div class="t1 chromeColor">
+        &nbsp;
+    </div>
+    <div class="t2 chromeColor">
+        &nbsp;
+    </div>
+    <div id="dvCalMain" class="calmain printborder">
+        <div id="gridcontainer" style="overflow-y: visible;">
+        </div>
+    </div>
+    <div class="t2 chromeColor">
+        &nbsp;
+    </div>
+    <div class="t1 chromeColor">
+        &nbsp;
+    </div>
+</div>
+

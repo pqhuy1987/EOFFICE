@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="cv_muctieucongviec"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+
+    <select id="SelectRows10" resultClass="System.Collections.Hashtable">
+      SELECT
+      madonvi
+      ,makehoach
+      ,makehoachgoc
+      ,ghichu
+      ,to_char(ngaybatdau,'dd/MM/yyyy') as ngaybatdau
+      ,to_char(ngayketthuc,'dd/MM/yyyy') as ngayketthuc
+      ,extract(month from ngaybatdau) as thangbatdau
+      ,extract(month from ngayketthuc) as thangketthuc
+      ,func_age(to_char(ngayketthuc,'dd/MM/yyyy'),to_char(ngaybatdau,'dd/MM/yyyy')) as sothangthuchien
+      ,ngayhoanthanh
+      ,hoanthanh
+      ,chiphi
+      ,xoa
+      ,(SELECT hoten FROM m_taikhoan WHERE xoa = '0' and mataikhoan = nguoithuchien) as nguoithuchien
+      ,cv_kehoach.nguoithuchien as manguoithuchien
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      ,noidungmuctieu
+      ,tytrong
+      ,chitieunam
+      ,stt
+      ,tinhtrang
+      FROM
+      cv_kehoach
+      WHERE
+      xoa = '0' and makehoachgoc='0'
+      <isNotEmpty	property="madonvi">	and madonvi = '$madonvi$'	</isNotEmpty>
+      <isNotEmpty	property="makehoach">	and makehoach = '$makehoach$'	</isNotEmpty>
+      <isNotEmpty	property="makehoachgoc">	and makehoachgoc = '$makehoachgoc$'	</isNotEmpty>
+      <isNotEmpty	property="tieude">	and noidungmuctieu = '$noidungmuctieu$'	</isNotEmpty>
+      <isNotEmpty	property="ghichu">	and ghichu = '$ghichu$'	</isNotEmpty>
+      <isNotEmpty	property="ngaybatdau">	and ngaybatdau = '$ngaybatdau$'	</isNotEmpty>
+      <isNotEmpty	property="ngayketthuc">	and ngayketthuc = '$ngayketthuc$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhoanthanh">	and ngayhoanthanh = '$ngayhoanthanh$'	</isNotEmpty>
+      <isNotEmpty	property="hoanthanh">	and hoanthanh = '$hoanthanh$'	</isNotEmpty>
+      <isNotEmpty	property="chiphi">	and chiphi = '$chiphi$'	</isNotEmpty>
+      <isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+      order by stt, func_convertodate(to_char(ngaybatdau,'dd/MM/yyyy'))
+    </select>
+    
+    
+    
+    <select id="SelectRows" resultClass="System.Collections.Hashtable">
+      SELECT
+      madonvi
+      ,mamuctieu
+      ,ghichu
+      ,ngaybatdau
+      ,ngayketthuc
+      ,ngayhoanthanh
+      ,hoanthanh
+      ,chiphi
+      ,xoa
+      ,(SELECT hoten FROM m_taikhoan WHERE xoa = '0' and mataikhoan = nguoinhanmuctieu) as nguoinhanmuctieu
+      ,cv_muctieucongviec.nguoinhanmuctieu as manguoinhanmuctieu
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      ,noidungmuctieu
+      ,tytrong
+      ,chitieunam
+      FROM
+      cv_muctieucongviec
+      WHERE
+      xoa = '0'
+      <isNotEmpty	property="madonvi">	and madonvi = '$madonvi$'	</isNotEmpty>
+      <isNotEmpty	property="makehoach">	and mamuctieu = '$mamuctieu$'	</isNotEmpty>
+      <isNotEmpty	property="makehoachgoc">	and noidungmuctieu = '$noidungmuctieu$'	</isNotEmpty>
+      <isNotEmpty	property="tieude">	and tytrong = '$tytrong$'	</isNotEmpty>
+      <isNotEmpty	property="ghichu">	and chitieunam = '$chitieunam$'	</isNotEmpty>
+      <isNotEmpty	property="ngaybatdau">	and ngaybatdau = '$ngaybatdau$'	</isNotEmpty>
+      <isNotEmpty	property="ngayketthuc">	and ngayketthuc = '$ngayketthuc$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhoanthanh">	and ngayhoanthanh = '$ngayhoanthanh$'	</isNotEmpty>
+      <isNotEmpty	property="hoanthanh">	and hoanthanh = '$hoanthanh$'	</isNotEmpty>
+      <isNotEmpty	property="chiphi">	and chiphi = '$chiphi$'	</isNotEmpty>
+      order by func_convertodate(ngaybatdau)
+      <!--order by func_convertodate(to_char(ngaybatdau,'dd/MM/yyyy'))-->
+    </select>
+
+    <select id="CountRows" resultClass="int">
+      SELECT
+      count(madonvi)
+      FROM
+      cv_kehoach
+      WHERE
+      xoa = '0'
+      <isNotEmpty	property="madonvi">	and madonvi = '$madonvi$'	</isNotEmpty>
+      <isNotEmpty	property="makehoach">	and makehoach = '$makehoach$'	</isNotEmpty>
+      <isNotEmpty	property="makehoachgoc">	and makehoachgoc = '$makehoachgoc$'	</isNotEmpty>
+      <isNotEmpty	property="tieude">	and tieude = '$tieude$'	</isNotEmpty>
+      <isNotEmpty	property="ghichu">	and ghichu = '$ghichu$'	</isNotEmpty>
+      <isNotEmpty	property="ngaybatdau">	and ngaybatdau = '$ngaybatdau$'	</isNotEmpty>
+      <isNotEmpty	property="ngayketthuc">	and ngayketthuc = '$ngayketthuc$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhoanthanh">	and ngayhoanthanh = '$ngayhoanthanh$'	</isNotEmpty>
+      <isNotEmpty	property="hoanthanh">	and hoanthanh = '$hoanthanh$'	</isNotEmpty>
+      <isNotEmpty	property="chiphi">	and chiphi = '$chiphi$'	</isNotEmpty>
+      <isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+
+    </select>
+
+    <select id="SelectKeHoachForCombobox" resultClass="System.Collections.Hashtable">
+      SELECT
+      makehoach
+      ,tieude
+      ,makehoachgoc
+      FROM
+      cv_kehoach
+      WHERE
+      xoa = '0'
+    </select>
+    
+    <insert id="InsertRow">
+      INSERT INTO cv_muctieucongviec
+      (
+      madonvi
+      ,mamuctieu
+      ,stt
+      ,noidungmuctieu
+      ,tytrong
+      ,chitieunam
+      ,ngaybatdau
+      ,ngayketthuc
+      ,ngayhoanthanh
+      ,hoanthanh
+      ,chiphi
+      ,ghichu
+      ,nguoinhanmuctieu
+      ,xoa
+      ,nguoitao
+      ,ngaytao
+      )
+      VALUES
+      (
+      ,$madonvi$
+      ,'$mamuctieu$'
+      ,$stt$
+      ,'$noidungmuctieu$'
+      ,'$tytrong$'
+      ,'$chitieunam$'
+      ,'$ngaybatdau$'
+      ,'$ngayketthuc$'
+      ,'$ngayhoanthanh$'
+      ,'$hoanthanh$'
+      ,'$chiphi$'
+      ,'$ghichu$'
+      ,0
+      ,'0'
+      ,0
+      ,GETDATE()
+      )
+
+    </insert>
+
+    <update id="Update">
+      UPDATE
+      cv_kehoach
+      SET
+      <isNotEmpty	property="madonvi">	, '$madonvi$'	</isNotEmpty>	<isEmpty	property="madonvi">	,null	</isEmpty>
+      <isNotEmpty	property="makehoach">	, '$makehoach$'	</isNotEmpty>	<isEmpty	property="makehoach">	,null	</isEmpty>
+      <isNotEmpty	property="tieude">	, '$tieude$'	</isNotEmpty>	<isEmpty	property="tieude">	,null	</isEmpty>
+      <isNotEmpty	property="ghichu">	, '$ghichu$'	</isNotEmpty>	<isEmpty	property="ghichu">	,null	</isEmpty>
+      <isNotEmpty	property="ngaybatdau">	, '$ngaybatdau$'	</isNotEmpty>	<isEmpty	property="ngaybatdau">	,null	</isEmpty>
+      <isNotEmpty	property="ngayketthuc">	, '$ngayketthuc$'	</isNotEmpty>	<isEmpty	property="ngayketthuc">	,null	</isEmpty>
+      <isNotEmpty	property="ngayhoanthanh">	, '$ngayhoanthanh$'	</isNotEmpty>	<isEmpty	property="ngayhoanthanh">	,null	</isEmpty>
+      <isNotEmpty	property="hoanthanh">	, '$hoanthanh$'	</isNotEmpty>	<isEmpty	property="hoanthanh">	,null	</isEmpty>
+      <isNotEmpty	property="chiphi">	, '$chiphi$'	</isNotEmpty>	<isEmpty	property="chiphi">	,null	</isEmpty>
+      <isNotEmpty	property="xoa">	, '$xoa$'	</isNotEmpty>	<isEmpty	property="xoa">	,null	</isEmpty>
+      <isNotEmpty	property="nguoitao">	, '$nguoitao$'	</isNotEmpty>	<isEmpty	property="nguoitao">	,null	</isEmpty>
+      <isNotEmpty	property="ngaytao">	, '$ngaytao$'	</isNotEmpty>	<isEmpty	property="ngaytao">	,null	</isEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	, '$nguoihieuchinh$'	</isNotEmpty>	<isEmpty	property="nguoihieuchinh">	,null	</isEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	, '$ngayhieuchinh$'	</isNotEmpty>	<isEmpty	property="ngayhieuchinh">	,null	</isEmpty>
+      WHERE
+      <isNotEmpty	property="madonvi">	and madonvi = '$madonvi$'	</isNotEmpty>
+      <isNotEmpty	property="makehoach">	and makehoach = '$makehoach$'	</isNotEmpty>
+      <isNotEmpty	property="tieude">	and tieude = '$tieude$'	</isNotEmpty>
+      <isNotEmpty	property="ghichu">	and ghichu = '$ghichu$'	</isNotEmpty>
+      <isNotEmpty	property="ngaybatdau">	and ngaybatdau = '$ngaybatdau$'	</isNotEmpty>
+      <isNotEmpty	property="ngayketthuc">	and ngayketthuc = '$ngayketthuc$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhoanthanh">	and ngayhoanthanh = '$ngayhoanthanh$'	</isNotEmpty>
+      <isNotEmpty	property="hoanthanh">	and hoanthanh = '$hoanthanh$'	</isNotEmpty>
+      <isNotEmpty	property="chiphi">	and chiphi = '$chiphi$'	</isNotEmpty>
+      <isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+    </update>
+
+    <update id="Delete">
+      UPDATE
+      cv_kehoach
+      SET
+      madonvi = ?
+      ,makehoach = ?
+      ,tieude = ?
+      ,ghichu = ?
+      ,ngaybatdau = ?
+      ,ngayketthuc = ?
+      ,ngayhoanthanh = ?
+      ,hoanthanh = ?
+      ,chiphi = ?
+      ,xoa = ?
+      ,nguoitao = ?
+      ,ngaytao = ?
+      ,nguoihieuchinh = ?
+      ,ngayhieuchinh = ?
+      WHERE
+      <isNotEmpty	property="madonvi">	and madonvi = '$madonvi$'	</isNotEmpty>
+      <isNotEmpty	property="makehoach">	and makehoach = '$makehoach$'	</isNotEmpty>
+      <isNotEmpty	property="tieude">	and tieude = '$tieude$'	</isNotEmpty>
+      <isNotEmpty	property="ghichu">	and ghichu = '$ghichu$'	</isNotEmpty>
+      <isNotEmpty	property="ngaybatdau">	and ngaybatdau = '$ngaybatdau$'	</isNotEmpty>
+      <isNotEmpty	property="ngayketthuc">	and ngayketthuc = '$ngayketthuc$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhoanthanh">	and ngayhoanthanh = '$ngayhoanthanh$'	</isNotEmpty>
+      <isNotEmpty	property="hoanthanh">	and hoanthanh = '$hoanthanh$'	</isNotEmpty>
+      <isNotEmpty	property="chiphi">	and chiphi = '$chiphi$'	</isNotEmpty>
+      <isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>	;
+    </update>
+  </statements>
+</sqlMap>

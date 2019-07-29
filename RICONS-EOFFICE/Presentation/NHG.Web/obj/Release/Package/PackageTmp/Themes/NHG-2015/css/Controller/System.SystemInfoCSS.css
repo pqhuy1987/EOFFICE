@@ -1,0 +1,12 @@
+﻿.adminContent{
+    margin:13px 50px;
+}
+
+.adminContent .adminTitle{
+    font-weight:bold;
+}
+
+.adminContent .se{
+    width:18px;
+    text-align:center;
+}

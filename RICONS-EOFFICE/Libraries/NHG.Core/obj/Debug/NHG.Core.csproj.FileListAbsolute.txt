@@ -1,0 +1,13 @@
+D:\Google Drive\21_EOFFICE\RICONS-EOFFICE\Libraries\NHG.Core\obj\Debug\NHG.Core.csprojResolveAssemblyReference.cache
+D:\GAME\RICONS-EOFFICE\RICONS-EOFFICE\Libraries\NHG.Core\bin\Debug\NHG.Core.dll
+D:\GAME\RICONS-EOFFICE\RICONS-EOFFICE\Libraries\NHG.Core\bin\Debug\NHG.Core.pdb
+D:\GAME\RICONS-EOFFICE\RICONS-EOFFICE\Libraries\NHG.Core\bin\Debug\ClosedXML.dll
+D:\GAME\RICONS-EOFFICE\RICONS-EOFFICE\Libraries\NHG.Core\bin\Debug\DocumentFormat.OpenXml.dll
+D:\GAME\RICONS-EOFFICE\RICONS-EOFFICE\Libraries\NHG.Core\bin\Debug\NHG.Logger.dll
+D:\GAME\RICONS-EOFFICE\RICONS-EOFFICE\Libraries\NHG.Core\bin\Debug\log4net.dll
+D:\GAME\RICONS-EOFFICE\RICONS-EOFFICE\Libraries\NHG.Core\bin\Debug\NHG.Logger.pdb
+D:\GAME\RICONS-EOFFICE\RICONS-EOFFICE\Libraries\NHG.Core\bin\Debug\ClosedXML.xml
+D:\GAME\RICONS-EOFFICE\RICONS-EOFFICE\Libraries\NHG.Core\bin\Debug\log4net.xml
+D:\GAME\RICONS-EOFFICE\RICONS-EOFFICE\Libraries\NHG.Core\obj\Debug\NHG.Core.csprojResolveAssemblyReference.cache
+D:\GAME\RICONS-EOFFICE\RICONS-EOFFICE\Libraries\NHG.Core\obj\Debug\NHG.Core.dll
+D:\GAME\RICONS-EOFFICE\RICONS-EOFFICE\Libraries\NHG.Core\obj\Debug\NHG.Core.pdb

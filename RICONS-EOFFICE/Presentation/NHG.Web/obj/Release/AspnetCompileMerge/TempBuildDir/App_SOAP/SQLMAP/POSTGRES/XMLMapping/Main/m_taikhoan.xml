@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="m_taikhoan"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="SelectRows" resultClass="System.Collections.Hashtable">
+      SELECT
+      ROW_NUMBER() OVER(ORDER BY tk.mataikhoan) stt
+      ,tk.mataikhoan
+      ,tendangnhap
+      ,hoten
+      ,thudientu
+      ,madonvi
+      ,grouptk
+      ,(SELECT tendonvi from m_donvi dv where dv.xoa = '0' and dv.madonvi = tk.madonvi) as tendonvi
+      ,maphongban
+      ,(SELECT tenphongban from m_donvi_phongban dv where dv.xoa = '0' and dv.maphongban = tk.maphongban) as tenphongban
+      ,machucdanh
+      ,(SELECT tenchucdanh from m_donvi_chucdanh dv where dv.xoa = '0' and dv.machucdanh = tk.machucdanh) as tenchucdanh
+      ,kichhoat as tinhtrang
+      FROM
+      m_taikhoan as tk
+      WHERE
+      tk.xoa = '0'
+      AND tk.mataikhoan <![CDATA[>]]> 0 
+      <isNotEmpty	property="kichhoat">	and tk.kichhoat = '$kichhoat$'	</isNotEmpty>
+      <isNotEmpty	property="maphongban">	and tk.maphongban = '$maphongban$'	</isNotEmpty>
+      <isNotEmpty	property="tendangnhap">	and  (lower(rtrim(tk.tendangnhap)) like lower(rtrim('%$tendangnhap$%')) or lower(rtrim(tk.thudientu)) like lower(rtrim('%$tendangnhap$%')) )	</isNotEmpty>
+      ORDER BY hoten
+    </select>
+
+    <select id="SelectDetail" resultClass="System.Collections.Hashtable">
+      SELECT
+      mataikhoan
+      ,manhansu
+      ,tendangnhap
+      ,thudientu
+      ,matkhau
+      ,hoten
+      ,gioitinh
+      ,diachi
+      ,sodienthoai
+      ,tenhinh
+      ,extensionfile
+      ,filecontenttype
+      ,binarydata
+      ,to_char( ngaytao , 'dd/MM/yyyy HH24:MI' ) as ngaytao
+      ,to_char( ngayhieuchinh , 'dd/MM/yyyy HH24:MI' ) as ngayhieuchinh
+      FROM
+      m_taikhoan as tk
+      WHERE
+      tk.xoa = '0'
+      and tk.mataikhoan = '$mataikhoan$'
+    </select>
+
+    <select id ="SelectPhongBanDonVi" resultClass ="System.Collections.Hashtable">
+      SELECT
+      tkdv.maphongban
+      , tkdv.madonvi
+      , tkdv.machucdanh
+      , (SELECT tenphongban  FROM m_donvi_phongban WHERE xoa = '0' and madonvi = tkdv.madonvi and maphongban = tkdv.maphongban) as tenphongban
+      , (SELECT tenchucdanh  FROM m_donvi_chucdanh WHERE xoa = '0' and madonvi = tkdv.madonvi and machucdanh = tkdv.machucdanh) as tenchucdanh
+      , (SELECT tendonvi  FROM m_donvi WHERE xoa = '0' and madonvi = tkdv.madonvi) as tendonvi
+      FROM
+      m_taikhoan_donvi tkdv
+      WHERE
+        tkdv.mataikhoan ='$mataikhoan$'
+    </select>
+
+    <select id="SelectTaiKhoanForCombobox" resultClass="System.Collections.Hashtable">
+      SELECT
+      tk.mataikhoan
+      ,tk.hoten
+      FROM
+      m_taikhoan as tk
+      inner join (select mataikhoan,madonvi,maphongban from m_taikhoan_donvi <isNotEmpty	property="maphongban"> where  maphongban='$maphongban$' </isNotEmpty>) tkdv on(tkdv.mataikhoan=tk.mataikhoan and tkdv.madonvi=tk.madonvi)
+      WHERE
+      tk.xoa = '0'
+      order by mataikhoan
+    </select>
+    
+     <select id="SelectNguoiduyetCombobox" resultClass="System.Collections.Hashtable">
+       select
+       tkdv.mataikhoan
+       ,tkdv.madonvi
+       ,tk.hoten as hoten
+       ,dvcd.machucdanh
+       ,dvcd.tenchucdanh as tenchucdanh
+       from m_taikhoan_donvi tkdv
+       inner join
+       (
+       select machucdanh,madonvi,capbac,tenchucdanh from m_donvi_chucdanh
+       where trim(lower(capbac)) like trim(lower('%c%'))
+       or trim(lower(capbac)) like trim(lower('%d%'))
+       or trim(lower(capbac)) like trim(lower('%m%'))
+       )dvcd on(dvcd.machucdanh=tkdv.machucdanh and dvcd.madonvi=tkdv.madonvi)
+       inner join
+       (
+       select mataikhoan,hoten from m_taikhoan
+       )tk on (tk.mataikhoan=tkdv.mataikhoan)
+       group by tkdv.mataikhoan
+       ,tkdv.madonvi
+       ,tk.hoten
+       ,dvcd.tenchucdanh,dvcd.machucdanh
+       order by dvcd.machucdanh
+     </select>
+      
+    
+    <insert id="Insert">
+      INSERT INTO m_taikhoan_donvi
+      (
+      mataikhoan
+      ,madonvi
+      ,maphongban
+      ,machucdanh
+      )
+      VALUES
+      (
+
+      );
+
+    </insert>
+
+    <update id="Update">
+    </update>
+  </statements>
+</sqlMap>

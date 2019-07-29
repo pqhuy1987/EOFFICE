@@ -1,0 +1,54 @@
+﻿/*--Start create--*/
+.boxContent input[type="text"] {
+    border-radius: 3px;
+    color: #333;
+    font-size: 12px;
+    padding: 0 5px;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    height: 27px;
+}
+
+.boxContent textarea {
+    border-radius: 3px;
+    color: #333;
+    font-size: 12px;
+    padding: 0 5px;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    resize:none;
+}
+
+.boxContent table td:first-child {
+    text-align: right;
+    padding-right: 6px;
+    vertical-align: text-top;
+    padding-top: 7px;
+    width: 134px;
+}
+
+
+.boxContent table tr td {
+    height: 35px;
+}
+
+.boxContent .boxEdit {
+    background-color: white;
+    border-radius: 4px;
+    margin: 28px auto;
+    width: 95%;
+}
+
+.boxContent .boxEdit table{
+    width:100%
+}
+
+.boxContent .appButton{
+    height:29px;
+    width:120px;
+}
+/*--End create--*/

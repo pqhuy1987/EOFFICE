@@ -1,0 +1,18 @@
+﻿.boxEdit{
+    margin: 15px 30px;
+}
+
+.boxEdit input[type="text"], .boxEdit input[type="password"] {
+    color: #150e0e;
+    font: 13px/1.231 arial,helvetica,clean,sans-serif;
+    height: 24px;
+    margin: 0;
+    padding: 0 3px;
+    vertical-align: baseline;
+    width:198px;
+}
+
+.boxEdit table tr td:first-child{
+    width:100px;
+    font-weight:bold;
+}

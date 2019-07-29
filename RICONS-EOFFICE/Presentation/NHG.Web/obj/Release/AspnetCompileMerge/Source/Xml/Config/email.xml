@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?test value?>
+<!--Ngày 12/20/15 10:07:19 PM   author: 0-->
+<email>
+  <smtp_host id="smtp_host">10.84.4.2</smtp_host>
+  <smtp_port id="smtp_port">25</smtp_port>
+  <smtp_user id="smtp_user">dkp@ricons.vn</smtp_user>
+  <smtp_pass id="smtp_pass">6hv..</smtp_pass>
+  <enableSSL id="enableSSL">true</enableSSL>
+  <linkname id="linkname">https://dkp.ricons.vn/Duyetmail/Duyet1/?madangky=</linkname>
+  <!--<linkname id="linkname">http://localhost:56877/Duyetmail/Duyet1/?madangky=</linkname>-->
+
+  <linknamechamcong id="linknamechamcong">https://dkp.ricons.vn/Duyetmail/Duyet2/?maphongban=</linknamechamcong>
+  <!--<linkname id="linkinbieumau">http://localhost:56877/xslt/</linkname>-->
+  <linkname id="linkinbieumau">https://dkp.ricons.vn/xslt/</linkname>
+</email>

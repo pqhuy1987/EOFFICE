@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Chỉnh sửa thông tin tài khoản";
+}
+@model NHG.Web.Models.LichLamViecModels
+@*--css--*@
+@section CSS
+{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/AccountCSS.CreateOrEdit.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/prism.css" />
+}
+
+@*--javascript--*@
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery.datepick-vi.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/controllers/AccountJS.CreateOrEdit.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/prism.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/mfupload.js"></script>
+}
+<script>
+    var linkContent = '@Url.Content("~")';
+    var jsTime = '@ViewBag.JsonChonGio';
+</script>
+@*@if (Model != null)
+{*@
+    <div class="HeaderFixed">
+        <div class="b-b b-light">
+            <div class="p-left c-black">Thông tin người dùng</div>
+            <div class="clearBoth"></div>
+        </div>
+    </div>
+    @using (Html.BeginForm("Edit", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+    {
+    }
+@*}*@

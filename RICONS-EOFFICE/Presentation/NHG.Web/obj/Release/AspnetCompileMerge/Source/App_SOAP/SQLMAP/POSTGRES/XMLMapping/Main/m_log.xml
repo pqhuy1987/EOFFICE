@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="m_log"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="SelectRows" resultClass="System.Collections.Hashtable">
+      SELECT (row_number() over (order by m_log.ngaytao desc nulls last)) as stt
+      ,loglevel as capdo
+      ,noidung
+      ,ipaddress
+      ,mataikhoan
+      ,pageurl
+      ,referrerurl
+      ,to_char( m_log.ngaytao , 'dd/MM/yyyy HH24:MI' ) as ngaytao
+      FROM
+      <isNotEmpty	property="loglevel">	loglevel = '$loglevel$'	</isNotEmpty>
+      m_log
+      ORDER BY m_log.ngaytao desc
+    </select>
+
+    <insert id="Insert">
+      INSERT INTO m_log
+      (
+      id
+      ,"LogLevel"
+      ,noidungtomtat
+      ,noidung
+      ,ipaddress
+      ,mataikhoan
+      ,pageurl
+      ,"ReferrerUrl"
+      )
+      VALUES
+      (
+      
+      );
+
+    </insert>
+
+    <update id="Update">
+    </update>
+  </statements>
+</sqlMap>

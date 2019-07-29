@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="m_vaitro"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="Select" resultClass="System.Collections.Hashtable">
+      SELECT
+      mavaitro
+      ,tenvaitro
+      FROM
+      m_vaitro
+      WHERE
+      xoa = '$xoa$'
+      order by tenvaitro
+    </select>
+    
+    <insert id="Insert">
+      INSERT INTO m_vaitro
+      (
+      mavaitro
+      ,tenvaitro
+      ,xoa
+      ,nguoitao
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      )
+      VALUES
+      (
+      '$mataikhoan$'
+      ,'$mavaitro$'
+      ,'$xoa$'
+      ,$nguoitao$
+      ,GETDATE()
+      ,$nguoihieuchinh$
+      ,GETDATE()
+      )
+    </insert>
+
+    <update id="Update">
+      UPDATE
+      m_vaitro
+      SET
+      tenvaitro = '$tenvaitro$'
+      ,nguoihieuchinh = '$nguoihieuchinh$'
+      ,ngayhieuchinh = GETDATE()
+      WHERE
+      mavaitro = '$mavaitro$'
+      and xoa = '0'
+    </update>
+
+    <update id="Deleted">
+      UPDATE
+      m_vaitro
+      SET
+      xoa = '1'
+      ,nguoihieuchinh = '$nguoihieuchinh$'
+      ,ngayhieuchinh = GETDATE()
+      WHERE
+      mavaitro = '$mavaitro$'
+    </update>
+  </statements>
+</sqlMap>

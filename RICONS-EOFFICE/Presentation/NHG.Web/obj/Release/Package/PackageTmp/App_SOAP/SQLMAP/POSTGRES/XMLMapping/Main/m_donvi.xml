@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="m_donvi"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="SelectRows" resultClass="System.Collections.Hashtable">
+      SELECT
+      madonvi
+      ,vitri
+      ,tendonvi
+      ,tenviettat
+      ,khuvuc
+      ,donvigoc
+      ,diachi
+      ,sodienthoai
+      ,fax
+      ,thudientu
+      ,lanhdao
+      ,maloaidonvi
+      ,kichhoat
+      ,xoa
+      ,nguoitao
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      FROM
+      m_donvi
+      WHERE
+      xoa = '0'
+      <isNotEmpty	property="madonvi">	and madonvi = '$madonvi$'	</isNotEmpty>
+      <isNotEmpty	property="vitri">	and vitri = '$vitri$'	</isNotEmpty>
+      <isNotEmpty	property="tendonvi">	and tendonvi = '$tendonvi$'	</isNotEmpty>
+      <isNotEmpty	property="tenviettat">	and tenviettat = '$tenviettat$'	</isNotEmpty>
+      <isNotEmpty	property="khuvuc">	and khuvuc = '$khuvuc$'	</isNotEmpty>
+      <isNotEmpty	property="donvigoc">	and donvigoc = '$donvigoc$'	</isNotEmpty>
+      <isNotEmpty	property="diachi">	and diachi = '$diachi$'	</isNotEmpty>
+      <isNotEmpty	property="sodienthoai">	and sodienthoai = '$sodienthoai$'	</isNotEmpty>
+      <isNotEmpty	property="fax">	and fax = '$fax$'	</isNotEmpty>
+      <isNotEmpty	property="thudientu">	and thudientu = '$thudientu$'	</isNotEmpty>
+      <isNotEmpty	property="lanhdao">	and lanhdao = '$lanhdao$'	</isNotEmpty>
+      <isNotEmpty	property="maloaidonvi">	and maloaidonvi = '$maloaidonvi$'	</isNotEmpty>
+      <isNotEmpty	property="kichhoat">	and kichhoat = '$kichhoat$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+
+    </select>
+
+    <insert id="Insert">
+      INSERT INTO m_donvi
+      (
+      madonvi
+      ,vitri
+      ,tendonvi
+      ,tenviettat
+      ,khuvuc
+      ,donvigoc
+      ,diachi
+      ,sodienthoai
+      ,fax
+      ,thudientu
+      ,lanhdao
+      ,maloaidonvi
+      ,kichhoat
+      ,xoa
+      ,nguoitao
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      )
+      VALUES
+      (
+      <isNotEmpty	property="madonvi">	, '$madonvi$'	</isNotEmpty>	<isEmpty	property="madonvi">	,null	</isEmpty>
+      <isNotEmpty	property="vitri">	, '$vitri$'	</isNotEmpty>	<isEmpty	property="vitri">	,null	</isEmpty>
+      <isNotEmpty	property="tendonvi">	, '$tendonvi$'	</isNotEmpty>	<isEmpty	property="tendonvi">	,null	</isEmpty>
+      <isNotEmpty	property="tenviettat">	, '$tenviettat$'	</isNotEmpty>	<isEmpty	property="tenviettat">	,null	</isEmpty>
+      <isNotEmpty	property="khuvuc">	, '$khuvuc$'	</isNotEmpty>	<isEmpty	property="khuvuc">	,null	</isEmpty>
+      <isNotEmpty	property="donvigoc">	, '$donvigoc$'	</isNotEmpty>	<isEmpty	property="donvigoc">	,null	</isEmpty>
+      <isNotEmpty	property="diachi">	, '$diachi$'	</isNotEmpty>	<isEmpty	property="diachi">	,null	</isEmpty>
+      <isNotEmpty	property="sodienthoai">	, '$sodienthoai$'	</isNotEmpty>	<isEmpty	property="sodienthoai">	,null	</isEmpty>
+      <isNotEmpty	property="fax">	, '$fax$'	</isNotEmpty>	<isEmpty	property="fax">	,null	</isEmpty>
+      <isNotEmpty	property="thudientu">	, '$thudientu$'	</isNotEmpty>	<isEmpty	property="thudientu">	,null	</isEmpty>
+      <isNotEmpty	property="lanhdao">	, '$lanhdao$'	</isNotEmpty>	<isEmpty	property="lanhdao">	,null	</isEmpty>
+      <isNotEmpty	property="maloaidonvi">	, '$maloaidonvi$'	</isNotEmpty>	<isEmpty	property="maloaidonvi">	,null	</isEmpty>
+      <isNotEmpty	property="kichhoat">	, '$kichhoat$'	</isNotEmpty>	<isEmpty	property="kichhoat">	,null	</isEmpty>
+      <isNotEmpty	property="xoa">	, '$xoa$'	</isNotEmpty>	<isEmpty	property="xoa">	,null	</isEmpty>
+      <isNotEmpty	property="nguoitao">	, '$nguoitao$'	</isNotEmpty>	<isEmpty	property="nguoitao">	,null	</isEmpty>
+      <isNotEmpty	property="ngaytao">	, '$ngaytao$'	</isNotEmpty>	<isEmpty	property="ngaytao">	,null	</isEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	, '$nguoihieuchinh$'	</isNotEmpty>	<isEmpty	property="nguoihieuchinh">	,null	</isEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	, '$ngayhieuchinh$'	</isNotEmpty>	<isEmpty	property="ngayhieuchinh">	,null	</isEmpty>
+
+      )
+
+    </insert>
+
+    <update id="Update">
+      UPDATE
+      m_donvi
+      SET
+      <isNotEmpty	property="madonvi">	, '$madonvi$'	</isNotEmpty>	<isEmpty	property="madonvi">	,null	</isEmpty>
+      <isNotEmpty	property="vitri">	, '$vitri$'	</isNotEmpty>	<isEmpty	property="vitri">	,null	</isEmpty>
+      <isNotEmpty	property="tendonvi">	, '$tendonvi$'	</isNotEmpty>	<isEmpty	property="tendonvi">	,null	</isEmpty>
+      <isNotEmpty	property="tenviettat">	, '$tenviettat$'	</isNotEmpty>	<isEmpty	property="tenviettat">	,null	</isEmpty>
+      <isNotEmpty	property="khuvuc">	, '$khuvuc$'	</isNotEmpty>	<isEmpty	property="khuvuc">	,null	</isEmpty>
+      <isNotEmpty	property="donvigoc">	, '$donvigoc$'	</isNotEmpty>	<isEmpty	property="donvigoc">	,null	</isEmpty>
+      <isNotEmpty	property="diachi">	, '$diachi$'	</isNotEmpty>	<isEmpty	property="diachi">	,null	</isEmpty>
+      <isNotEmpty	property="sodienthoai">	, '$sodienthoai$'	</isNotEmpty>	<isEmpty	property="sodienthoai">	,null	</isEmpty>
+      <isNotEmpty	property="fax">	, '$fax$'	</isNotEmpty>	<isEmpty	property="fax">	,null	</isEmpty>
+      <isNotEmpty	property="thudientu">	, '$thudientu$'	</isNotEmpty>	<isEmpty	property="thudientu">	,null	</isEmpty>
+      <isNotEmpty	property="lanhdao">	, '$lanhdao$'	</isNotEmpty>	<isEmpty	property="lanhdao">	,null	</isEmpty>
+      <isNotEmpty	property="maloaidonvi">	, '$maloaidonvi$'	</isNotEmpty>	<isEmpty	property="maloaidonvi">	,null	</isEmpty>
+      <isNotEmpty	property="kichhoat">	, '$kichhoat$'	</isNotEmpty>	<isEmpty	property="kichhoat">	,null	</isEmpty>
+      <isNotEmpty	property="xoa">	, '$xoa$'	</isNotEmpty>	<isEmpty	property="xoa">	,null	</isEmpty>
+      <isNotEmpty	property="nguoitao">	, '$nguoitao$'	</isNotEmpty>	<isEmpty	property="nguoitao">	,null	</isEmpty>
+      <isNotEmpty	property="ngaytao">	, '$ngaytao$'	</isNotEmpty>	<isEmpty	property="ngaytao">	,null	</isEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	, '$nguoihieuchinh$'	</isNotEmpty>	<isEmpty	property="nguoihieuchinh">	,null	</isEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	, '$ngayhieuchinh$'	</isNotEmpty>	<isEmpty	property="ngayhieuchinh">	,null	</isEmpty>
+      WHERE
+      <isNotEmpty	property="madonvi">	and madonvi = '$madonvi$'	</isNotEmpty>
+      <isNotEmpty	property="vitri">	and vitri = '$vitri$'	</isNotEmpty>
+      <isNotEmpty	property="tendonvi">	and tendonvi = '$tendonvi$'	</isNotEmpty>
+      <isNotEmpty	property="tenviettat">	and tenviettat = '$tenviettat$'	</isNotEmpty>
+      <isNotEmpty	property="khuvuc">	and khuvuc = '$khuvuc$'	</isNotEmpty>
+      <isNotEmpty	property="donvigoc">	and donvigoc = '$donvigoc$'	</isNotEmpty>
+      <isNotEmpty	property="diachi">	and diachi = '$diachi$'	</isNotEmpty>
+      <isNotEmpty	property="sodienthoai">	and sodienthoai = '$sodienthoai$'	</isNotEmpty>
+      <isNotEmpty	property="fax">	and fax = '$fax$'	</isNotEmpty>
+      <isNotEmpty	property="thudientu">	and thudientu = '$thudientu$'	</isNotEmpty>
+      <isNotEmpty	property="lanhdao">	and lanhdao = '$lanhdao$'	</isNotEmpty>
+      <isNotEmpty	property="maloaidonvi">	and maloaidonvi = '$maloaidonvi$'	</isNotEmpty>
+      <isNotEmpty	property="kichhoat">	and kichhoat = '$kichhoat$'	</isNotEmpty>
+      <isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+
+    </update>
+
+    <update id="Delete">
+      UPDATE
+      m_donvi
+      SET
+      <isNotEmpty	property="madonvi">	, '$madonvi$'	</isNotEmpty>	<isEmpty	property="madonvi">	,null	</isEmpty>
+      <isNotEmpty	property="vitri">	, '$vitri$'	</isNotEmpty>	<isEmpty	property="vitri">	,null	</isEmpty>
+      <isNotEmpty	property="tendonvi">	, '$tendonvi$'	</isNotEmpty>	<isEmpty	property="tendonvi">	,null	</isEmpty>
+      <isNotEmpty	property="tenviettat">	, '$tenviettat$'	</isNotEmpty>	<isEmpty	property="tenviettat">	,null	</isEmpty>
+      <isNotEmpty	property="khuvuc">	, '$khuvuc$'	</isNotEmpty>	<isEmpty	property="khuvuc">	,null	</isEmpty>
+      <isNotEmpty	property="donvigoc">	, '$donvigoc$'	</isNotEmpty>	<isEmpty	property="donvigoc">	,null	</isEmpty>
+      <isNotEmpty	property="diachi">	, '$diachi$'	</isNotEmpty>	<isEmpty	property="diachi">	,null	</isEmpty>
+      <isNotEmpty	property="sodienthoai">	, '$sodienthoai$'	</isNotEmpty>	<isEmpty	property="sodienthoai">	,null	</isEmpty>
+      <isNotEmpty	property="fax">	, '$fax$'	</isNotEmpty>	<isEmpty	property="fax">	,null	</isEmpty>
+      <isNotEmpty	property="thudientu">	, '$thudientu$'	</isNotEmpty>	<isEmpty	property="thudientu">	,null	</isEmpty>
+      <isNotEmpty	property="lanhdao">	, '$lanhdao$'	</isNotEmpty>	<isEmpty	property="lanhdao">	,null	</isEmpty>
+      <isNotEmpty	property="maloaidonvi">	, '$maloaidonvi$'	</isNotEmpty>	<isEmpty	property="maloaidonvi">	,null	</isEmpty>
+      <isNotEmpty	property="kichhoat">	, '$kichhoat$'	</isNotEmpty>	<isEmpty	property="kichhoat">	,null	</isEmpty>
+      <isNotEmpty	property="xoa">	, '$xoa$'	</isNotEmpty>	<isEmpty	property="xoa">	,null	</isEmpty>
+      <isNotEmpty	property="nguoitao">	, '$nguoitao$'	</isNotEmpty>	<isEmpty	property="nguoitao">	,null	</isEmpty>
+      <isNotEmpty	property="ngaytao">	, '$ngaytao$'	</isNotEmpty>	<isEmpty	property="ngaytao">	,null	</isEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	, '$nguoihieuchinh$'	</isNotEmpty>	<isEmpty	property="nguoihieuchinh">	,null	</isEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	, '$ngayhieuchinh$'	</isNotEmpty>	<isEmpty	property="ngayhieuchinh">	,null	</isEmpty>
+      WHERE
+      <isNotEmpty	property="madonvi">	and madonvi = '$madonvi$'	</isNotEmpty>
+      <isNotEmpty	property="vitri">	and vitri = '$vitri$'	</isNotEmpty>
+      <isNotEmpty	property="tendonvi">	and tendonvi = '$tendonvi$'	</isNotEmpty>
+      <isNotEmpty	property="tenviettat">	and tenviettat = '$tenviettat$'	</isNotEmpty>
+      <isNotEmpty	property="khuvuc">	and khuvuc = '$khuvuc$'	</isNotEmpty>
+      <isNotEmpty	property="donvigoc">	and donvigoc = '$donvigoc$'	</isNotEmpty>
+      <isNotEmpty	property="diachi">	and diachi = '$diachi$'	</isNotEmpty>
+      <isNotEmpty	property="sodienthoai">	and sodienthoai = '$sodienthoai$'	</isNotEmpty>
+      <isNotEmpty	property="fax">	and fax = '$fax$'	</isNotEmpty>
+      <isNotEmpty	property="thudientu">	and thudientu = '$thudientu$'	</isNotEmpty>
+      <isNotEmpty	property="lanhdao">	and lanhdao = '$lanhdao$'	</isNotEmpty>
+      <isNotEmpty	property="maloaidonvi">	and maloaidonvi = '$maloaidonvi$'	</isNotEmpty>
+      <isNotEmpty	property="kichhoat">	and kichhoat = '$kichhoat$'	</isNotEmpty>
+      <isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+
+    </update>
+  </statements>
+</sqlMap>

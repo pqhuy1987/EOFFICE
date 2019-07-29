@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="m_taikhoan_vaitro"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="Select" resultClass="System.Collections.Hashtable">
+      SELECT
+      mataikhoan
+      ,mavaitro
+      FROM
+      m_taikhoan_vaitro
+      WHERE
+        mataikhoan = '$mataikhoan$'
+        AND mavaitro = '$mavaitro$'
+    </select>
+    
+    <insert id="Insert">
+      INSERT INTO m_taikhoan_vaitro
+      (
+      mataikhoan
+      ,mavaitro
+      )
+      VALUES
+      (
+      '$mataikhoan$'
+      ,'$mavaitro$'
+      )
+    </insert>
+    
+    <update id="Deleted">
+      DELETE FROM m_taikhoan_vaitro
+      WHERE
+      mataikhoan = '$mataikhoan$'
+      AND mavaitro = '$mavaitro$'
+    </update>
+  </statements>
+</sqlMap>

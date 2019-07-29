@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<formats>
+
+  <format id="1">thuy.lemien@ricons.vn/Lê Miên Thụy</format> <!--thuy.lemien@ricons.vn-->
+
+  <format id="2">long.tran@ricons.vn/Trần Kim Long</format>
+  
+  <format id="3">luc.pham@ricons.vn/Phạm Quân Lực</format>
+  
+  <format id="4">tam.nguyen@ricons.vn/Nguyễn Thành Tâm</format> <!--tam.nguyen-->
+
+  <format id="5">vanut.nguyen@ricons.vn/Nguyễn Văn Út</format>
+  
+  <format id="6">hoainam.truong@ricons.vn/Trương Hoài Nam</format>
+  
+  <format id="7">kham.nguyen@ricons.vn/Nguyễn Phi Khâm</format>
+
+  <format id="8">nhut.le@ricons.vn/Lê Văn Nhựt</format>
+
+
+  <!--<format id="8">han.ho@ricons.vn/Mạch Thọ Long</format>-->
+ 
+</formats>
+
+

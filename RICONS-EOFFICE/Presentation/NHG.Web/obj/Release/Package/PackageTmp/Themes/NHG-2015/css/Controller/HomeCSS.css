@@ -1,0 +1,31 @@
+﻿section#content .HeaderFixed {
+    background-color: black;
+    margin-bottom: 13px;
+}
+
+.boxContentFix {
+    padding: 0 16px;
+}
+
+section#content {
+    background-color: #eef2f4;
+}
+
+    section#content .hbox.stretch {
+        background-color: #eef2f4;
+    }
+
+.boxActive {
+    margin: 6px auto 30px;
+    min-height: 180px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,.2);
+}
+
+    .boxActive .top-tabs {
+        border-bottom: 1px solid #f0f1f2;
+        min-height: 19px;
+        padding: 12px 0 31px 15px;
+        position: relative;
+    }
+

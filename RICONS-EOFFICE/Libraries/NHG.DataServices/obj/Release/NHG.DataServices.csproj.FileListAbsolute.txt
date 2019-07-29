@@ -1,0 +1,103 @@
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\NHG.DataServices\bin\Release\NHG.DataServices.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\NHG.DataServices\bin\Release\NHG.DataServices.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\NHG.DataServices\bin\Release\IBatisNet.Common.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\NHG.DataServices\bin\Release\IBatisNet.DataMapper.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\NHG.DataServices\bin\Release\NHG.Core.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\NHG.DataServices\bin\Release\NHG.Logger.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\NHG.DataServices\bin\Release\log4net.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\NHG.DataServices\bin\Release\NHG.Core.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\NHG.DataServices\bin\Release\NHG.Logger.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\NHG.DataServices\bin\Release\log4net.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\NHG.DataServices\obj\Release\NHG.DataServices.csprojResolveAssemblyReference.cache
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\NHG.DataServices\obj\Release\NHG.DataServices.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\NHG.DataServices\obj\Release\NHG.DataServices.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\NHG.DataServices\bin\Release\IBatisNet.Common.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\NHG.DataServices\bin\Release\IBatisNet.DataMapper.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.DataServices\bin\Release\NHG.DataServices.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.DataServices\bin\Release\NHG.DataServices.pdb
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.DataServices\bin\Release\NHG.Core.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.DataServices\bin\Release\NHG.Logger.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.DataServices\bin\Release\log4net.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.DataServices\bin\Release\NHG.Core.pdb
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.DataServices\bin\Release\NHG.Logger.pdb
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.DataServices\bin\Release\log4net.xml
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.csprojResolveAssemblyReference.cache
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.dll
+C:\Users\khiemth.NGUYENHOANG\Desktop\E-NHG\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.DataServices\bin\Release\NHG.DataServices.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.DataServices\bin\Release\NHG.DataServices.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.DataServices\bin\Release\NHG.Core.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.DataServices\bin\Release\NHG.Logger.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.DataServices\bin\Release\log4net.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.DataServices\bin\Release\NHG.Core.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.DataServices\bin\Release\NHG.Logger.pdb
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.DataServices\bin\Release\log4net.xml
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.csprojResolveAssemblyReference.cache
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.dll
+C:\Users\khiemth.NGUYENHOANG\Documents\Visual Studio 2013\Projects\E-NHG\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.pdb
+D:\SOFTWARE\RICONS\Libraries\NHG.DataServices\bin\Release\NHG.DataServices.dll
+D:\SOFTWARE\RICONS\Libraries\NHG.DataServices\bin\Release\NHG.DataServices.pdb
+D:\SOFTWARE\RICONS\Libraries\NHG.DataServices\bin\Release\NHG.Core.dll
+D:\SOFTWARE\RICONS\Libraries\NHG.DataServices\bin\Release\NHG.Logger.dll
+D:\SOFTWARE\RICONS\Libraries\NHG.DataServices\bin\Release\log4net.dll
+D:\SOFTWARE\RICONS\Libraries\NHG.DataServices\bin\Release\NHG.Core.pdb
+D:\SOFTWARE\RICONS\Libraries\NHG.DataServices\bin\Release\NHG.Logger.pdb
+D:\SOFTWARE\RICONS\Libraries\NHG.DataServices\bin\Release\log4net.xml
+D:\SOFTWARE\RICONS\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.csprojResolveAssemblyReference.cache
+D:\SOFTWARE\RICONS\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.dll
+D:\SOFTWARE\RICONS\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.pdb
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.DataServices.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.DataServices.pdb
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.Core.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.Logger.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\log4net.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.Core.pdb
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.Logger.pdb
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\log4net.xml
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.csprojResolveAssemblyReference.cache
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.dll
+C:\Users\han.ho\Desktop\RICONS-XNP\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.pdb
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.DataServices.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.DataServices.pdb
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\ClosedXML.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\DocumentFormat.OpenXml.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.Core.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.Logger.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\log4net.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.Core.pdb
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.Logger.pdb
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\ClosedXML.xml
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\log4net.xml
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.csprojResolveAssemblyReference.cache
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.dll
+D:\SOFTWARE\RICONS-XNP\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.DataServices.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.DataServices.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\ClosedXML.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\DocumentFormat.OpenXml.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.Core.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.Logger.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\log4net.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.Core.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NHG.Logger.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\ClosedXML.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\log4net.xml
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.csprojResolveAssemblyReference.cache
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.dll
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-XNP\Libraries\NHG.DataServices\bin\Release\NPOI.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.DataServices\bin\Release\NHG.DataServices.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.DataServices\bin\Release\NHG.DataServices.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.DataServices\bin\Release\ClosedXML.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.DataServices\bin\Release\DocumentFormat.OpenXml.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.DataServices\bin\Release\NHG.Core.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.DataServices\bin\Release\NHG.Logger.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.DataServices\bin\Release\NPOI.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.DataServices\bin\Release\log4net.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.DataServices\bin\Release\NHG.Core.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.DataServices\bin\Release\NHG.Logger.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.DataServices\bin\Release\ClosedXML.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.DataServices\bin\Release\log4net.xml
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.dll
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.pdb
+D:\SOFTWARE\CTY RICONS\RICONS-EOFFICE\Libraries\NHG.DataServices\obj\Release\NHG.DataServices.csprojResolveAssemblyReference.cache
