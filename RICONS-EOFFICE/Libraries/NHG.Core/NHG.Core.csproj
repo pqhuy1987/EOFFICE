@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{48C94B4F-1402-4DB8-BC5F-7763AFA5DEA5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NHG.Core</RootNamespace>
+    <AssemblyName>NHG.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>..\..\packages\ClosedXML.0.87.1\lib\net40\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\RICONS-DIVICE_OFFICE\Libraries\RICONS.Core\libSrc\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\RICONS-DIVICE_OFFICE\Libraries\RICONS.Core\libSrc\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\..\..\RICONS-DIVICE_OFFICE\Presentation\RICONS.Web\bin\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\RICONS-DIVICE_OFFICE\Libraries\RICONS.Core\libSrc\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassData\MenuLinks.cs" />
+    <Compile Include="ClassData\MenuRole.cs" />
+    <Compile Include="Constants\CST_Class.cs" />
+    <Compile Include="Constants\CST_Common.cs" />
+    <Compile Include="Constants\CST_Login.cs" />
+    <Compile Include="Exception.cs" />
+    <Compile Include="Functions\AES.cs" />
+    <Compile Include="Functions\Constants.cs" />
+    <Compile Include="Functions\EncDec.cs" />
+    <Compile Include="Functions\Functions.cs" />
+    <Compile Include="Functions\FunctionsDateTime.cs" />
+    <Compile Include="Functions\FunctionsFile.cs" />
+    <Compile Include="Functions\FunctionsImage.cs" />
+    <Compile Include="Functions\FunctionString.cs" />
+    <Compile Include="Functions\FunctionXML.cs" />
+    <Compile Include="Functions\RandomStringGenerator.cs" />
+    <Compile Include="Html\BBCodeHelper.cs" />
+    <Compile Include="Html\CodeFormatter\CLikeFormat.cs" />
+    <Compile Include="Html\CodeFormatter\CodeFormat.cs" />
+    <Compile Include="Html\CodeFormatter\CodeFormatHelper.cs" />
+    <Compile Include="Html\CodeFormatter\CSharpFormat.cs" />
+    <Compile Include="Html\CodeFormatter\HighlightOptions.cs" />
+    <Compile Include="Html\CodeFormatter\HtmlFormat.cs" />
+    <Compile Include="Html\CodeFormatter\JavaScriptFormat.cs" />
+    <Compile Include="Html\CodeFormatter\MshFormat.cs" />
+    <Compile Include="Html\CodeFormatter\SourceFormat.cs" />
+    <Compile Include="Html\CodeFormatter\TsqlFormat.cs" />
+    <Compile Include="Html\CodeFormatter\VisualBasicFormat.cs" />
+    <Compile Include="Html\HtmlHelper.cs" />
+    <Compile Include="Html\ResolveLinksHelper.cs" />
+    <Compile Include="IRepository\IExportToExcel.cs" />
+    <Compile Include="Menu\SiteMapNode.cs" />
+    <Compile Include="Menu\XmlSiteMap.cs" />
+    <Compile Include="Message\EmailAccount.cs" />
+    <Compile Include="Message\EmailSender.cs" />
+    <Compile Include="Message\IEmailSender.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\BaseExcel.cs" />
+    <Compile Include="Repository\ExportToExcel.cs" />
+    <Compile Include="Repository\FileDialogs.cs" />
+    <Compile Include="Repository\SetCellValue.cs" />
+    <Compile Include="ResourcePathUrl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NHG.Logger\NHG.Logger.csproj">
+      <Project>{c5834c69-0231-40e9-9d2a-4199314d8f5c}</Project>
+      <Name>NHG.Logger</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

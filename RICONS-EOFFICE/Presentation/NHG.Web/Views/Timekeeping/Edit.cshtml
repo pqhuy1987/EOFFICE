@@ -1,0 +1,477 @@
+﻿@model NHG.Web.Models.TimekeepingModels
+@{
+    ViewBag.Title = "Chấm công nhân viên";
+}
+@*--css--*@
+@section CSS
+{
+    @*<link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/Donxinnghiphep.css" />*@
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/Chamcong/Timekeeping_New.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/prism.css" />
+
+}
+
+@*--javascript--*@
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/controllers/Chamcong/Timekeeping_edit.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery.datepick-vi.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/prism.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/table/buildTable.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/colResizale/colResizable-1.3.source.js"></script>
+
+    <script type="text/javascript" src="@Url.Content("~")Themes/NHG-2015/css/TableBuild/global/plugins/jquery.blockui.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")Themes/NHG-2015/css/TableBuild/global/scripts/app.min.js"></script>
+
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/bootbox.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/custom.js"></script>
+
+<script>
+    $(document).ready(function (e) {
+        setValueToCombobox();
+    });
+    function setValueToCombobox() {
+        //debugger;
+        $('#filter01').val(@Model.maphongban);
+        for (var selector in configChosenDanhmucphongban) {
+            $(selector).change();
+            $(selector).trigger('chosen:updated');
+        }
+    }
+</script>
+
+}
+<script>
+    var linkContent = '@Url.Content("~")';
+</script>
+
+<div class="HeaderFixed1">
+    <div class="p-left1 b-b" style="padding-left: 10px; font-size: 14pt; font-weight: bold; color: black;">Chấm công nhân viên</div>
+    <div class="clearBoth"></div>
+</div>
+
+<div class="boxEdit">
+
+    @using (Html.BeginForm("Edit", "Timekeeping", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-md-2" style="width:170px"></div>
+            <div class="col-md-1"><label style="color:red" id="lblthongbao" class="hidden"></label></div>
+            <div class="col-md-1"><input type="text" style="width:100%;" autocomplete="off" placeholder="Mã chấm công" id="txtmachamcong" name="machamcong" class="hidden" value="@Model.machamcong" /></div>
+            <div class="col-md-1"><input type="text" style="width:100%;" autocomplete="off" placeholder="phongban/congtruong" id="txtphongban_congtruong" name="phongban_congtruong" class="hidden" value="@Model.phongban_congtruong" /></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2" style="width: 170px">Mã nhân viên<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-3"><input type="text" style="width:100%;" autocomplete="off" placeholder="Mã nhân viên" id="txtmanhanvien" name="manhanvien" value="@Model.manhanvien" /></div>
+            <div class="col-md-2" style="width:125px">Email<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-3"><input type="text" style="width: 100%;" class="inputShort" placeholder="Địa chỉ Email" id="txtemail" name="email" value="@Model.email" /></div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-2" style="width: 170px">Họ và tên<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-3"><input type="text" style="width:100%;" autocomplete="off" placeholder="Họ và tên" id="txthovaten" name="hovaten" value="@Model.hovaten" /></div>
+            <div class="col-md-2" style="width:125px">Ngày sinh<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width:100%;" autocomplete="off" placeholder="Ngày sinh" id="txtngaysinh" name="ngaysinh" value="@Model.ngaysinh" /></div>
+            <div class="col-md-1" style="min-width: 130px;">Tháng chấm công<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width:100%;text-align:center" autocomplete="off" placeholder="Tháng chấm công" id="txtthang" name="thang" value="@Model.thang" /></div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-2" style="width: 170px">Phòng ban/Công trường<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-3">
+                <select id="filter01" data-placeholder="Phòng ban" class="chosen-select-loaikehoach" name="maphongban">
+                    <option value="0">Chọn phòng ban</option>
+                    @if (!string.IsNullOrEmpty(ViewBag.sbphongban))
+                    {
+                        @Html.Raw(ViewBag.sbphongban);
+                    }
+                </select>
+            </div>
+
+            <div class="col-md-2" style="width:125px">Làm việc từ ngày<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%;" class="inputShort" id="txtngaylamviectu" name="ngaylamviectu" value="@Model.ngaylamviectu" /></div>
+            <div class="col-md-1">Đến ngày<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%;" class="inputShort" id="txtngaylamviecden" name="ngaylamviecden" value="@Model.ngaylamviecden" /></div>
+
+        </div>
+
+        <div class="row" style="padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px;">
+            <div class="col-md-12" style="font-size: 12px; font-weight: bold; color: white; padding-left: 10px; height: 27px; background-color: #0090d9">QUY RA CÔNG ĐỂ TRẢ LƯƠNG</div>
+        </div>
+
+        <div style="width:100%; overflow-x: scroll; padding-left:10px;">
+            <div id="boxContent">
+                <div @*class="row"*@ style="padding-right:10px">
+                    <div @*class="col-md-12"*@ style="width:120%">
+                        <div class="portlet-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table_danhSach" id="tableContent" style="font-size:10.5px;">
+                                    <thead id="head-date">
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2" style="width: 170px">Ngày công+lễ:</div>
+            <div class="col-md-1"><input type="text" style="width:100%;" autocomplete="off" placeholder="Ngày công + lễ" id="txtngaycong_le" name="ngaycong_le" value="@Model.ngaycong_le" /></div>
+            <div class="col-md-1">Nghỉ phép<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%;" class="inputShort" placeholder="Nghỉ phép" id="txtnghiphep" name="nghiphep" value="@Model.nghiphep" /></div>
+
+            <div class="col-md-1" style="width:125px">Hiếu hỉ<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%;" class="inputShort" placeholder="Nghỉ hiếu hỉ" id="txtnghihieu_hi" name="nghihieu_hi" value="@Model.nghihieu_hi" /></div>
+            <div class="col-md-1">Ốm+TS<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%;" class="inputShort" placeholder="Nghỉ ốm + TS" id="txtnghiom_thaisan" name="nghiom_thaisan" value="@Model.nghiom_thaisan" /></div>
+            <div class="col-md-1" style="width:100px">Không lương<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%;" class="inputShort" placeholder="Nghỉ không lương" id="txtnghikhongluong" name="nghikhongluong" value="@Model.nghikhongluong" /></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2" style="width: 170px">Số ngày được tính lương:</div>
+            <div class="col-md-1"><input type="text" style="width:100%;" autocomplete="off" placeholder="SN tính lương" id="txtsongayduoc_traluong" name="songayduoc_traluong" value="@Model.songayduoc_traluong" /></div>
+            <div class="col-md-1">PC cơm<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%;" class="inputShort" placeholder="Số ngày phụ cấp cơm" id="txtsongaypc_tiencom" name="songaypc_tiencom" value="@Model.songaypc_tiencom" /></div>
+
+            <div class="col-md-1" style="width:125px">Công chuẩn<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%;" class="inputShort" placeholder="SN công chuẩn" id="txtsongay_congchuan" name="songay_congchuan" value="@Model.songay_congchuan" /></div>
+            <div class="col-md-1">Chênh lệch<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%;" class="inputShort" placeholder="Chênh lệch công" id="txtchenhlech_ngaycong" name="chenhlech_ngaycong" value="@Model.chenhlech_ngaycong" /></div>
+        </div>
+
+        <div class="row" style="padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom:5px;">
+            <div class="col-md-12" style="font-size: 12px; font-weight: bold; color: white; padding-left: 10px; height: 27px; background-color: #0090d9">ĐÁNH GIÁ CỦA TRƯỞNG BỘ PHẬN</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2" style="width: 170px;">Tiêu chí:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%; text-align: center" autocomplete="off" placeholder="Tiêu chí" id="txttieuchi" name="tieuchi" value="Mức độ" /></div>
+            <div class="col-md-2" style="width:215px">Hoàn thành công việc được giao<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%; text-align: center" class="inputShort" placeholder="Hoàn thành công việc được giao" id="txthoanthanh_congviec" name="hoanthanh_congviec" value="@Model.hoanthanh_congviec" /></div>
+
+            <div class="col-md-1" style="width:151px">Tinh thần trách nhiệm<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%; text-align: center" class="inputShort" placeholder="Tinh thần trách nhiệm" id="txttinhthan_trachnhiem" name="tinhthan_trachnhiem" value="@Model.tinhthan_trachnhiem" /></div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-2" style="width: 170px">Cư xử họp tác trong CV:</div>
+            <div class="col-md-1"><input type="text" style="width:100%; text-align:center" autocomplete="off" placeholder="Tiêu chí" id="txtcuxu_hoptac" name="cuxu_hoptac" value="@Model.cuxu_hoptac" /></div>
+
+            <div class="col-md-2" style="width:215px">Tuân thủ giờ giấc, tác phong<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%; text-align: center" class="inputShort" placeholder="Hoàn thành công việc được giao" id="txttuanthu_giogiac" name="tuanthu_giogiac" value="@Model.tuanthu_giogiac" /></div>
+
+            <div class="col-md-1" style="width:151px">Xếp loại NV<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%; text-align: center" class="inputShort" placeholder="" id="txtxeploai" name="xeploai" value="@Model.xeploai" /></div>
+        </div>
+
+        <div class="row" style="padding-top:15px; padding-bottom:25px;">
+            <div class="col-md-2" style="width:170px"></div>
+            <div class="col-md-7">
+                @*<input id="btn-save" type="submit" class="buttoncustom WhiteButton" name="luu" value="Lưu" />*@
+                <input id="btn-save" type="button" class="buttoncustom WhiteButton" name="luu" value="Lưu" />
+                <a href="@Url.Action("Index", "Timekeeping")" class="buttoncustom WhiteButton">Trở về</a>
+            </div>
+        </div>
+
+    }
+</div>
+
+
+<script>
+    $(document).ready(function (e) {
+        debugger;
+
+        var curDt = new Date();
+        var MM = curDt.getMonth() + 1;
+        var yyyy = curDt.getFullYear();
+        renderDate(MM + "/" + yyyy);
+
+        $('#btn-save').on('click', function (e) {
+            e.preventDefault();
+            debugger;
+
+            //var aa = $("#txtmanhanvien").val().length;
+
+            //if ($("#txtmanhanvien").val().trim().length != 6) {
+            //    alert("Nhập mã nhân viên không đúng?");
+            //    return false;
+            //}
+            if ($("#txthovaten").val().length < 5) {
+                alert("Nhập họ tên không đúng?");
+                return false;
+            }
+            else if ($("#txtthang").val().length != 7) {
+                alert("Nhập tháng chấm công không đúng?");
+                return false;
+            }
+
+            else if ($("#txtemail").val().length < 5) {
+                alert("Nhập Email không đúng?");
+                return false;
+            }
+            else if ($("#filter01").val() == 0) {
+                alert("Chọn phòng ban/công trường?");
+                return false;
+            }
+            else if ($("#txtngaylamviectu").val().length != 10 || $("#txtngaylamviecden").val().length != 10) {
+                alert("Nhập ngày làm việc từ - ngày làm việc đến không đúng?");
+                return false;
+            }
+
+            var data = [];
+            var DataJson = "{'data1':";
+            DataJson += "{";
+            DataJson += "'machamcong':'" + $('#txtmachamcong').val() + "',";
+            DataJson += "'manhanvien':'" + $('#txtmanhanvien').val() + "',";
+            DataJson += "'hovaten':'" + $('#txthovaten').val() + "',";
+            DataJson += "'email':'" + $('#txtemail').val() + "',";
+
+            DataJson += "'thang':'" + $('#txtthang').val() + "',";
+
+            DataJson += "'ngaysinh':'" + $('#txtngaysinh').val() + "',";
+            DataJson += "'ngaylamviectu':'" + $('#txtngaylamviectu').val() + "',";
+            DataJson += "'ngaylamviecden':'" + $('#txtngaylamviecden').val() + "',";
+            DataJson += "'maphongban':'" + $('#filter01').val() + "',";
+          
+            DataJson += "'ngaycong_le':'" + $("#txtngaycong_le").val() + "',";
+            DataJson += "'nghiphep':'" + $("#txtnghiphep").val() + "',";
+            DataJson += "'nghihieu_hi':'" + $("#txtnghihieu_hi").val() + "',";
+            DataJson += "'nghiom_thaisan':'" + $("#txtnghiom_thaisan").val() + "',";
+            DataJson += "'nghikhongluong':'" + $("#txtnghikhongluong").val() + "',";
+            DataJson += "'songayduoc_traluong':'" + $("#txtsongayduoc_traluong").val() + "',";
+            DataJson += "'songaypc_tiencom':'" + $("#txtsongaypc_tiencom").val() + "',";
+            DataJson += "'songay_congchuan':'" + $("#txtsongay_congchuan").val() + "',";
+            DataJson += "'chenhlech_ngaycong':'" + $("#txtchenhlech_ngaycong").val() + "',";
+            DataJson += "'tieuchi':'" + $("#txttieuchi").val() + "',";
+            DataJson += "'hoanthanh_congviec':'" + $("#txthoanthanh_congviec").val() + "',";
+            DataJson += "'tinhthan_trachnhiem':'" + $("#txttinhthan_trachnhiem").val() + "',";
+            DataJson += "'cuxu_hoptac':'" + $("#txtcuxu_hoptac").val() + "',";
+            DataJson += "'tuanthu_giogiac':'" + $("#txttuanthu_giogiac").val() + "',";
+            DataJson += "'xeploai':'" + $("#txtxeploai").val() + "',";
+            DataJson += "}, 'data2':[";
+
+            $('#boxContent table tbody tr').each(function (index, item) {
+                debugger;
+                var ngay21 = $(item).find('td.col21 input').val();
+                var ngay22 = $(item).find('td.col22 input').val();
+                var ngay23 = $(item).find('td.col23 input').val();
+                var ngay24 = $(item).find('td.col24 input').val();
+                var ngay25 = $(item).find('td.col25 input').val();
+                var ngay26 = $(item).find('td.col26 input').val();
+                var ngay27 = $(item).find('td.col27 input').val();
+                var ngay28 = $(item).find('td.col28 input').val();
+                var ngay29 = 0;
+                var ngay30 = 0;
+                var ngay31 = 0;
+                try {
+                    ngay29 = $(item).find('td.col29 input').val();
+                    ngay30 = $(item).find('td.col30 input').val();
+                    ngay31 = $(item).find('td.col31 input').val();
+                }
+                catch (Exception) { }
+                var ngay1 = $(item).find('td.col1 input').val();
+                var ngay2 = $(item).find('td.col2 input').val();
+                var ngay3 = $(item).find('td.col3 input').val();
+                var ngay4 = $(item).find('td.col4 input').val();
+                var ngay5 = $(item).find('td.col5 input').val();
+                var ngay6 = $(item).find('td.col6 input').val();
+                var ngay7 = $(item).find('td.col7 input').val();
+                var ngay8 = $(item).find('td.col8 input').val();
+                var ngay9 = $(item).find('td.col9 input').val();
+                var ngay10 = $(item).find('td.col10 input').val();
+                var ngay11 = $(item).find('td.col11 input').val();
+                var ngay12 = $(item).find('td.col12 input').val();
+                var ngay13 = $(item).find('td.col13 input').val();
+                var ngay14 = $(item).find('td.col14 input').val();
+                var ngay15 = $(item).find('td.col15 input').val();
+                var ngay16 = $(item).find('td.col16 input').val();
+                var ngay17 = $(item).find('td.col17 input').val();
+                var ngay18 = $(item).find('td.col18 input').val();
+                var ngay19 = $(item).find('td.col19 input').val();
+                var ngay20 = $(item).find('td.col20 input').val();
+
+                DataJson += "{";
+                DataJson += "'ngay21':'" + ngay21 + "',";
+                DataJson += "'ngay22':'" + ngay22 + "',";
+                DataJson += "'ngay23':'" + ngay23 + "',";
+                DataJson += "'ngay24':'" + ngay24 + "',";
+                DataJson += "'ngay25':'" + ngay25 + "',";
+                DataJson += "'ngay26':'" + ngay26 + "',";
+                DataJson += "'ngay27':'" + ngay27 + "',";
+                DataJson += "'ngay28':'" + ngay28 + "',";
+                DataJson += "'ngay29':'" + ngay29 + "',";
+                DataJson += "'ngay30':'" + ngay30 + "',";
+                DataJson += "'ngay31':'" + ngay31 + "',";
+
+                DataJson += "'ngay1':'" + ngay1 + "',";
+                DataJson += "'ngay2':'" + ngay2 + "',";
+                DataJson += "'ngay3':'" + ngay3 + "',";
+                DataJson += "'ngay4':'" + ngay4 + "',";
+                DataJson += "'ngay5':'" + ngay5 + "',";
+                DataJson += "'ngay6':'" + ngay6 + "',";
+                DataJson += "'ngay7':'" + ngay7 + "',";
+                DataJson += "'ngay8':'" + ngay8 + "',";
+                DataJson += "'ngay9':'" + ngay9 + "',";
+                DataJson += "'ngay10':'" + ngay10 + "',";
+                DataJson += "'ngay11':'" + ngay11 + "',";
+                DataJson += "'ngay12':'" + ngay12 + "',";
+                DataJson += "'ngay13':'" + ngay13 + "',";
+                DataJson += "'ngay14':'" + ngay14 + "',";
+                DataJson += "'ngay15':'" + ngay15 + "',";
+                DataJson += "'ngay16':'" + ngay16 + "',";
+                DataJson += "'ngay17':'" + ngay17 + "',";
+                DataJson += "'ngay18':'" + ngay18 + "',";
+                DataJson += "'ngay19':'" + ngay19 + "',";
+                DataJson += "'ngay20':'" + ngay20 + "',";
+                DataJson += "}";
+                if (index != $('#boxContent table tbody tr').length - 1)
+                    DataJson += ",";
+            });
+            DataJson += "]}";
+            $.ajax({
+                type: 'POST',
+                url: '/Timekeeping/Save',
+                datatype: "JSON",
+                data: "DataJson=" + DataJson,
+                cache: false,
+
+            })
+            .done(function (result) {
+                debugger;
+                var tb = JSON.stringify(result.success);
+                var idmachamcong = JSON.stringify(result.machamcong);
+                if (tb == "true") {
+                    $('#txtmachamcong').val(idmachamcong);
+                    alert('Lưu dữ liệu thành công');
+                } else {
+                    $('#txtmachamcong').val(0);
+                    alert('Lỗi lưu dữ liệu');
+                }
+            })
+            .fail(function (result) {
+                $('#txtmachamcong').val(0);
+                alert('Lỗi lưu dữ liệu');
+
+            });
+        })
+
+        //keypress
+        $('input#txtthang').on('keypress', function (event) {
+            debugger;
+
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == '13') {
+                if ($("#txtthang").val().trim().length == 7) {
+                    var thand = $("#txtthang").val().trim().split('/');
+                    var thangthang = 0;
+                    if (thand[0] == '1' || thand[0] == '01') {
+                        thangthang = 12;
+                        thand[1] = thand[1] - 1;
+                    }
+                    else {
+                        thangthang = thand[0] - 1;
+                    }
+
+                    if (thangthang.toString().length == 1)
+                        thangthang = '0' + thangthang;
+                    var ntn = '21/' + thangthang + '/' + thand[1];
+
+                    $('#txtngaylamviectu').val(ntn);
+
+                    $('#txtngaylamviecden').val('20/' + $("#txtthang").val().trim());
+
+                    renderDate($("#txtthang").val().trim());
+                    GetData_Edit(false);
+                }
+            }
+        });
+
+    });
+
+    function renderDate(selectedDate) {
+        debugger;
+        var date = new Date();
+        // Lấy số thứ tự của ngày hiện tại
+        var current_day1 = date.getDay();
+        var d = selectedDate.split('/');
+        var d1 = selectedDate.split('/');
+        var thang = d[0] - 1;
+        var numberDateofMonth = new Date(d[1], thang, 0).getDate();
+        var songaycuathang = numberDateofMonth - 20;
+
+        var thangnam = $("#txtthang").val();
+
+        if ($("#txtthang").val().trim().length == 7) {
+            d = thangnam.split('/');
+            d1 = thangnam.split('/');
+            if (d[0] == '1' || d[0] == '01') {
+                d[0] = 12;
+                d[1] = d[1] - 1;
+                numberDateofMonth = new Date(d[1], d[0], 0).getDate();
+            }
+            else {
+                d[0] = d[0]-1;
+                numberDateofMonth = new Date(d[1], d[0], 0).getDate();
+            }
+                
+        }
+
+        var html = '';
+        html += '<tr>';
+        for (i = 21; i <= numberDateofMonth; i++) {
+            var tnn = d[0] + "/" + i + "/" + d[1];
+            var date = new Date(tnn);
+            var current_day = date.getDay();
+            if (current_day == 0) html += '<th class="ovhcn col' + i.toString() + '">' + i + "</br></br> CN" + '</th>';
+            else if (current_day == 1) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T2" + '</th>';
+            else if (current_day == 2) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T3" + '</th>';
+            else if (current_day == 3) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T4" + '</th>';
+            else if (current_day == 4) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T5" + '</th>';
+            else if (current_day == 5) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T6" + '</th>';
+            else if (current_day == 6) html += '<th class="ovht7 col' + i.toString() + '">' + i + "</br></br>T7" + '</th>';
+        }
+        for (i = 1; i <= 20; i++) {
+
+            var tnn = d1[0] + "/" + i + "/" + d1[1];
+            var date = new Date(tnn);
+            var current_day = date.getDay();
+            if (current_day == 0) html += '<th class="ovhcn col' + i.toString() + '">' + i + "</br></br> CN" + '</th>';
+            else if (current_day == 1) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T2" + '</th>';
+            else if (current_day == 2) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T3" + '</th>';
+            else if (current_day == 3) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T4" + '</th>';
+            else if (current_day == 4) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T5" + '</th>';
+            else if (current_day == 5) html += '<th class="ovh col' + i.toString() + '">' + i + "</br></br>T6" + '</th>';
+            else if (current_day == 6) html += '<th class="ovht7 col' + i.toString() + '">' + i + "</br></br>T7" + '</th>';
+        }
+        html += ' </tr>';
+
+        $('#head-date').html(html);
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<html class="app js no-touch no-android no-chrome firefox no-iemobile no-ie no-ie8 no-ie10 no-ie11 no-ios no-ios7 ipad" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>@ViewBag.Title - Ricons</title>
+    <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="@Url.Content("~")favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/jquery-ui-1.10.2.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/bootstrap_calendar.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/loader.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/scrollbar/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/app.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/StyleButton.css" />
+
+    @RenderSection("CSS", required: false)
+    <!--[if lt IE 9]>
+        <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js">
+        </script> <script src="js/ie/excanvas.js"></script> <![endif]-->
+
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/app.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/encoder.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery.common-functions.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/scrollbar/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/loader.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/dialog/jquery.customdialog.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/ScriptUploadFile.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery.fileDownload.js"></script>
+
+    @RenderSection("JavaScript", required: false)
+</head>
+<body class="nhg-body">
+    <section class="vbox">
+        <header class="bg-white header header-md navbar navbar-fixed-top-xs box-shadow">
+            <div class="navbar-header aside-md dk">
+                <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <a href="@Url.Content("~")" class="navbar-brand">
+                    <img src="@Url.Content("~")Themes/NHG-2015/images/Logo.png" class="m-r-sm" alt="scale">
+                </a>
+
+                <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
+                    <i class="fa fa-cog"></i>
+                </a>
+
+            </div>
+
+            @*ô cham cham o tren cung dau voi logo*@
+
+            @*<ul class="nav navbar-nav hidden-xs">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="i i-grid"></i>
+                    </a>
+                    <section class="dropdown-menu aside-lg bg-white on animated fadeInLeft">
+                        <div class="row m-l-none m-r-none m-t m-b text-center">
+                            <div class="col-xs-4">
+                                <div class="padder-v">
+                                    <a href="#">
+                                        <span class="m-b-xs block">
+                                            <i class="i i-mail i-2x text-primary-lt"></i>
+                                        </span>
+                                        <small class="text-muted">Mailbox</small>
+                                    </a>
+                                </div>
+                            </div> <div class="col-xs-4">
+                                <div class="padder-v">
+                                    <a href="@Url.Action("Index", "Calendar")">
+                                        <span class="m-b-xs block">
+                                            <i class="i i-calendar i-2x text-danger-lt"></i>
+                                        </span>
+                                        <small class="text-muted">Lịch</small>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="padder-v">
+                                    <a href="#">
+                                        <span class="m-b-xs block">
+                                            <i class="i i-map i-2x text-success-lt"></i>
+                                        </span>
+                                        <small class="text-muted">Map</small>
+                                    </a>
+                                </div>
+                            </div> <div class="col-xs-4">
+                                <div class="padder-v">
+                                    <a href="#">
+                                        <span class="m-b-xs block">
+                                            <i class="i i-paperplane i-2x text-info-lt"></i>
+                                        </span>
+                                        <small class="text-muted">Trainning</small>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="padder-v">
+                                    <a href="@Url.Action("Index", "Document")">
+                                        <span class="m-b-xs block">
+                                            <i class="i i-docs i-2x text-muted"></i>
+                                        </span> <small class="text-muted">Tài liệu</small>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="padder-v">
+                                    <a href="#">
+                                        <span class="m-b-xs block">
+                                            <i class="i i-clock i-2x text-warning-lter"></i>
+                                        </span> <small class="text-muted">Timeline</small>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </li>
+            </ul>*@
+
+
+
+
+
+
+            @*<form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-sm bg-white b-white btn-icon">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                        <input class="form-control input-sm no-border" placeholder="Từ khóa tìm kiếm" type="text" id="txtTimKiem"/>
+                    </div>
+                </div>
+            </form>*@
+
+
+            <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
+                @*//Noi dung thong bao*@ 
+
+                <li class="hidden-xs">      
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="i i-chat3"></i>
+                        <span style="display: inline-block;" class="badge badge-sm up bg-danger count">3</span>
+                    </a>
+                    <section class="dropdown-menu aside-xl animated flipInY">
+                        <section class="panel bg-white">
+                            <!-- noi dung thong bao -->
+                            @Html.Action("QuickAlert", "Message")
+                            <!-- End noi dung thong bao -->
+                            <div class="panel-footer text-sm">
+                                <a href="@Url.Action("Config", "Message")" class="pull-right">
+                                    <i class="fa fa-cog"></i>
+                                </a>
+                                <a href="@Url.Action("Alerts", "Message")">Xem toàn bộ</a>
+                            </div>
+                        </section>
+                    </section>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="thumb-sm avatar pull-left">
+                            <img src="@Url.Content("~")Themes/NHG-2015/images/hinha0.jpg" alt="...">
+                        </span>@Session["fullname"].ToString()<b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight">
+                        <li>
+                            <span class="arrow top"></span>
+                            <a href="@Url.Action("Personal", "Account")">Hồ sơ</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Help")">Trợ giúp</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="@Url.Action("LogOff", "Account")">Đăng xuất</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </header> 
+
+
+
+        <section>
+            <section class="hbox stretch">
+                <!-- .aside -->
+                <aside class="bg-black aside-md hidden-print hidden-xs" id="nav">
+                    <section class="vbox">
+                        <section class="w-f scrollable">
+                            <div class="clearfix wrapper dk nav-user hidden-xs">
+                                <div class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <span class="thumb avatar pull-left m-r">
+                                            <img src="@Url.Content("~")Themes/NHG-2015/images/hinha0.jpg" class="dker" alt="...">
+                                            <i class="on md b-black"></i>
+                                        </span>
+                                        <span class="hidden-nav-xs clear">
+                                            <span class="block m-t-xs">
+                                                <strong class="font-bold text-lt"><div class="text-eclip" title="@Session["fullname"].ToString()">@Session["fullname"].ToString()</div><b class="caret"></b></strong>
+                                            </span>
+                                            <span class="text-muted text-xs block">@Session["tenchucvu"].ToString()</span>
+                                        </span>
+                                    </a> <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                        <li>
+                                            <span class="arrow top"></span>
+                                            <a href="@Url.Action("Personal", "Account")">Hồ sơ</a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index", "Help")">Trợ giúp</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="@Url.Action("LogOff", "Account")">Đăng xuất</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- nav -->
+                            @Html.Action("MenuHeaderLink", "Common")
+                            <!-- / nav -->
+                        </section>
+ 
+                        <footer class="footer hidden-xs no-padder text-center-nav-xs">
+                            <a href="@Url.Action("LogOff", "Account")" class="btn btn-icon icon-muted btn-inactive pull-right m-l-xs m-r-xs hidden-nav-xs">
+                                <i class="i i-logout"></i>
+                            </a>
+                            <a href="#nav" data-toggle="class:nav-xs" class="btn btn-icon icon-muted btn-inactive m-l-xs m-r-xs">
+                                <i class="i i-circleleft text"></i>
+                                <i class="i i-circleright text-active"></i>
+                            </a>
+                        </footer>
+
+                    </section>
+                </aside>
+                <!-- /.aside -->
+
+                <section id="content">
+                    <section class="hbox stretch">
+                        <div id="ScrollContent">
+                            @RenderBody()
+                        </div>
+                    </section>
+                </section>
+
+
+            </section>
+        </section>
+
+
+
+
+    </section>
+    <script type="text/javascript">
+        //giu session
+        setInterval(function () {
+            $.get("@Url.Content("~")ajax/KeepAlive.ashx");
+        }, 1000 * 15); // 30s gửi request một lần
+        //
+        $('#nav .scrollable .nav-primary').slimscroll({ height: getWindowHeight() - $('.nhg-body header.header').height() - $('.nhg-body .nav-user').outerHeight(true) - $('.nhg-body #nav .footer').height() });
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿
+.col1 {
+    text-align: center;
+    width: 80px;
+}
+
+.col2 {
+    width: 100%;
+}
+
+.col3 {
+    text-align: center;
+    width: 300px;
+}
+
+.rows-box .col2:hover{
+    text-overflow:clip;
+    white-space:pre-wrap;
+}

@@ -1,0 +1,2 @@
+DataProvider: PostgreSql0.7
+DataConnectionString: ./App_SOAP/SQLMAP/POSTGRES/SqlMap.config

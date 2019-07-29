@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="Holiday"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+
+    <update id="UpdateRow_phongban">
+      UPDATE
+      m_donvi_phongban
+      SET
+      madonvi=$madonvi$
+      ,tenphongban=N'$tenphongban$'
+      ,sodienthoai=N'$sodienthoai$'
+
+      ,email='$email$'
+      ,hovaten=N'$hovaten$'
+      ,thuocquanly='$thuocquanly$'
+
+      ,ghichu=N'$ghichu$'
+      ,nguoihieuchinh=$nguoitao$
+      ,ngayhieuchinh= GETDATE()
+      WHERE maphongban='$maphongban$'
+    </update>
+
+    <update id="DeletedRow_phongban">
+      UPDATE
+      m_donvi_phongban
+      SET
+      xoa='1'
+      ,nguoihieuchinh=$nguoitao$
+      ,ngayhieuchinh= GETDATE()
+      WHERE maphongban='$maphongban$'
+    </update>
+    
+    
+    <select id="SelectRows_holiday" resultClass="System.Collections.Hashtable">
+      SELECT id, holidayname, datevalue  FROM  AtHoliday
+    </select>
+
+     <select id="SelectRows_chucvu" resultClass="System.Collections.Hashtable">
+       SELECT
+       *
+       FROM
+       m_donvi_chucdanh
+       WHERE xoa='0'
+     </select>
+    
+    <select id="CountRows" resultClass="int">
+      SELECT
+      count(*)
+      FROM
+      m_donvi_phongban
+      WHERE
+      xoa = '0'
+    </select>
+
+  </statements>
+</sqlMap>

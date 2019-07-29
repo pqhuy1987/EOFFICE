@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "SystemLog";
+}
+
+@*--css--*@
+@section CSS
+{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/System.SystemLogCSS.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/prism.css" />
+}
+
+@*--javascript--*@
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/controllers/System.SystemLogJS.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/prism.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/table/buildTable.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/colResizale/colResizable-1.3.source.js"></script>
+}
+<script>
+    var linkContent = '@Url.Content("~")';
+</script>
+<div class="HeaderFixed">
+    <div class="b-b b-light">
+        <div class="p-left c-black">Lịch sử hoạt động</div>
+        <div class="p-right">
+            <div class="p-right-item t-fillter c-black">Lọc theo:&nbsp;</div>
+            <div class="p-right-item">
+                <select id="filter01" data-placeholder="Chọn kế hoạch..." class="chosen-select-plan">
+                    <option value="0">Tất cả</option>
+                    <option value="1">ERROR</option>
+                    <option value="2">INFO</option>
+                    <option value="3">WARNING</option>
+                </select>
+            </div>
+            <div class="p-right-item t-export c-black">Export: </div>
+            <div class="p-right-item t-action"><i class="fa fa-file-excel-o"></i>Excel</div>
+            <div class="p-right-item t-action"><i class="fa fa-print"></i>Print</div>
+        </div>
+        <div class="clearBoth"></div>
+    </div>
+</div>
+<div id="boxContent">
+    <div class="boxTable boxTable1">
+        <table class="table_danhSach table_fixed" id="tableFixedHeader">
+        </table>
+    </div>
+    <div class="boxTable boxTable2">
+        <table class="table_danhSach table_fixed" id="tableContent">
+            <thead>
+
+            </thead>
+            <tbody>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" id="girdInfo">Tổng số: <span class="currentRow">1</span>/<span class="sumRow">212</span></td>
+                </tr>
+                <tr>
+                    <td colspan="4" id="girdInfoLoad">
+                        <div class="divExentd"><i class="retweet_32"></i>Xem thêm</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" id="footerInfo">
+                        <div class="companyName">CÔNG TY CỔ PHẦN ĐẦU TU PHÁT TRIỂN NGUYỄN HOÀNG</div>
+                        <div class="address">49 Phạm Ngọc Thạch, P.6, Q3, TP.HCM</div>
+</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+﻿@using NHG.Core.ClassData;
+@model IList<MenuLinks>
+
+@if (Model != null)
+{
+    bool firsT = true;
+    if (Model.Count > 0)
+    {
+        <nav class="nav-primary hidden-xs">
+            @foreach (var item in Model)
+            {
+                if (item.listChild != null)
+                {
+                    if (item.listChild.Count > 0)
+                    {
+                        if (!firsT)
+                        {
+                            <div class="line dk hidden-nav-xs"></div>
+                        }
+                        firsT = false;
+                        <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm" madanhmuc="@item.id">@item.title</div>
+                        <ul class="nav nav-main" data-ride="collapse">
+                            @foreach (var child in item.listChild)
+                            {
+                                string strURL = "#";
+                                string strImageURL = child.ImageUrl;
+                                string strTitle = child.title;
+                                if (!string.IsNullOrWhiteSpace(child.action) && !string.IsNullOrWhiteSpace(child.controller))
+                                {
+                                    strURL = Url.Action(child.action, child.controller);
+                                }
+                                else
+                                {
+                                    if (!string.IsNullOrWhiteSpace(child.url))
+                                    {
+                                        strURL = child.url;
+                                    }
+                                }
+                                if (child.listChild != null)
+                                {
+                                    if (child.listChild.Count > 0)
+                                    {
+                                        <li madanhmuc="@child.id">
+                                            <a href="@strURL">
+                                                <span class="pull-right text-muted">
+                                                    <i class="i i-circle-sm-o text"></i>
+                                                    <i class="i i-circle-sm text-active"></i>
+                                                </span>
+                                                <b class="badge bg-danger pull-right"></b>
+                                                <i class="i @strImageURL icon"> </i>
+                                                <span class="font-bold">@strTitle</span>
+                                            </a>
+                                            <ul class="nav dk">
+                                                @foreach (var subChild in child.listChild)
+                                                {
+                                                    strURL = "#";
+                                                    if (!string.IsNullOrWhiteSpace(subChild.action) && !string.IsNullOrWhiteSpace(subChild.controller))
+                                                    {
+                                                        strURL = Url.Action(subChild.action, subChild.controller);
+
+                                                    }
+                                                    else
+                                                    {
+                                                        if (!string.IsNullOrWhiteSpace(subChild.url))
+                                                        {
+                                                            strURL = subChild.url;
+                                                        }
+                                                    }
+                                                    <li madanhmuc="@subChild.id">
+                                                        <a href="@strURL">
+                                                            <i class="i i-dot"></i> <span>@subChild.title</span>
+                                                        </a>
+                                                    </li>
+
+                                                }
+                                            </ul>
+                                        </li>
+                                    }
+                                }
+                                else
+                                {
+                                    <li madanhmuc="@child.id">
+                                        <a href="@strURL" >
+                                            <b class="badge bg-danger pull-right"></b>
+                                            <i class="i @strImageURL icon"> </i>
+                                            <span class="font-bold">@strTitle</span>
+                                        </a>
+                                    </li>
+                                }
+
+                            }
+                        </ul>
+
+                    }
+                }
+            }
+        </nav>
+    }
+}
+
+

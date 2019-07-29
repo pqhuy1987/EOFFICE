@@ -1,0 +1,308 @@
+﻿
+@model NHG.Web.Models.AbsentModels
+@{
+    ViewBag.Title = "Đơn xin nghỉ phép";
+}
+@*--css--*@
+@section CSS
+{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/controller/Donxinnghiphep.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/chosen/prism.css" />
+    
+}
+
+@*--javascript--*@
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/controllers/Donxinnghiphep.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery.datepick-vi.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/chosen/prism.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/table/buildTable.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/colResizale/colResizable-1.3.source.js"></script>
+
+    <script type="text/javascript" src="@Url.Content("~")Themes/NHG-2015/css/TableBuild/global/plugins/jquery.blockui.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")Themes/NHG-2015/css/TableBuild/global/scripts/app.min.js"></script>
+
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/bootbox.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/custom.js"></script>
+
+}
+<script>
+    var linkContent = '@Url.Content("~")';
+</script>
+
+<div class="HeaderFixed1">
+    <div class="p-left1 b-b" style="padding-left:10px">Tạo mới đơn xin nghỉ phép</div>
+    <div class="clearBoth"></div>
+</div>
+
+<div class="boxEdit">
+
+    @using (Html.BeginForm("Registerforleave", "Absent", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-md-2" style="width:180px"></div>
+            <div class="col-md-7"><label style="color:red" id="lblthongbao" class="hidden"></label></div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-2" style="width:180px">Mã nhân viên:</div>
+            <div class="col-md-3"><input type="text" style="width:100%;" autocomplete="off" placeholder="Mã nhân viên" id="manhanvien" name="manhanvien" value="@Model.manhanvien" /></div>
+
+            <div class="col-md-1"><input type="text" id="txtsongaynghi" class="hidden" value="@Model.songayphepconlai" /></div>
+
+        </div>
+        
+        <div class="row">
+             <div class="col-md-2" style="width:180px">Họ và tên<label style="color:red;height:10px;">*</label>:</div>
+             <div class="col-md-3"><input type="text" style="width:100%;" autocomplete="off" placeholder="Họ và tên" id="txthovaten" name="hovaten" value="@Model.hovaten" /></div>
+            <div class="col-md-1">Ngày sinh<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-3"><input type="text" style="width:100%;" autocomplete="off" placeholder="Ngày sinh" id="txtngaysinh" name="ngaysinh" value="@Model.ngaysinh" /></div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-2" style="width:180px">Chức danh<label style="color:red;height:10px;">*</label>:</div> 
+            <div class="col-md-5">
+                <input type="radio" id="chknhanvien" name="machucdanh" checked="checked" value="1" /><span id="spNhanvien">Nhân viên</span>
+                &nbsp;&nbsp;<input type="radio" id="chktruongdonvi" name="machucdanh" value="2" /><span id="spTruongdonvi">Trưởng đơn vị</span>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-2" style="width:180px">Phòng ban/Công trường<label style="color:red;height:10px;">*</label>:</div>
+                    <div class="col-md-7">
+                        <select id="filter01" data-placeholder="Phòng ban" class="chosen-select-loaikehoach" name="maphongban">
+                            @if (!string.IsNullOrEmpty(ViewBag.sbphongban))
+                            {
+                                @Html.Raw(ViewBag.sbphongban);
+                            }
+                        </select>
+                    </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-2" style="width:180px">Nghỉ phép từ ngày<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%;" class="inputShort" id="txtngayxinnghitu" name="ngayxinnghitu" /></div>
+            
+            <div class="col-md-1">Số ngày<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%;" class="inputShort" id="txtsongayxinnghi" name="songayxinnghi" value="1" /></div>
+            
+            <div class="col-md-1">Đến ngày<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%;" class="inputShort" id="txtngayxinnghiden" name="ngayxinnghiden" /></div>
+
+            <div class="col-md-1">Phép năm<label style="color:red;height:10px;">*</label>:</div>
+            <div class="col-md-1"><input type="text" style="width: 100%;" class="inputShort" id="txtsongayphepconlai" name="songayphepconlai" value="@Model.songayphepconlai" readonly="readonly" /></div>
+
+        </div>
+        
+        <div class="row">
+            <div class="col-md-2" style="width:180px">Lý do xin nghỉ:</div>
+                    <div class="col-md-7"><input type="text" style="width: 100%; " autocomplete="off" placeholder="Lý do xin nghỉ" id="txtlydoxinnghi" name="lydoxinnghi" /></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2" style="width:180px">Địa chỉ Email<label style="color:red;height:10px;">*</label>:</div>
+                    <div class="col-md-3"><input type="text" style="width: 100%;" class="inputShort" placeholder="Địa chỉ Email" id="txtemail" name="email" value="@Model.email" /></div>
+             <div class="col-md-1">Số Đ.thoại:</div>
+             <div class="col-md-3"><input type="text" style="width: 100%; " autocomplete="off" placeholder="Số điện thoại" id="txtsodienthoai" name="sodienthoai" value="@Model.sodienthoai" /></div>
+         
+          </div>
+
+        <div class="row">
+            <div class="col-md-2" style="width:180px">Người thay thế:</div>
+                    <div class="col-md-7"><input type="text" style="width:100%;" autocomplete="off" placeholder="Người thay thế tạm thời" id="nguoithaythetamthoi" name="nguoithaythetamthoi" /></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2" style="width:180px">Loại phép năm<label style="color:red;height:10px;">*</label>:</div> 
+            <div class="col-md-7">
+                <input type="checkbox" id="chknghiphep" name="nghiphep" checked="checked" /><span id="spnghiphep">Phép năm</span>
+                &nbsp;<input type="checkbox" name="nghikhongluong" id="chknghikhongluong" /><span id="spnghikhongluong">Không lương</span>
+                &nbsp;<input type="checkbox" name="nghithaisan" id="chknghithaisan" /><span id="spnghithaisan">Thai sản</span>
+                &nbsp;<input type="checkbox" name="conkh" id="chkconkh" /><span id="spconkh">Con kết hôn</span>
+                &nbsp;<input type="checkbox" id="chkcanhankh" name="canhankh" /><span id="spcanhankh">Cá nhân KH</span>
+                &nbsp;<input type="checkbox" name="chame_mat" id="chkchame_mat" /><span id="spchame_mat">Cha mẹ, vợ chồng, con mất</span>
+                &nbsp;<input type="checkbox" name="ongba_mat" id="chkongba_mat" /><span id="spongba_mat">Ông bà, anh chị,em ruột mất</span>
+            </div>
+        </div>  
+        
+         <div class="row" >
+            <div class="col-md-2" style="width:180px">Chọn thời gian nghỉ<label style="color:red;height:10px;">*</label>:</div> 
+            <div class="col-md-5">
+                <input type="radio" id="chkcangay" name="thoigian" value="0" checked="checked" /><span id="spNhanvien">Cả ngày</span>
+                &nbsp;&nbsp;<input type="radio" id="chksang" name="thoigian" value="1" /><span id="spNhanvien">Sáng</span>
+                &nbsp;&nbsp;<input type="radio" id="chkchieu" name="thoigian" value="2" /><span id="spTruongdonvi">Chiều</span>
+            </div>
+        </div>
+          
+        <div class="row" style="padding-top:15px; padding-bottom:25px;">
+            <div class="col-md-2" style="width:180px"></div>
+                    <div class="col-md-7">
+                        <input id="btn-save" type="submit" class="buttoncustom WhiteButton" name="luu" value="Gửi đơn"/>
+                        <a href="@Url.Action("Vacationlist", "Absent")" class="buttoncustom WhiteButton">Trở về</a>
+                    </div>
+        </div>
+   
+    }
+</div>
+
+
+<script>
+    $(document).ready(function (e) {
+        var songayphepconlai = parseFloat($('#txtsongayphepconlai').val());
+        if (songayphepconlai <= 0)
+        {
+            $("#chknghikhongluong").prop('checked', true);
+            $('#chknghiphep').prop('checked', false);
+        }
+         
+        $("#chkcanhankh").click(function () {
+            debugger;
+            var songayphephientai = parseFloat($('#txtsongayphepconlai').val());
+            var songayxinnghi = parseFloat($('#txtsongayxinnghi').val());
+            if ($('#chkcanhankh:checked').length == 1) {
+                if (songayxinnghi>=3)
+                    document.getElementById('txtsongayphepconlai').value = songayphephientai + 3;
+                else document.getElementById('txtsongayphepconlai').value = songayphephientai + songayxinnghi;
+            }
+            else
+            {
+                if (songayxinnghi >= 3)
+                    document.getElementById('txtsongayphepconlai').value = songayphephientai - 3;
+                else document.getElementById('txtsongayphepconlai').value = songayphephientai - songayxinnghi;
+            }
+
+            if (parseFloat($('#txtsongayphepconlai').val()) < 0)
+                $("#chknghikhongluong").prop('checked', true);
+            else $("#chknghikhongluong").prop('checked', false);
+
+        });
+
+        $("#chkchame_mat").click(function () {
+            debugger;
+            var songayphephientai = parseFloat($('#txtsongayphepconlai').val());
+            var songayxinnghi = parseFloat($('#txtsongayxinnghi').val());
+            if ($('#chkchame_mat:checked').length == 1) {
+                if (songayxinnghi >= 3)
+                    document.getElementById('txtsongayphepconlai').value = songayphephientai + 3;
+                else document.getElementById('txtsongayphepconlai').value = songayphephientai + songayxinnghi;
+            }
+            else {
+                if (songayxinnghi >= 3)
+                    document.getElementById('txtsongayphepconlai').value = songayphephientai - 3;
+                else document.getElementById('txtsongayphepconlai').value = songayphephientai - songayxinnghi;
+            }
+            if (parseFloat($('#txtsongayphepconlai').val()) < 0)
+                $("#chknghikhongluong").prop('checked', true);
+            else $("#chknghikhongluong").prop('checked', false);
+        });
+
+        $("#chkconkh").click(function () {
+            debugger;
+            var songayphephientai = parseFloat($('#txtsongayphepconlai').val());
+            var songayxinnghi = parseFloat($('#txtsongayxinnghi').val());
+            if ($('#chkconkh:checked').length == 1) {
+                if (songayxinnghi >= 1)
+                    document.getElementById('txtsongayphepconlai').value = songayphephientai + 1;
+                else document.getElementById('txtsongayphepconlai').value = songayphephientai + songayxinnghi;
+            }
+            else {
+                if (songayxinnghi >= 1)
+                    document.getElementById('txtsongayphepconlai').value = songayphephientai - 1;
+                else document.getElementById('txtsongayphepconlai').value = songayphephientai - songayxinnghi;
+            }
+            if (parseFloat($('#txtsongayphepconlai').val()) < 0)
+                $("#chknghikhongluong").prop('checked', true);
+            else $("#chknghikhongluong").prop('checked', false);
+        });
+
+        $("#chkongba_mat").click(function () {
+            debugger;
+            var songayphephientai = parseFloat($('#txtsongayphepconlai').val());
+            var songayxinnghi = parseFloat($('#txtsongayxinnghi').val());
+            if ($('#chkongba_mat:checked').length == 1) {
+                if (songayxinnghi >= 1)
+                    document.getElementById('txtsongayphepconlai').value = songayphephientai + 1;
+                else document.getElementById('txtsongayphepconlai').value = songayphephientai + songayxinnghi;
+            }
+            else {
+                if (songayxinnghi >= 1)
+                    document.getElementById('txtsongayphepconlai').value = songayphephientai - 1;
+                else document.getElementById('txtsongayphepconlai').value = songayphephientai - songayxinnghi;
+            }
+            if (parseFloat($('#txtsongayphepconlai').val()) < 0)
+                $("#chknghikhongluong").prop('checked', true);
+            else $("#chknghikhongluong").prop('checked', false);
+        });
+
+        $("#btn-save").click(function () {
+            debugger;
+            var songayxinnghi = parseFloat($('#txtsongayxinnghi').val());
+            var sophepconlai = parseFloat($('#txtsongayphepconlai').val());
+
+            $("#lblthongbao").removeClass('hidden');
+            if ($("#txthovaten").val().length < 3) {
+                $('#lblthongbao').html('Họ và tên không để trống?'); 
+                return false;
+            } 
+            else if ($("#filter01").val() == 0) {
+                $('#lblthongbao').html('Chọn phòng ban/Công trường?');
+                return false;
+            }
+            
+            else if (isNaN($("#txtsongayxinnghi").val()) == true || $("#txtsongayxinnghi").val().length < 1 || parseFloat($("#txtsongayxinnghi").val())<=0) {
+                $('#lblthongbao').html('Số ngày xin nghỉ không hợp lệ. Nếu nghỉ nữa ngày nhập 0.5 ?');
+                return false;
+            }
+
+            else if (parseFloat($("#txtsongayxinnghi").val()) == 0.5 && $('#chksang:checked').length == 0 && $('#chkchieu:checked').length == 0) {
+                $('#lblthongbao').html('Chọn thời gian xin nghỉ Sáng hoặc Chiều?');
+                return false;
+            }
+
+            else if ($("#txtemail").val().length < 5) {
+                $('#lblthongbao').html('Email không hợp lệ?');
+                return false;
+            }
+
+            else if ($("#txtsodienthoai").val().length > 16) {
+                $('#lblthongbao').html('Số điện thoại không hợp lệ. Nhập tối đa 11 số');
+                return false;
+            }
+
+            else if ($('#chknghiphep:checked').length == 0 && $('#chknghikhongluong:checked').length() == 0 && $('#chknghithaisan:checked').length() == 0 &&
+                $('#chkconkh:checked').length() == 0 && $('#chkcanhankh:checked').length() == 0 && $('#chkchame_mat:checked').length() == 0 && $('#chkongba_mat:checked').length() == 0) {
+                $('#lblthongbao').html('Chọn loại phép năm');
+                return false;
+            }
+            else if ($("#txtemail").val().length > 5) {
+                var email = $("#txtemail").val();
+                var dodai = email.length - 1;
+                var daucham = email.lastIndexOf('.');
+                var acong = email.lastIndexOf('.') - 2;
+                var daucach = email.indexOf(' ');
+                if ((dodai <= 5) || (acong < 1) || (daucham <= acong + 1) || (daucach != -1)) {
+                    $('#lblthongbao').html('Email không hợp lệ?');
+                    return false;
+                }
+            }
+            else {
+                $("#lblthongbao").removeClass('hidden');
+            }
+        });
+
+    });
+
+    </script>
+
+
+
+
+
+
+

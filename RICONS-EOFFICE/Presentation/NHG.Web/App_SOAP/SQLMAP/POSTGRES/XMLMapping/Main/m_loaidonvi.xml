@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="m_loaidonvi"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="Select" resultClass="System.Collections.Hashtable">
+      SELECT
+      maloaidonvi
+      ,tenloaidonvi
+      ,vitri
+      ,ghichu
+      ,xoa
+      ,nguoitao
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      FROM
+      m_loaidonvi
+      WHERE
+      <isNotEmpty	property="maloaidonvi">	and maloaidonvi = '$maloaidonvi$'	</isNotEmpty>
+      <isNotEmpty	property="tenloaidonvi">	and tenloaidonvi = '$tenloaidonvi$'	</isNotEmpty>
+      <isNotEmpty	property="vitri">	and vitri = '$vitri$'	</isNotEmpty>
+      <isNotEmpty	property="ghichu">	and ghichu = '$ghichu$'	</isNotEmpty>
+      <isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+
+    </select>
+
+    <insert id="Insert">
+      INSERT INTO m_loaidonvi
+      (
+      maloaidonvi
+      ,tenloaidonvi
+      ,vitri
+      ,ghichu
+      ,xoa
+      ,nguoitao
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      )
+      VALUES
+      (
+      <isNotEmpty	property="maloaidonvi">	, '$maloaidonvi$'	</isNotEmpty>	<isEmpty	property="maloaidonvi">	,null	</isEmpty>
+      <isNotEmpty	property="tenloaidonvi">	, '$tenloaidonvi$'	</isNotEmpty>	<isEmpty	property="tenloaidonvi">	,null	</isEmpty>
+      <isNotEmpty	property="vitri">	, '$vitri$'	</isNotEmpty>	<isEmpty	property="vitri">	,null	</isEmpty>
+      <isNotEmpty	property="ghichu">	, '$ghichu$'	</isNotEmpty>	<isEmpty	property="ghichu">	,null	</isEmpty>
+      <isNotEmpty	property="xoa">	, '$xoa$'	</isNotEmpty>	<isEmpty	property="xoa">	,null	</isEmpty>
+      <isNotEmpty	property="nguoitao">	, '$nguoitao$'	</isNotEmpty>	<isEmpty	property="nguoitao">	,null	</isEmpty>
+      <isNotEmpty	property="ngaytao">	, '$ngaytao$'	</isNotEmpty>	<isEmpty	property="ngaytao">	,null	</isEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	, '$nguoihieuchinh$'	</isNotEmpty>	<isEmpty	property="nguoihieuchinh">	,null	</isEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	, '$ngayhieuchinh$'	</isNotEmpty>	<isEmpty	property="ngayhieuchinh">	,null	</isEmpty>
+
+      );
+
+    </insert>
+
+    <update id="Update">
+      UPDATE
+      m_loaidonvi
+      SET
+      <isNotEmpty	property="maloaidonvi">	and maloaidonvi = '$maloaidonvi$'	</isNotEmpty>
+      <isNotEmpty	property="tenloaidonvi">	and tenloaidonvi = '$tenloaidonvi$'	</isNotEmpty>
+      <isNotEmpty	property="vitri">	and vitri = '$vitri$'	</isNotEmpty>
+      <isNotEmpty	property="ghichu">	and ghichu = '$ghichu$'	</isNotEmpty>
+      <isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+      WHERE
+      <isNotEmpty	property="maloaidonvi">	and maloaidonvi = '$maloaidonvi$'	</isNotEmpty>
+      <isNotEmpty	property="tenloaidonvi">	and tenloaidonvi = '$tenloaidonvi$'	</isNotEmpty>
+      <isNotEmpty	property="vitri">	and vitri = '$vitri$'	</isNotEmpty>
+      <isNotEmpty	property="ghichu">	and ghichu = '$ghichu$'	</isNotEmpty>
+      <isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+    </update>
+    <update id="Delete">
+      UPDATE
+      m_loaidonvi
+      SET
+      <isNotEmpty	property="maloaidonvi">	and maloaidonvi = '$maloaidonvi$'	</isNotEmpty>
+      <isNotEmpty	property="tenloaidonvi">	and tenloaidonvi = '$tenloaidonvi$'	</isNotEmpty>
+      <isNotEmpty	property="vitri">	and vitri = '$vitri$'	</isNotEmpty>
+      <isNotEmpty	property="ghichu">	and ghichu = '$ghichu$'	</isNotEmpty>
+      <isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+      WHERE
+      <isNotEmpty	property="maloaidonvi">	and maloaidonvi = '$maloaidonvi$'	</isNotEmpty>
+      <isNotEmpty	property="tenloaidonvi">	and tenloaidonvi = '$tenloaidonvi$'	</isNotEmpty>
+      <isNotEmpty	property="vitri">	and vitri = '$vitri$'	</isNotEmpty>
+      <isNotEmpty	property="ghichu">	and ghichu = '$ghichu$'	</isNotEmpty>
+      <isNotEmpty	property="xoa">	and xoa = '$xoa$'	</isNotEmpty>
+      <isNotEmpty	property="nguoitao">	and nguoitao = '$nguoitao$'	</isNotEmpty>
+      <isNotEmpty	property="ngaytao">	and ngaytao = '$ngaytao$'	</isNotEmpty>
+      <isNotEmpty	property="nguoihieuchinh">	and nguoihieuchinh = '$nguoihieuchinh$'	</isNotEmpty>
+      <isNotEmpty	property="ngayhieuchinh">	and ngayhieuchinh = '$ngayhieuchinh$'	</isNotEmpty>
+    </update>
+  </statements>
+</sqlMap>

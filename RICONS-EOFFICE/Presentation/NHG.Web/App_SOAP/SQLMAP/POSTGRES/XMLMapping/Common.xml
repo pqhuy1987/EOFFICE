@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="Common"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <!---====================SELECT ===================-->
+    <select id="SimpleSelectRows" resultClass="System.Collections.Hashtable">
+      SELECT
+      <iterate property="columns" open="" close="" conjunction=",">
+        $columns[]$
+      </iterate>
+      FROM $tablename$
+      <isNotEmpty property ="arrwhere">
+        WHERE
+        <iterate property="arrwhere" open=" " close=" " conjunction=" AND ">
+          $arrwhere[]$
+        </iterate>
+      </isNotEmpty>
+    </select>
+
+    <!---====================INSERT ===================-->
+    <insert id ="InsertRow">
+      INSERT INTO $tablename$
+      <iterate property="columns" open="(" close=")" conjunction=",">
+        $columns[]$
+      </iterate>
+      VALUES
+      <iterate property="values" open="(" close=")" conjunction=",">
+        $values[]$
+      </iterate>
+    </insert>
+
+    <!---====================UPDATE ===================-->
+    <update id ="UpdateRow">
+      UPDATE $tablename$
+      SET
+      <iterate property="columns" open=" " close=" " conjunction=",">
+        $columns[]$
+      </iterate>
+      <isNotEmpty property ="arrwhere">
+        WHERE
+        <iterate property="arrwhere" open=" " close=" " conjunction=" AND ">
+          $arrwhere[]$
+        </iterate>
+      </isNotEmpty>
+    </update>
+
+    <update id ="UpdateNextSeq">
+      UPDATE m_taikhoan_sequences
+      SET giatri = '$giatri$'
+      WHERE
+      mataikhoan = '$mataikhoan$'
+      AND sequencename = '$sequencename$'
+    </update>
+
+    <!---====================DELETE ===================-->
+    <update id="Delete">
+      UPDATE  $TABLE_NAME$
+      SET     DELETED = '1'
+      ,update_id = $UPDATE_ID$
+      ,update_date = GETDATE()
+      <!--Neu khong co dieu kien ID thi xoa het table, neu co ID thi chi xoa nhung record = ID nay-->
+      <dynamic prepend="WHERE">
+        <isNotEmpty property="COLUMN_ID">
+          <isNotEmpty property="VALUE_ID">
+            $COLUMN_ID$ = $VALUE_ID$
+          </isNotEmpty>
+        </isNotEmpty>
+      </dynamic>
+    </update>
+
+    <!---===============Lay ma tang dan trong bang==========-->
+    <select id="GetNextVal" resultClass="int">
+      SELECT nextval('$seqname$')
+    </select>
+
+    <!---===============Lay ma tang dan trong bang==========-->
+    <select id="GetNextSeq" resultClass="System.Collections.Hashtable">
+      SELECT (CAST (giatri AS int4) + 1) as giatri, dodai
+      FROM m_taikhoan_sequences
+      WHERE
+      mataikhoan = '$mataikhoan$'
+      AND sequencename = '$sequencename$'
+    </select>
+
+    <!---===============Lay ngay hien tai tren server==========-->
+    <select id="GetNow" resultClass="string">
+      select to_char(GETDATE(),'YYYY-MM-DD HH24:MI:SS')
+    </select>
+
+    <select id="SelectUpdateDateDB" resultClass="string">
+      select case when update_date is null then ' ' else  to_char(update_date,'YYYY-MM-DD HH24:MI:SS') END as update_date
+      from  $TABLE$
+      where $COL_ID$ = $ID$
+    </select>
+
+    <!---===============Chon Khoa chinh lon nhat trong mot bang==========-->
+    <select id="SelectMaxID" resultClass="int">
+      SELECT NVL(Max($COLUMNID$),0) +1  FROM $TABLE$
+    </select>
+
+    <!---===============Tao moi Sequence tu DB==========-->
+    <select id="CreateSeq">
+      CREATE SEQUENCE $SEQUENCE$
+      INCREMENT BY 1
+      START WITH $SEQVALUE$
+    </select>
+
+    <!---===============Xoa Sequence tu DB==========-->
+    <select id="Dropseq">
+      DROP SEQUENCE $SEQUENCE$
+    </select>
+
+    <!---===============Cap nhat Sequence tu DB==========-->
+    <select id="UpdateSeq" resultClass="string">
+      select sp_alter_sequence()
+    </select>
+
+    <!---============ Lay danh sach cac SEQUENCES tu DB==================-->
+    <select id ="GetSequences" resultClass="System.Collections.Hashtable">
+      SELECT relname as sequencename from pg_class where relkind ='S'
+      <isNotEmpty property ="tablename">
+        AND and relname = 'seq_$tablename$'
+      </isNotEmpty>
+    </select>
+
+    <!---===============Lay cac danh sach column tu DB==========-->
+    <select id ="GetColumns" resultClass="System.Collections.Hashtable">
+      SELECT   DISTINCT 	TableName
+      ,COL.Column_Name as ColumnName
+      ,udt_name as DataType
+      ,COL.Ordinal_position as DispOrder
+      ,CASE WHEN PK.Column_name IS NOT NULL THEN 'true' ELSE 'false' END AS Primary
+      ,(SELECT relname from pg_class where relkind ='S' and relname like 'seq_' || TableName ) as sequencename
+      FROM    information_schema.columns as COL
+      INNER JOIN pg_tables PTB
+      ON COL.Table_Name = PTB.TableName
+      LEFT JOIN information_schema.constraint_column_usage PK
+      ON ( COL.Column_Name = PK.Column_name
+      AND COL.Table_Name = PK.Table_Name
+      )
+      WHERE PTB.schemaname ='public'
+      <isNotEmpty property ="tablename">
+        AND PTB.tablename = '$tablename$'
+      </isNotEmpty>
+      ORDER BY DispOrder
+    </select>
+
+
+    <select id ="Get_seq_All" resultClass="System.Collections.Hashtable">
+      SELECT giatri from $tablename$ where id ='$columname$'
+    </select>
+
+    <update id ="Update_seq_All">
+      UPDATE  $tablename$
+      SET giatri = '$giatri$'
+      where id='$columname$'
+    </update>
+    
+    
+    
+    
+    
+  </statements>
+</sqlMap>

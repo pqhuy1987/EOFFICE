@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap
+  namespace="cv_lichlamviec"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://ibatis.apache.org/mapping">
+  <statements>
+    <select id="SelectRows" resultClass="System.Collections.Hashtable">
+      SELECT
+      malichlamviec
+      ,madonvi
+      ,noidung
+      ,diadiem
+      ,to_char(ngaybatdau, 'dd/MM/yyyy HH24:MI') as ngaybatdau
+      ,to_char(ngayketthuc, 'dd/MM/yyyy HH24:MI') as ngayketthuc
+      ,maulich
+      ,phuongtiendichuyen
+      ,mucdouutien
+      ,xoa
+      ,nguoitao
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      FROM
+      cv_lichlamviec
+      WHERE
+      xoa = '0'
+      <isNotEmpty	property="malichlamviec">
+        and malichlamviec = '$malichlamviec$'
+      </isNotEmpty>
+      <isNotEmpty	property="ngaybatdau">
+        AND to_timestamp(to_char(ngaybatdau,'yyyy/MM/dd'),'yyyy/MM/dd') <![CDATA[>=]]> to_timestamp('$ngaybatdau$','yyyy/MM/dd')
+      </isNotEmpty>
+      <isNotEmpty	property="ngayketthuc">
+        AND to_timestamp(to_char(ngaybatdau,'yyyy/MM/dd'),'yyyy/MM/dd') <![CDATA[<=]]> to_timestamp('$ngayketthuc$','yyyy/MM/dd')
+      </isNotEmpty>
+    </select>
+
+    <select id="loadSuKien" resultClass="System.Collections.Hashtable">
+      SELECT
+      llv.malichlamviec
+      ,llv.noidung
+      ,llv.diadiem
+      ,llv.maulich
+      ,to_char(ngaybatdau, 'MM/dd/yyyy HH24:MI') as ngaybatdau
+      ,to_char(ngayketthuc, 'MM/dd/yyyy HH24:MI') as ngayketthuc
+      ,sukiencangay
+      FROM
+      cv_lichlamviec AS llv
+      where
+      llv.xoa = '0'
+      <isNotEmpty	property="malichlamviec">
+        and malichlamviec = '$malichlamviec$'
+      </isNotEmpty>
+      <isNotEmpty	property="ngaybatdau">
+        AND to_timestamp(to_char(ngaybatdau,'yyyy/MM/dd'),'yyyy/MM/dd') <![CDATA[>=]]> to_timestamp('$ngaybatdau$','yyyy/MM/dd')
+      </isNotEmpty>
+      <isNotEmpty	property="ngayketthuc">
+        AND to_timestamp(to_char(ngaybatdau,'yyyy/MM/dd'),'yyyy/MM/dd') <![CDATA[<=]]> to_timestamp('$ngayketthuc$','yyyy/MM/dd')
+      </isNotEmpty>
+      order by llv.ngaybatdau
+    </select>
+
+    <insert id="InsertRow">
+      INSERT INTO cv_lichlamviec
+      (
+      malichlamviec
+      ,madonvi
+      ,noidung
+      ,diadiem
+      ,ngaybatdau
+      ,ngayketthuc
+      ,maulich
+      ,phuongtiendichuyen
+      ,mucdouutien
+      ,xoa
+      ,nguoitao
+      ,ngaytao
+      ,nguoihieuchinh
+      ,ngayhieuchinh
+      )
+      VALUES
+      (
+      '$malichlamviec$'
+      <isNotEmpty	property="madonvi">	, '$madonvi$'	</isNotEmpty>	<isEmpty	property="madonvi">	,null	</isEmpty>
+      <isNotEmpty	property="noidung">	, '$noidung$'	</isNotEmpty>	<isEmpty	property="noidung">	,null	</isEmpty>
+      <isNotEmpty	property="diadiem">	, '$diadiem$'	</isNotEmpty>	<isEmpty	property="diadiem">	,null	</isEmpty>
+      <isNotEmpty	property="ngaybatdau">	, '$ngaybatdau$'	</isNotEmpty>	<isEmpty	property="ngaybatdau">	,null	</isEmpty>
+      <isNotEmpty	property="ngayketthuc">	, '$ngayketthuc$'	</isNotEmpty>	<isEmpty	property="ngayketthuc">	,null	</isEmpty>
+      <isNotEmpty	property="maulich">	, '$maulich$'	</isNotEmpty>	<isEmpty	property="maulich">	,null	</isEmpty>
+      <isNotEmpty	property="phuongtiendichuyen">	, '$phuongtiendichuyen$'	</isNotEmpty>	<isEmpty	property="phuongtiendichuyen">	,null	</isEmpty>
+      <isNotEmpty	property="mucdouutien">	, '$mucdouutien$'	</isNotEmpty>	<isEmpty	property="mucdouutien">	,null	</isEmpty>
+      <isNotEmpty	property="xoa">	, '$xoa$'	</isNotEmpty>	<isEmpty	property="xoa">	,0	</isEmpty>
+      , '$nguoitao$'
+      ,GETDATE()
+      , '$nguoihieuchinh$'
+      ,GETDATE()
+      );
+
+
+    </insert>
+
+    <update id="UpdateRow">
+      UPDATE
+      cv_lichlamviec
+      SET
+      nguoihieuchinh = '$nguoihieuchinh$'
+      ,ngayhieuchinh = GETDATE()	
+      <isNotEmpty	property="madonvi">	, madonvi = '$madonvi$'	</isNotEmpty>	
+      <isNotEmpty	property="noidung">	, noidung = '$noidung$'	</isNotEmpty>	
+      <isNotEmpty	property="diadiem">	, diadiem = '$diadiem$'	</isNotEmpty>
+      <isNotEmpty	property="ngaybatdau">	, ngaybatdau = '$ngaybatdau$'	</isNotEmpty>
+      <isNotEmpty	property="ngaykethuc">	, ngaykethuc = '$ngaykethuc$'	</isNotEmpty>
+      <isNotEmpty	property="maulich">	, maulich = '$maulich$'	</isNotEmpty>
+      <isNotEmpty	property="phuongtiendichuyen">	, phuongtiendichuyen = '$phuongtiendichuyen$'	</isNotEmpty>
+      <isNotEmpty	property="mucdouutien">	, mucdouutien = '$mucdouutien$'	</isNotEmpty>
+      WHERE
+      xoa = '0'
+      and malichlamviec = '$malichlamviec$'
+
+    </update>
+
+    <update id="DeleteRow">
+      UPDATE
+      cv_lichlamviec
+      SET
+      xoa = '1'
+      WHERE
+      xoa = '$xoa$'
+      and malichlamviec = '$malichlamviec$'
+    </update>
+  </statements>
+</sqlMap>

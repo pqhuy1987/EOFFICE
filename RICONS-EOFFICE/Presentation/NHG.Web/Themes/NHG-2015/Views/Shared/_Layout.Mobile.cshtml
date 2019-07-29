@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html class="app js no-touch no-android no-chrome firefox no-iemobile no-ie no-ie8 no-ie10 no-ie11 no-ios no-ios7 ipad" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>@ViewBag.Title - NHG</title>
+    <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="@Url.Content("~")favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/jquery-ui-1.10.2.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/bootstrap_calendar.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/loader.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/scrollbar/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/app.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~")themes/NHG-2015/css/StyleButton.css" />
+    
+    @RenderSection("CSS", required: false)
+    <!--[if lt IE 9]>
+        <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js">
+        </script> <script src="js/ie/excanvas.js"></script> <![endif]-->
+    <style type="text/css">
+        .jqstooltip {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            visibility: hidden;
+            background: rgb(0, 0, 0) transparent;
+            background-color: rgba(0,0,0,0.6);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+            color: white;
+            font: 10px arial, san serif;
+            text-align: left;
+            white-space: nowrap;
+            padding: 5px;
+            border: 1px solid white;
+            z-index: 10000;
+        }
+
+        .jqsfield {
+            color: white;
+            font: 10px arial, san serif;
+            text-align: left;
+        }
+    </style>
+    <script type="text/javascript">
+        try {
+            for (var lastpass_iter = 0; lastpass_iter < document.forms.length; lastpass_iter++) {
+                var lastpass_f = document.forms[lastpass_iter];
+                if (typeof (lastpass_f.lpsubmitorig) == "undefined") {
+                    if (typeof (lastpass_f.submit) == "function") {
+                        lastpass_f.lpsubmitorig = lastpass_f.submit;
+                        lastpass_f.submit = function () {
+                            var form = this; try {
+                                if (document.documentElement && 'createEvent' in document) {
+                                    var forms = document.getElementsByTagName('form');
+                                    for (
+                                        var i = 0 ; i < forms.length ; ++i)
+                                        if (forms[i] == form) {
+                                            var element = document.createElement('lpformsubmitdataelement');
+                                            element.setAttribute('formnum', i);
+                                            element.setAttribute('from', 'submithook');
+                                            document.documentElement.appendChild(element);
+                                            var evt = document.createEvent('Events');
+                                            evt.initEvent('lpformsubmit', true, false);
+                                            element.dispatchEvent(evt);
+                                            break;
+                                        }
+                                }
+                            } catch (e) {
+                            }
+                            try {
+                                form.lpsubmitorig();
+                            } catch (e) {
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (e) { }
+    </script>
+</head>
+<body class="nhg-body">
+    <div>iPad moiblee</div>
+    
+    <!-- Bootstrap -->
+    <!-- App -->
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/app.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery-migrate-1.2.1.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/encoder.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery.common-functions.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/scrollbar/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/loader.js" ></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/dialog/jquery.customdialog.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/ScriptUploadFile.js"></script>
+    <script type="text/javascript" src="@Url.Content("~")themes/NHG-2015/js/jquery.fileDownload.js"></script>
+    <script type="text/javascript">
+        //giu session
+        setInterval(function () {
+            $.get("@Url.Content("~")ajax/KeepAlive.ashx");
+        }, 1000 * 15); // 30s gửi request một lần
+        //
+        var browserInfo = '@Request.Browser.Version.ToString().ToLower()';
+        var browserMSIE = false;
+        if (!CheckNullOrEmpty(browserInfo))
+            if (browserInfo == 'true')
+                browserMSIE = true;
+        var browserMSIE_Version = '<%this.Response.Write(browserMSIE_version); %>';
+        $('#nav .scrollable .nav-primary').slimscroll({ height: getWindowHeight() - $('.nhg-body header.header').height() - $('.nhg-body .nav-user').outerHeight(true) - $('.nhg-body #nav .footer').height() });
+    </script>
+    
+    @RenderSection("JavaScript", required: false)
+</body>
+</html>

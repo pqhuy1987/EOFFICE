@@ -1,0 +1,21 @@
+﻿
+.col1 {
+    text-align: center;
+    width: 98px;
+}
+
+.col2 {
+    width: 100%;
+}
+
+.col3 {
+    width: 90px;
+}
+
+.col4 {
+    width: 135px;
+}
+
+.col5 {
+    width: 135px;
+}
